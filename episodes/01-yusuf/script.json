@@ -1,6 +1,6 @@
 {
  "title": "Yusuf",
- "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+ "voice_id": "nPczCjzI2devNBz1zQrb",
  "scenes": [
   {
    "id": "canaan",
@@ -24,15 +24,47 @@
   },
   {
    "id": "palace",
-   "text": "Il grandit chez un grand dignitaire. Quand l'épouse de celui-ci voulut le séduire, il s'enfuit : « Qu'Allah me protège ! »"
+   "text": "Il grandit dans la maison d'un grand dignitaire d'Égypte. Mais l'épouse de celui-ci s'éprit de lui. Un jour, elle ferma les portes et voulut le séduire. « Qu'Allah me protège ! », dit Yusuf, et il s'enfuit."
+  },
+  {
+   "id": "accuse",
+   "text": "Elle le retint par sa chemise, qui se déchira par-derrière. À la porte, ils trouvèrent son mari. Aussitôt, elle accusa Yusuf. Mais un témoin de sa famille trancha : la chemise déchirée dans le dos prouvait son innocence."
+  },
+  {
+   "id": "women",
+   "text": "En ville, les femmes la blâmaient. Elle les invita, offrit à chacune un couteau, puis fit entrer Yusuf. Éblouies, elles se coupèrent les mains : « Ce n'est pas un humain… c'est un noble ange ! »"
   },
   {
    "id": "prison",
-   "text": "Innocent, il fut pourtant jeté en prison. Mais même derrière ces murs, il appelait à l'unicité d'Allah."
+   "text": "Les menaces redoublèrent. Yusuf implora : « Seigneur, la prison m'est préférable à ce à quoi elles m'invitent. » Et malgré son innocence, il fut emprisonné."
+  },
+  {
+   "id": "companions",
+   "text": "Deux jeunes hommes entrèrent en prison avec lui. L'un se vit en rêve pressant du raisin. L'autre portait du pain sur sa tête, dont mangeaient les oiseaux."
+  },
+  {
+   "id": "interpret",
+   "text": "Yusuf les appela d'abord à l'unicité d'Allah. Puis il expliqua : le premier servirait à boire à son maître. Le second serait crucifié, et les oiseaux mangeraient de sa tête."
+  },
+  {
+   "id": "forgotten",
+   "text": "Au premier, il demanda : « Parle de moi auprès de ton maître. » Mais Satan le lui fit oublier… et Yusuf resta en prison plusieurs années."
   },
   {
    "id": "king",
-   "text": "Un jour, le roi rêva de sept vaches grasses dévorées par sept vaches maigres. Yusuf l'interpréta : sept années d'abondance, puis sept de famine. Innocenté, il reçut la charge des réserves du pays."
+   "text": "Un jour, le roi vit en rêve sept vaches grasses dévorées par sept vaches maigres, sept épis verts et sept autres secs. Aucun de ses sages ne sut l'expliquer."
+  },
+  {
+   "id": "cupbearer",
+   "text": "Alors l'échanson se souvint de Yusuf, et courut le trouver en prison. Yusuf expliqua : sept années d'abondance, puis sept années de famine. Gardez le grain dans ses épis."
+  },
+  {
+   "id": "release",
+   "text": "Le roi voulut le faire sortir. Mais Yusuf refusa, tant que son innocence n'était pas établie. Les femmes avouèrent, et l'épouse du dignitaire déclara : « Maintenant, la vérité éclate. C'est moi qui ai voulu le séduire. »"
+  },
+  {
+   "id": "treasury",
+   "text": "Innocenté, Yusuf sortit enfin de prison. Et le roi lui confia les réserves de toute l'Égypte."
   },
   {
    "id": "brothers",

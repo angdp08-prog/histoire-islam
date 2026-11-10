@@ -22,8 +22,10 @@ def env_for(gains):
         g = gains.get(s["id"], 0.0)
         a, b = int(s["start"] * SR), int((s["start"] + s["dur"]) * SR)
         e[a:b] = g
-    k = int(0.8 * SR); ker = np.ones(k) / k
-    return np.convolve(e, ker, mode="same")
+    k = int(0.8 * SR)  # moving average via cumulative sum (fast)
+    cs = np.concatenate([[0.0], np.cumsum(e)])
+    i = np.arange(N); lo = np.clip(i - k // 2, 0, N); hi = np.clip(i + k // 2, 0, N)
+    return (cs[hi] - cs[lo]) / k
 
 # wind: brown-ish noise, slowly modulated
 white = rs.standard_normal(N)

@@ -24,7 +24,20 @@ def words_from_alignment(al):
         e0 = e
     if cur:
         words.append({"w": cur, "s": s0, "e": e0})
-    return words
+    return glue(words)
+
+
+def glue(words):
+    """French typography: attach lone punctuation tokens (« » : ! ? ;) to the neighbouring word."""
+    out = []
+    for w in words:
+        if out and re.fullmatch(r"[»:!?;…,.]+", w["w"]):
+            out[-1]["w"] += "\u00a0" + w["w"]; out[-1]["e"] = w["e"]
+        elif out and out[-1]["w"] == "«":
+            prev = out.pop(); out.append({"w": "«\u00a0" + w["w"], "s": prev["s"], "e": w["e"]})
+        else:
+            out.append(dict(w))
+    return out
 
 
 def words_estimated(text):
@@ -38,7 +51,7 @@ def words_estimated(text):
             d += 0.15
         words.append({"w": w, "s": t, "e": t + d * 0.85})
         t += d
-    return words
+    return glue(words)
 
 
 def audio_dur(path):
