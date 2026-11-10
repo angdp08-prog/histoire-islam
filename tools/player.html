@@ -1,0 +1,50 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Amiri;font-weight:700;src:url(assets/amiri-700.woff2)}
+@font-face{font-family:Lora;font-weight:600;src:url(assets/lora-600.woff2)}
+@font-face{font-family:Lora;font-weight:500;font-style:italic;src:url(assets/lora-500i.woff2)}
+html,body{margin:0;background:#000}canvas{display:block}
+</style></head>
+<body><canvas id="c" width="1080" height="1920"></canvas>
+<script src="engine.js"></script>
+<script>
+// offscreen layers for cross-fades
+const _pool = []; let _depth = 0;
+function layer(ctx, alpha, fn) {
+  if (alpha <= 0) return;
+  const b = _pool[_depth] || (_pool[_depth] = Object.assign(document.createElement('canvas'), { width: W, height: H }));
+  _depth++;
+  const c = b.getContext('2d'); c.setTransform(1, 0, 0, 1, 0, 0); c.globalAlpha = 1; c.globalCompositeOperation = 'source-over';
+  c.clearRect(0, 0, W, H); c.save(); fn(c); c.restore();
+  ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = alpha; ctx.drawImage(b, 0, 0); ctx.restore();
+  _depth--;
+}
+const XF = 0.8; // cross-fade length
+const ctx = document.getElementById('c').getContext('2d');
+function draw(t) {
+  const TL = window.TL;
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
+  const grades = [];
+  TL.scenes.forEach((s, i) => {
+    const sc = SCENES[s.id]; if (!sc) return;
+    const fadeIn = i === 0 ? 1 : seg(t, s.start - XF / 2, s.start + XF / 2);
+    const fadeOut = i === TL.scenes.length - 1 ? 1 : 1 - seg(t, s.start + s.dur - XF / 2, s.start + s.dur + XF / 2);
+    const a = Math.min(fadeIn, 1) * (fadeOut < 1 && TL.scenes[i + 1] ? 1 : fadeOut);
+    if (t < s.start - XF / 2 || t > s.start + s.dur + XF / 2) return;
+    // draw under the next one: current scene fully opaque, next fades in on top
+    layer(ctx, i === 0 ? 1 : ease(fadeIn), c => sc.draw(c, t - s.start, s.dur));
+    if (sc.grade) grades.push([sc.grade, ease(fadeIn)]);
+  });
+  // colour grade of the dominant scene + vignette + grain
+  const g = grades.length ? grades[grades.length - 1] : null;
+  if (g) { ctx.save(); ctx.globalAlpha = 1; post(ctx, t, null); ctx.restore(); ctx.save(); ctx.globalCompositeOperation = 'soft-light'; ctx.globalAlpha = 1;
+    grades.forEach(([col, a]) => { ctx.globalAlpha = a; ctx.fillStyle = col; ctx.fillRect(0, 0, W, H); }); ctx.restore(); }
+  else post(ctx, t, null);
+  // fade in from black at start
+  if (t < 0.8) { ctx.fillStyle = `rgba(0,0,0,${1 - seg(t, 0, 0.8)})`; ctx.fillRect(0, 0, W, H); }
+  subtitles(ctx, t, TL.cues);
+}
+window.draw = draw;
+window.loadScenes = src => new Promise(r => { const s = document.createElement('script'); s.src = src; s.onload = r; document.body.appendChild(s); });
+</script></body></html>
