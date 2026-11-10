@@ -8,7 +8,7 @@
   },
   {
    "id": "dream",
-   "text": "Une nuit, il vit en rêve onze étoiles, le soleil et la lune se prosterner devant lui. « Ne le raconte pas à tes frères », lui dit son père."
+   "text": "Une nuit, il vit en rêve onze étoiles, le soleil et la lune se prosterner devant lui."
   },
   {
    "id": "well",
@@ -24,27 +24,27 @@
   },
   {
    "id": "palace",
-   "text": "Il grandit dans la maison d'un grand dignitaire d'Égypte. Mais l'épouse de celui-ci s'éprit de lui. Un jour, elle ferma les portes et voulut le séduire. « Qu'Allah me protège ! », dit Yusuf, et il s'enfuit."
+   "text": "Il grandit chez un grand dignitaire d'Égypte, dont l'épouse voulut le séduire. Mais Yusuf s'écria : « Qu'Allah me protège ! » et s'enfuit."
   },
   {
    "id": "accuse",
-   "text": "Elle le retint par sa chemise, qui se déchira par-derrière. À la porte, ils trouvèrent son mari. Aussitôt, elle accusa Yusuf. Mais un témoin de sa famille trancha : la chemise déchirée dans le dos prouvait son innocence."
+   "text": "Elle le retint par sa chemise, qui se déchira dans le dos, puis l'accusa devant son mari. Mais un témoin trancha : c'était la preuve de son innocence."
   },
   {
    "id": "women",
-   "text": "En ville, les femmes la blâmaient. Elle les invita, offrit à chacune un couteau, puis fit entrer Yusuf. Éblouies, elles se coupèrent les mains : « Ce n'est pas un humain… c'est un noble ange ! »"
+   "text": "Les femmes de la ville la blâmèrent. Elle les invita, donna à chacune un couteau, et fit entrer Yusuf. Éblouies, elles se coupèrent les mains : « C'est un noble ange ! »"
   },
   {
    "id": "prison",
-   "text": "Les menaces redoublèrent. Yusuf implora : « Seigneur, la prison m'est préférable à ce à quoi elles m'invitent. » Et malgré son innocence, il fut emprisonné."
+   "text": "« Seigneur, la prison m'est préférable », implora Yusuf. Et malgré son innocence, il fut emprisonné."
   },
   {
    "id": "companions",
-   "text": "Deux jeunes hommes entrèrent en prison avec lui. L'un se vit en rêve pressant du raisin. L'autre portait du pain sur sa tête, dont mangeaient les oiseaux."
+   "text": "Deux prisonniers lui racontèrent leurs rêves : l'un pressait du raisin, l'autre portait du pain que mangeaient les oiseaux."
   },
   {
    "id": "interpret",
-   "text": "Yusuf les appela d'abord à l'unicité d'Allah. Puis il expliqua : le premier servirait à boire à son maître. Le second serait crucifié, et les oiseaux mangeraient de sa tête."
+   "text": "Yusuf les appela d'abord à l'unicité d'Allah, puis expliqua : l'un servirait à boire au roi, l'autre serait crucifié."
   },
   {
    "id": "forgotten",
@@ -56,11 +56,11 @@
   },
   {
    "id": "cupbearer",
-   "text": "Alors l'échanson se souvint de Yusuf, et courut le trouver en prison. Yusuf expliqua : sept années d'abondance, puis sept années de famine. Gardez le grain dans ses épis."
+   "text": "L'échanson se souvint alors de Yusuf. Celui-ci expliqua : sept années d'abondance, puis sept de famine."
   },
   {
    "id": "release",
-   "text": "Le roi voulut le faire sortir. Mais Yusuf refusa, tant que son innocence n'était pas établie. Les femmes avouèrent, et l'épouse du dignitaire déclara : « Maintenant, la vérité éclate. C'est moi qui ai voulu le séduire. »"
+   "text": "Mais Yusuf refusa de sortir avant d'être innocenté. Les femmes avouèrent, et l'épouse déclara : « La vérité éclate. C'est moi qui ai voulu le séduire. »"
   },
   {
    "id": "treasury",
@@ -68,7 +68,7 @@
   },
   {
    "id": "brothers",
-   "text": "La famine frappa. Ses frères vinrent chercher du grain, sans le reconnaître… jusqu'au jour où il leur dit : « Je suis Yusuf. »"
+   "text": "Pendant la famine, ses frères vinrent chercher du grain, sans le reconnaître. Puis il leur dit : « Je suis Yusuf. »"
   },
   {
    "id": "forgive",
@@ -76,11 +76,12 @@
   },
   {
    "id": "reunion",
-   "text": "Sa chemise fut posée sur le visage de son père, et Ya'qub retrouva la vue. Toute la famille se prosterna : le rêve de l'enfant s'était réalisé."
+   "text": "Sa chemise rendit la vue à son père, et toute la famille se prosterna : le rêve de l'enfant s'était réalisé."
   },
   {
    "id": "death",
    "text": "Au soir de sa vie, Yusuf implora : « Fais-moi mourir soumis, et joins-moi aux vertueux. » Il s'éteignit en Égypte. Après l'épreuve, vient toujours la délivrance."
   }
- ]
+ ],
+ "tempo": 1.04
 }

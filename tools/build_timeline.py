@@ -5,7 +5,7 @@ import json, os, re, subprocess, sys
 
 ep = sys.argv[1]
 cfg = json.load(open(os.path.join(ep, "script.json"), encoding="utf-8"))
-LEAD_FIRST, LEAD, TAIL, OUTRO = 1.4, 0.3, 0.55, 4.0
+LEAD_FIRST, LEAD, TAIL, OUTRO = 1.2, 0.25, 0.45, 3.5
 CHARS_PER_SEC = 13.5  # estimate when no audio
 
 
@@ -96,8 +96,17 @@ for i, s in enumerate(cfg["scenes"]):
     base = os.path.join(ep, "audio", f"{i:02d}_{s['id']}")
     if os.path.exists(base + ".json"):
         ws = words_from_alignment(json.load(open(base + ".json", encoding="utf-8")))
-        vdur = audio_dur(base + ".mp3")
-        timeline["audio"].append({"file": base + ".mp3", "at": None})
+        src = base + ".mp3"
+        tempo = cfg.get("tempo", 1.0)
+        if tempo != 1.0:  # speed up slightly without changing pitch; rescale word timings
+            tdir = os.path.join(ep, ".segments", "tempo"); os.makedirs(tdir, exist_ok=True)
+            dst = os.path.join(tdir, os.path.basename(base) + ".wav")
+            subprocess.check_call(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-af", f"atempo={tempo}", dst])
+            src = dst
+            for x in ws:
+                x["s"] /= tempo; x["e"] /= tempo
+        vdur = audio_dur(src)
+        timeline["audio"].append({"file": src, "at": None})
     else:
         ws = words_estimated(s["text"])
         vdur = ws[-1]["e"] + 0.1
