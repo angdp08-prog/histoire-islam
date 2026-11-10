@@ -26,8 +26,10 @@ if tl["audio"]:
 else:
     subprocess.check_call(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo", "-t", str(tl["total"]), out])
 PY
+HAS_VOICE=$(python3 -c "import json,sys;print(1 if json.load(open(sys.argv[1]+'/timeline.json'))['audio'] else 0)" "$EP")
+if [ "$HAS_VOICE" = 0 ]; then MIX='[2:a]volume=1.4[a]'; else MIX='[1:a]highpass=f=70,acompressor=threshold=-20dB:ratio=3:attack=10:release=200,volume=1.6[v];[2:a]volume=1.0[b];[v][b]amix=inputs=2:normalize=0,loudnorm=I=-15:TP=-1.5:LRA=11[a]'; fi
 ffmpeg -y -loglevel error -i "$S/video.mp4" -i "$S/voice.wav" -i "$EP/ambience.wav" -filter_complex \
-  "[1:a]highpass=f=70,acompressor=threshold=-20dB:ratio=3:attack=10:release=200,volume=1.6[v];[2:a]volume=1.0[b];[v][b]amix=inputs=2:normalize=0,loudnorm=I=-15:TP=-1.5:LRA=11[a]" \
+  "$MIX" \
   -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k -shortest -movflags +faststart "$EP/$NAME.mp4"
 rm -rf "$S"
 echo "==> $EP/$NAME.mp4"
