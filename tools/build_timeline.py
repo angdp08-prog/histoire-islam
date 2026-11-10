@@ -5,7 +5,7 @@ import json, os, re, subprocess, sys
 
 ep = sys.argv[1]
 cfg = json.load(open(os.path.join(ep, "script.json"), encoding="utf-8"))
-LEAD_FIRST, LEAD, TAIL, OUTRO = 1.6, 0.35, 0.75, 4.5
+LEAD_FIRST, LEAD, TAIL, OUTRO = 1.4, 0.3, 0.55, 4.0
 CHARS_PER_SEC = 13.5  # estimate when no audio
 
 
