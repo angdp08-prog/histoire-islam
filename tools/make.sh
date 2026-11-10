@@ -5,7 +5,7 @@ set -euo pipefail
 EP=${1:?episode dir}; cd "$(dirname "$0")/.."
 NAME=$(basename "$EP")
 VOICE=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]+'/script.json')).get('voice','elevenlabs'))" "$EP")
-if [ "$VOICE" != user ] && { ! ls "$EP"/audio/*.mp3 >/dev/null 2>&1 || [ "${FORCE_TTS:-0}" = 1 ]; }; then python3 tools/tts.py "$EP" || echo "!! TTS failed: building without voice"; fi
+if [ "$VOICE" != user ] && { ! ls "$EP"/audio/*.mp3 >/dev/null 2>&1 || [ "${FORCE_TTS:-0}" = 1 ]; }; then python3 tools/tts.py "$EP" || { echo "!! ElevenLabs failed: trying local Kokoro voice (tools/tts_local.py)"; python3 tools/tts_local.py "$EP"; } || echo "!! TTS failed: building without voice"; fi
 python3 tools/build_timeline.py "$EP"
 python3 tools/ambience.py "$EP"
 node tools/render.js "$EP" --workers "${WORKERS:-4}"

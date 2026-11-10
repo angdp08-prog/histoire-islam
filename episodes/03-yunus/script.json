@@ -2,31 +2,120 @@
  "title": "Yunus",
  "voice": "elevenlabs",
  "scenes": [
-  {"id": "nineveh", "text": "Sur les rives du Tigre s'élevait Ninive, une cité immense. Ses habitants adoraient des idoles. Allah leur envoya Yunus, fils de Matta, paix sur lui."},
-  {"id": "call", "text": "Longtemps, il les appela : « Adorez Allah seul. » Mais ils détournèrent le regard et persistèrent dans leur égarement."},
-  {"id": "leave", "text": "Alors Yunus les avertit du châtiment, puis quitta la ville, irrité, sans attendre l'ordre de son Seigneur."},
-  {"id": "ship", "text": "Il gagna le rivage et monta à bord d'un navire lourdement chargé."},
-  {"id": "storm", "text": "En pleine mer, la tempête se leva. Le navire risquait de sombrer : il fallait l'alléger. On tira au sort… et le sort désigna Yunus."},
-  {"id": "whale", "text": "Il fut jeté dans les flots. Et un énorme poisson l'avala."},
-  {"id": "darkness", "text": "Ténèbres de la nuit, ténèbres de la mer, ténèbres du ventre du poisson. Du fond de ces ténèbres, il appela son Seigneur :"},
-  {"id": "dua", "text": "« Pas de divinité à part Toi. Gloire à Toi ! J'ai été, certes, parmi les injustes. »"},
-  {"id": "answer", "text": "Allah l'exauça et le délivra de l'angoisse. Sans ses glorifications, il serait resté dans le ventre du poisson jusqu'au Jour de la Résurrection."},
-  {"id": "shore", "text": "Le poisson le rejeta sur une terre nue, affaibli et malade."},
-  {"id": "plant", "text": "Et Allah fit pousser au-dessus de lui un plant de courge, pour l'abriter de ses larges feuilles."},
-  {"id": "repent", "text": "À Ninive, voyant approcher le châtiment, tout le peuple se repentit. Allah l'écarta d'eux : la seule cité ainsi épargnée après l'avertissement."},
-  {"id": "return", "text": "Yunus retourna vers les siens : cent mille personnes ou plus. Ils crurent, et Allah leur accorda la jouissance de la vie, pour un temps."},
-  {"id": "lesson", "text": "« Ainsi sauvons-Nous les croyants. » Aussi profonde que soit l'obscurité, une invocation sincère n'est jamais perdue."}
+  {
+   "id": "nineveh",
+   "text": "Sur les rives du Tigre s'élevait Ninive, une cité immense. Ses habitants adoraient des idoles. Allah leur envoya Yunus, fils de Matta, paix sur lui."
+  },
+  {
+   "id": "call",
+   "text": "Longtemps, il les appela : « Adorez Allah seul. » Mais ils détournèrent le regard et persistèrent dans leur égarement."
+  },
+  {
+   "id": "leave",
+   "text": "Alors Yunus les avertit du châtiment, puis quitta la ville, irrité, sans attendre l'ordre de son Seigneur."
+  },
+  {
+   "id": "ship",
+   "text": "Il gagna le rivage et monta à bord d'un navire lourdement chargé."
+  },
+  {
+   "id": "storm",
+   "text": "En pleine mer, la tempête se leva. Le navire risquait de sombrer : il fallait l'alléger. On tira au sort… et le sort désigna Yunus."
+  },
+  {
+   "id": "whale",
+   "text": "Il fut jeté dans les flots. Et un énorme poisson l'avala."
+  },
+  {
+   "id": "darkness",
+   "text": "Ténèbres de la nuit, ténèbres de la mer, ténèbres du ventre du poisson. Du fond de ces ténèbres, il appela son Seigneur :"
+  },
+  {
+   "id": "dua",
+   "text": "« Pas de divinité à part Toi. Gloire à Toi ! J'ai été, certes, parmi les injustes. »"
+  },
+  {
+   "id": "answer",
+   "text": "Allah l'exauça et le délivra de l'angoisse. Sans ses glorifications, il serait resté dans le ventre du poisson jusqu'au Jour de la Résurrection."
+  },
+  {
+   "id": "shore",
+   "text": "Le poisson le rejeta sur une terre nue, affaibli et malade."
+  },
+  {
+   "id": "plant",
+   "text": "Et Allah fit pousser au-dessus de lui un plant de courge, pour l'abriter de ses larges feuilles."
+  },
+  {
+   "id": "repent",
+   "text": "À Ninive, voyant approcher le châtiment, tout le peuple se repentit. Allah l'écarta d'eux : la seule cité ainsi épargnée après l'avertissement."
+  },
+  {
+   "id": "return",
+   "text": "Yunus retourna vers les siens : cent mille personnes ou plus. Ils crurent, et Allah leur accorda la jouissance de la vie, pour un temps."
+  },
+  {
+   "id": "lesson",
+   "text": "« Ainsi sauvons-Nous les croyants. » Aussi profonde que soit l'obscurité, une invocation sincère n'est jamais perdue."
+  }
  ],
  "ambience": {
-  "wind": {"nineveh": 0.4, "call": 0.3, "leave": 0.6, "ship": 0.35, "storm": 0.9, "shore": 0.35, "plant": 0.3, "repent": 0.6, "return": 0.35, "lesson": 0.3, "outro": 0.15},
-  "crickets": {"nineveh": 0.3, "call": 0.25, "lesson": 0.5, "outro": 0.2},
-  "room": {"darkness": 0.8, "dua": 1.0, "answer": 0.5},
-  "drips": {"darkness": 0.7, "dua": 0.8, "answer": 0.4},
-  "sea": {"ship": 0.6, "storm": 1.0, "whale": 1.0, "darkness": 0.5, "dua": 0.3, "answer": 0.7, "shore": 0.8, "plant": 0.25},
-  "rain": {"storm": 1.0, "whale": 0.4},
-  "thunder": {"storm": 1.0, "whale": 0.4, "repent": 0.6}
+  "wind": {
+   "nineveh": 0.4,
+   "call": 0.3,
+   "leave": 0.6,
+   "ship": 0.35,
+   "storm": 0.9,
+   "shore": 0.35,
+   "plant": 0.3,
+   "repent": 0.6,
+   "return": 0.35,
+   "lesson": 0.3,
+   "outro": 0.15
+  },
+  "crickets": {
+   "nineveh": 0.3,
+   "call": 0.25,
+   "lesson": 0.5,
+   "outro": 0.2
+  },
+  "room": {
+   "darkness": 0.8,
+   "dua": 1.0,
+   "answer": 0.5
+  },
+  "drips": {
+   "darkness": 0.7,
+   "dua": 0.8,
+   "answer": 0.4
+  },
+  "sea": {
+   "ship": 0.6,
+   "storm": 1.0,
+   "whale": 1.0,
+   "darkness": 0.5,
+   "dua": 0.3,
+   "answer": 0.7,
+   "shore": 0.8,
+   "plant": 0.25
+  },
+  "rain": {
+   "storm": 1.0,
+   "whale": 0.4
+  },
+  "thunder": {
+   "storm": 1.0,
+   "whale": 0.4,
+   "repent": 0.6
+  }
  },
  "voice_id": "nPczCjzI2devNBz1zQrb",
  "model_id": "eleven_v3",
- "stability": 0.5
+ "stability": 0.5,
+ "pron": {
+  "Yunus": "Younouss",
+  "Yunus,": "Younouss"
+ },
+ "local_voice": "ff_siwis",
+ "local_speed": 0.85
 }
