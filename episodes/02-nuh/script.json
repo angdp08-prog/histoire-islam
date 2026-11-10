@@ -1,29 +1,107 @@
 {
  "title": "Nuh",
- "voice": "user",
- "est_cps": 14.0,
+ "voice": "elevenlabs",
  "scenes": [
-  {"id": "idols", "text": "Bien après Adam, les hommes oublièrent Allah. Ils sculptèrent des idoles, Wadd, Suwa', Yaghuth, Ya'uq et Nasr, et se mirent à les adorer."},
-  {"id": "call", "text": "Allah leur envoya alors Nuh. Jour et nuit, en public et en secret, il les appela : « Ô mon peuple, adorez Allah. Vous n'avez pas d'autre divinité que Lui. »"},
-  {"id": "refuse", "text": "Mais ils se bouchaient les oreilles et se couvraient de leurs vêtements. Les notables ricanaient : « Seuls les plus faibles te suivent ! »"},
-  {"id": "years", "text": "Neuf cent cinquante ans, il patienta. Et seule une poignée de croyants le suivit."},
-  {"id": "command", "text": "Alors Allah lui révéla : « Construis l'arche sous Nos yeux. »"},
-  {"id": "build", "text": "Loin de toute mer, Nuh se mit à bâtir un immense navire. Et chaque fois que les notables passaient, ils se moquaient de lui."},
-  {"id": "sign", "text": "Puis le signe arriva : l'eau jaillit du four. Nuh fit monter un couple de chaque espèce, sa famille et les croyants."},
-  {"id": "embark", "text": "« Au nom d'Allah, qu'elle vogue et qu'elle accoste », dit-il."},
-  {"id": "flood", "text": "Le ciel s'ouvrit en torrents, la terre fit jaillir ses sources. Et l'arche vogua parmi des vagues hautes comme des montagnes."},
-  {"id": "son", "text": "Nuh appela son fils, resté à l'écart : « Mon fils, monte avec nous ! » Il répondit : « Je me réfugierai sur une montagne. » « Aujourd'hui, nul n'est à l'abri de l'ordre d'Allah. » Et une vague les sépara."},
-  {"id": "calm", "text": "Puis l'ordre fut donné : « Ô terre, absorbe ton eau. Ô ciel, cesse ! » Les eaux se retirèrent, et l'arche se posa sur le mont Judi."},
-  {"id": "descend", "text": "« Descends, avec Notre paix et Nos bénédictions. » Nuh et les croyants foulèrent une terre nouvelle."},
-  {"id": "death", "text": "À l'heure de sa mort, Nuh confia à son fils : « Je t'ordonne La ilaha illa Allah, et je t'interdis l'association et l'orgueil. » Puis il quitta ce monde, en paix."}
+  {
+   "id": "idols",
+   "text": "Bien après Adam, les hommes oublièrent Allah. Ils sculptèrent des idoles, Wadd, Suwa', Yaghuth, Ya'uq et Nasr, et se mirent à les adorer."
+  },
+  {
+   "id": "call",
+   "text": "Allah leur envoya alors Nuh. Jour et nuit, en public et en secret, il les appela : « Ô mon peuple, adorez Allah. Vous n'avez pas d'autre divinité que Lui. »"
+  },
+  {
+   "id": "refuse",
+   "text": "Mais ils se bouchaient les oreilles et se couvraient de leurs vêtements. Les notables ricanaient : « Seuls les plus faibles te suivent ! »"
+  },
+  {
+   "id": "years",
+   "text": "Neuf cent cinquante ans, il patienta. Et seule une poignée de croyants le suivit."
+  },
+  {
+   "id": "command",
+   "text": "Alors Allah lui révéla : « Construis l'arche sous Nos yeux. »"
+  },
+  {
+   "id": "build",
+   "text": "Loin de toute mer, Nuh se mit à bâtir un immense navire. Et chaque fois que les notables passaient, ils se moquaient de lui."
+  },
+  {
+   "id": "sign",
+   "text": "Puis le signe arriva : l'eau jaillit du four. Nuh fit monter un couple de chaque espèce, sa famille et les croyants."
+  },
+  {
+   "id": "embark",
+   "text": "« Au nom d'Allah, qu'elle vogue et qu'elle accoste », dit-il."
+  },
+  {
+   "id": "flood",
+   "text": "Le ciel s'ouvrit en torrents, la terre fit jaillir ses sources. Et l'arche vogua parmi des vagues hautes comme des montagnes."
+  },
+  {
+   "id": "son",
+   "text": "Nuh appela son fils, resté à l'écart : « Mon fils, monte avec nous ! » Il répondit : « Je me réfugierai sur une montagne. » « Aujourd'hui, nul n'est à l'abri de l'ordre d'Allah. » Et une vague les sépara."
+  },
+  {
+   "id": "calm",
+   "text": "Puis l'ordre fut donné : « Ô terre, absorbe ton eau. Ô ciel, cesse ! » Les eaux se retirèrent, et l'arche se posa sur le mont Judi."
+  },
+  {
+   "id": "descend",
+   "text": "« Descends, avec Notre paix et Nos bénédictions. » Nuh et les croyants foulèrent une terre nouvelle."
+  },
+  {
+   "id": "death",
+   "text": "À l'heure de sa mort, Nuh confia à son fils : « Je t'ordonne La ilaha illa Allah, et je t'interdis l'association et l'orgueil. » Puis il quitta ce monde, en paix."
+  }
  ],
  "ambience": {
-  "wind":    {"idols": 0.4, "call": 0.35, "refuse": 0.3, "years": 0.5, "command": 0.25, "build": 0.5, "sign": 0.6, "calm": 0.3, "descend": 0.35, "death": 0.4, "outro": 0.15},
-  "crickets":{"idols": 0.4, "command": 0.6, "years": 0.3, "death": 0.35, "outro": 0.2},
-  "hammer":  {"build": 1.0},
-  "rain":    {"sign": 0.25, "embark": 0.7, "flood": 1.0, "son": 0.9, "calm": 0.3},
-  "thunder": {"embark": 0.5, "flood": 1.0, "son": 0.7},
-  "sea":     {"flood": 1.0, "son": 1.0, "calm": 0.6, "descend": 0.2},
-  "drips":   {"calm": 0.6}
- }
+  "wind": {
+   "idols": 0.4,
+   "call": 0.35,
+   "refuse": 0.3,
+   "years": 0.5,
+   "command": 0.25,
+   "build": 0.5,
+   "sign": 0.6,
+   "calm": 0.3,
+   "descend": 0.35,
+   "death": 0.4,
+   "outro": 0.15
+  },
+  "crickets": {
+   "idols": 0.4,
+   "command": 0.6,
+   "years": 0.3,
+   "death": 0.35,
+   "outro": 0.2
+  },
+  "hammer": {
+   "build": 1.0
+  },
+  "rain": {
+   "sign": 0.25,
+   "embark": 0.7,
+   "flood": 1.0,
+   "son": 0.9,
+   "calm": 0.3
+  },
+  "thunder": {
+   "embark": 0.5,
+   "flood": 1.0,
+   "son": 0.7
+  },
+  "sea": {
+   "flood": 1.0,
+   "son": 1.0,
+   "calm": 0.6,
+   "descend": 0.2
+  },
+  "drips": {
+   "calm": 0.6
+  }
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "stability": 0.5
 }

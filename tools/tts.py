@@ -12,14 +12,18 @@ scenes = cfg["scenes"]
 for i, s in enumerate(scenes):
     if only and s["id"] not in only:
         continue
-    body = {
-        "text": s["text"],
-        "model_id": cfg.get("model_id", "eleven_multilingual_v2"),
-        "voice_settings": {"stability": 0.62, "similarity_boost": 0.8, "style": 0.15,
-                           "use_speaker_boost": True, "speed": cfg.get("speed", 0.92)},
-        "previous_text": scenes[i - 1]["text"] if i else None,
-        "next_text": scenes[i + 1]["text"] if i + 1 < len(scenes) else None,
-    }
+    model = cfg.get("model_id", "eleven_multilingual_v2")
+    if model == "eleven_v3":  # most natural model; stability must be 0.0 / 0.5 / 1.0, no context stitching
+        body = {"text": s["text"], "model_id": model,
+                "voice_settings": {"stability": cfg.get("stability", 0.5), "similarity_boost": 0.8, "use_speaker_boost": True}}
+    else:
+        body = {
+            "text": s["text"], "model_id": model,
+            "voice_settings": {"stability": 0.62, "similarity_boost": 0.8, "style": 0.15,
+                               "use_speaker_boost": True, "speed": cfg.get("speed", 0.92)},
+            "previous_text": scenes[i - 1]["text"] if i else None,
+            "next_text": scenes[i + 1]["text"] if i + 1 < len(scenes) else None,
+        }
     req = urllib.request.Request(
         f"https://api.elevenlabs.io/v1/text-to-speech/{cfg['voice_id']}/with-timestamps?output_format=mp3_44100_128",
         data=json.dumps(body).encode(), headers={"xi-api-key": key, "Content-Type": "application/json"})
