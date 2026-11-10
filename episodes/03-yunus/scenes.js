@@ -1,6 +1,7 @@
-// Episode 3 — Yunus (alayhi salam). Visual rule for this episode: the prophet is NEVER drawn
-// (no face, no silhouette). His presence is suggested by symbols: a lamp, footprints, a ship,
-// the great fish, a point of light in the darkness, the gourd plant, calligraphy. Townsfolk are faceless.
+// Episode 3 — Yunus (alayhi salam). Same visual rules as Yusuf and Nuh: prophets = face veiled by white light
+// (prophet: true), everyone else faceless.
+
+const YUNUS = { prophet: true, robe: '#b8c9c6', wrap: '#eef1ec', skin: '#c99872' };
 
 const FOLK = [
   { robe: '#5a4b40', wrap: '#7d6a58', skin: '#9a6a4c' }, { robe: '#46505c', wrap: '#6c7682', skin: '#b07a58' },
@@ -116,6 +117,7 @@ function ship(c, x, y, s, o = {}) {
   c.fillStyle = '#5a3a22'; c.fillRect(-190, -500, 380, 14);
   c.strokeStyle = '#2a1a0e'; c.lineWidth = 3; c.beginPath(); c.moveTo(0, -520); c.lineTo(-330, -150); c.moveTo(0, -520); c.lineTo(300, -150); c.stroke();
   // crates and jars on deck
+  if (o.passenger) figure(c, Object.assign({ x: -90, y: -150, h: 190, dir: 1, light: 0.9, armUp: o.passengerArm || 0 }, YUNUS));
   const cr = rng(3);
   for (let k = 0; k < cargo; k++) { const cx = -260 + k * 110 + (k > 2 ? 40 : 0); if (Math.abs(cx) < 30) continue;
     c.fillStyle = k % 2 ? '#8a5a2e' : '#a06a36'; c.fillRect(cx - 40, -230, 80, 80); c.strokeStyle = '#5a3a1a'; c.lineWidth = 4; c.strokeRect(cx - 40, -230, 80, 80);
@@ -237,7 +239,7 @@ const SCENES = {
       c.fillStyle = '#9a7656'; c.fillRect(-100, 1140, W + 200, 900);
       // stone idols in a niche
       c.fillStyle = '#6a5a4a'; [820, 900, 980].forEach((x, k) => { c.fillRect(x - 22, 1140 - 150 - k * 10, 44, 150 + k * 10); c.beginPath(); c.arc(x, 1140 - 170 - k * 10, 28, 0, 6.283); c.fill(); });
-      lamp(c, 200, 1400, 1.1, t);
+      figure(c, Object.assign({ x: 190, y: 1440, h: 450, dir: 1, armUp: turn > 0.5 ? 0.25 : 0.6 + 0.15 * Math.sin(t * 1.5), light: 1 }, YUNUS));
       FOLK.slice(0, 6).forEach((f, i) => {
         const x = 330 + i * 125, dir = turn > 0.5 ? 1 : -1;
         figure(c, Object.assign({ x, y: 1420 + (i % 2) * 40, h: 340, dir, covered: turn > 0.5 && i % 2 === 0, light: 0.6 }, f));
@@ -258,8 +260,10 @@ const SCENES = {
       city(c, 900, '#4a3226', 0.35, t, 0);
       dune(c, -200, 700, 1120, 90, '#9a6a44', '#7a5234'); dune(c, 300, 1300, 1130, 110, '#8a5e3c', '#6a462c');
       c.fillStyle = '#8a603e'; c.fillRect(-100, 1120, W + 200, 900);
-      const pts = []; for (let i = 0; i < 14; i++) { const q = i / 13; pts.push([lerp(540, 820, q) + Math.sin(q * 6) * 40, lerp(1150, 1820, q), 0.25 - q * 0.2, lerp(0.6, 1.6, q)]); }
-      footprints(c, pts, 0.8, t, '#3a2414');
+      const wq = ease(seg(t, 0.4, d - 0.3)), path = q => [lerp(540, 760, q) + Math.sin(q * 6) * 30, lerp(1130, 1420, q)];
+      const pts = []; for (let i = 0; i < 12; i++) { const q = i / 12 * wq; const [px, py] = path(q); pts.push([px + (i % 2 ? 10 : -10), py + 6, 0.2, lerp(0.5, 1.2, q)]); }
+      pts.forEach(([x, y, ang, sc], i) => { c.save(); c.translate(x, y); c.rotate(ang); c.scale(sc, sc * 0.55); c.fillStyle = 'rgba(58,36,20,0.55)'; c.beginPath(); c.ellipse(0, 0, 11, 24, 0, 0, 6.283); c.fill(); c.restore(); });
+      { const [fx, fy] = path(wq); figure(c, Object.assign({ x: fx, y: fy, h: lerp(150, 420, wq), dir: 1, walk: wq < 1 ? t * 1.3 : null, light: 0.8 }, YUNUS)); }
       dust(c, t, 60, 33, [0, 900, W, 900], '#ffd0a0', 0.35, 40);
       c.setTransform(1, 0, 0, 1, 0, 0);
       arabicCaption(c, 'إِذ ذَّهَبَ مُغَاضِبًا', t, d * 0.35, d + 1, 280, 110);
@@ -277,7 +281,7 @@ const SCENES = {
       cloudBank(c, t, 480, 8, '#f0d0b0', 0.22, 21, 8);
       waves(c, t, 1040, 6, '#4a6a84', 0.01, 0.6, 1, 'rgba(255,220,180,.3)');
       const x = lerp(420, 640, ease(p)), y = waveY(x, t, 1220, 10, 0.006, 0.9, 2);
-      ship(c, x, y + 20, 0.9, { t, rot: Math.sin(t * 0.9) * 0.02, cargo: 6 });
+      ship(c, x, y + 20, 0.9, { t, rot: Math.sin(t * 0.9) * 0.02, cargo: 6, passenger: true });
       waves(c, t, 1240, 14, '#3a5a74', 0.006, 0.9, 2, 'rgba(255,220,180,.35)');
       // the pier
       c.fillStyle = '#4a3020'; c.fillRect(-100, 1300, 360, 30); for (let k = 0; k < 5; k++) c.fillRect(-60 + k * 70, 1320, 16, 200);
@@ -300,7 +304,7 @@ const SCENES = {
         lightning(c, t, 3.4, 0.6);
         waves(c, t, 1050, 150, '#16243a', 0.004, 1.1, 1, 'rgba(150,180,220,.25)');
         const ay = waveY(540, t, 1200, 110, 0.005, 1.6, 2), ay2 = waveY(600, t, 1200, 110, 0.005, 1.6, 2);
-        ship(c, 540, ay + 40, 0.6, { t: t * 3, rot: Math.atan2(ay2 - ay, 60) * 0.8, cargo: Math.round(6 - 5 * toss) });
+        ship(c, 540, ay + 40, 0.6, { t: t * 3, rot: Math.atan2(ay2 - ay, 60) * 0.8, cargo: Math.round(6 - 5 * toss), passenger: true });
         // crates falling into the sea
         for (let k = 0; k < 4; k++) { const q = seg(t, d * 0.3 + k * 0.6, d * 0.3 + k * 0.6 + 1.0); if (q <= 0 || q >= 1) continue;
           const bx = 540 + (k % 2 ? 1 : -1) * lerp(80, 300, q), by = ay - 100 + q * q * 400 - Math.sin(q * 3.14) * 120;
@@ -342,8 +346,10 @@ const SCENES = {
       for (let x = -100; x <= W + 100; x += 10) { const yy = 250 + Math.sin(x * 0.01 + t * 1.4) * 10; x === -100 ? c.moveTo(x, yy) : c.lineTo(x, yy); } c.stroke();
       const sp = seg(t, 0.2, 2.2); if (sp > 0 && sp < 1) { c.strokeStyle = `rgba(255,255,255,${0.6 * (1 - sp)})`; c.lineWidth = 6; c.beginPath(); c.ellipse(560, 260, 40 + sp * 260, 10 + sp * 40, 0, 0, 6.283); c.stroke(); }
       bubbles(c, t, 40, 7, [460, 260, 200, 700], 0.4 * (1 - seg(t, d * 0.4, d * 0.7)));
-      // the fish rises from the deep toward the bubbles
-      whale(c, lerp(1500, 520, swim), lerp(1350, 900, swim), 1.1, t, { open: (1 - shut) * seg(t, d * 0.2, d * 0.4), dir: -1 });
+      const sink = easeOut(seg(t, 0.2, d * 0.6));
+      if (shut < 0.6) figure(c, Object.assign({ x: 520, y: lerp(420, 860, sink), h: 170, dir: 1, light: 0.5, alpha: 1 - shut / 0.6, armUp: 0.5 }, YUNUS));
+      // the fish comes from the deep, its open mouth reaching him
+      whale(c, lerp(1750, 1000, swim), lerp(1150, 880, swim), 1.1, t, { open: (1 - shut) * seg(t, d * 0.2, d * 0.4), dir: -1 });
       dust(c, t, 60, 5, [0, 300, W, 1600], '#bfe0ff', 0.25, 6);
       c.setTransform(1, 0, 0, 1, 0, 0);
       arabicCaption(c, 'فَالْتَقَمَهُ الْحُوتُ', t, d * 0.55, d + 1, 280, 110, '#dfeaff');
@@ -387,13 +393,14 @@ const SCENES = {
       glow(c, 540, 960, 120, '#fff6d8', 0.6 + 0.3 * br);
       dust(c, t, 70, 77, [140, 400, 800, 1100], '#ffe0a0', 0.5 * br, 10);
       c.restore();
+      figure(c, Object.assign({ x: 540, y: 1330, h: 360, dir: 1, pose: 'kneel', light: 0.5 + 0.5 * br }, YUNUS));
       c.setTransform(1, 0, 0, 1, 0, 0);
       c.save(); c.direction = 'rtl';
       const L = [['لَّا إِلَٰهَ إِلَّا أَنتَ', 0.2], ['سُبْحَانَكَ', d * 0.28], ['إِنِّي كُنتُ مِنَ الظَّالِمِينَ', d * 0.48]];
       L.forEach(([w, t0], i) => { const a = seg(t, t0, t0 + 0.9);
         textGlow(c, w, W / 2, 560 + i * 140 - (1 - easeOut(seg(t, t0, t0 + 0.9))) * 30, `700 ${i === 2 ? 84 : 100}px Amiri`, '#f6c453', a, '#ffb300', 34); });
       c.restore();
-      textGlow(c, 'Al-Anbiya, 87', W / 2, 1000, 'italic 500 36px Lora', '#f3e7d0', seg(t, d * 0.6, d * 0.7) * 0.8, '#000', 10);
+      textGlow(c, 'Al-Anbiya, 87', W / 2, 925, 'italic 500 36px Lora', '#f3e7d0', seg(t, d * 0.6, d * 0.7) * 0.8, '#000', 10);
     },
   },
 
@@ -432,6 +439,7 @@ const SCENES = {
       const fo = 1180 + Math.sin(t * 1.2) * 20;
       c.strokeStyle = 'rgba(255,255,255,0.7)'; c.lineWidth = 6; c.beginPath(); c.moveTo(-100, fo); c.quadraticCurveTo(540, fo - 60, W + 100, fo + 20); c.stroke();
       c.fillStyle = 'rgba(120,90,60,0.35)'; c.beginPath(); c.ellipse(520, 1420, 210, 50, -0.05, 0, 6.283); c.fill();
+      figure(c, Object.assign({ x: 540, y: 1420, h: 300, dir: 1, pose: 'lie', light: 0.45 }, YUNUS));
       [[180, 1560], [820, 1500], [700, 1700]].forEach(([x, y]) => { c.fillStyle = '#a08060'; c.beginPath(); c.ellipse(x, y, 26, 14, 0, 0, 6.283); c.fill(); });
       for (let i = 0; i < 2; i++) bird(c, 600 + i * 90 + t * 20, 640 + Math.sin(t * 2 + i) * 20, 0.8, t + i, '#4a3a3a');
       c.setTransform(1, 0, 0, 1, 0, 0);
@@ -451,8 +459,9 @@ const SCENES = {
       waves(c, t, 1000, 5, '#7a9ab4', 0.01, 0.5, 1, 'rgba(255,240,210,.35)');
       c.fillStyle = '#e0bc8c'; c.beginPath(); c.moveTo(-100, 1060); c.quadraticCurveTo(540, 1020, W + 100, 1080); c.lineTo(W + 100, H + 100); c.lineTo(-100, H + 100); c.fill();
       // shade spreading on the sand where the vine covers
-      c.fillStyle = `rgba(60,50,30,${0.35 * g})`; c.beginPath(); c.ellipse(500, 1440, 520 * g + 20, 90 * g + 6, 0, 0, 6.283); c.fill();
-      gourd(c, 540, 1420, 1.7, g, t);
+      c.fillStyle = `rgba(60,50,30,${0.35 * g})`; c.beginPath(); c.ellipse(620, 1450, 520 * g + 20, 90 * g + 6, 0, 0, 6.283); c.fill();
+      figure(c, Object.assign({ x: 600, y: 1465, h: 290, dir: 1, pose: 'lie', light: 0.5 + 0.4 * g }, YUNUS));
+      gourd(c, 650, 1430, 1.7, g, t);
       dust(c, t, 30, 51, [0, 900, W, 700], '#fff4d0', 0.3, 10);
       c.setTransform(1, 0, 0, 1, 0, 0);
       arabicCaption(c, 'شَجَرَةً مِّن يَقْطِينٍ', t, 0.6, d + 1, 280, 110);
@@ -490,13 +499,16 @@ const SCENES = {
       city(c, 1000, '#9a6a46', 0.2, t, open);
       c.fillStyle = '#b48a5e'; c.fillRect(-100, 990, W + 200, 1000);
       // footprints arriving from the shore toward the gate
-      const pts = []; for (let i = 0; i < 12; i++) { const q = 1 - i / 11; pts.push([lerp(540, 300, q) + Math.sin(q * 5) * 30, lerp(1010, 1820, q), -0.2 + q * 0.15, lerp(0.55, 1.5, q)]); }
-      footprints(c, pts, 0.3, t, '#5a3a20');
+      const wq = ease(seg(t, 0.2, d * 0.85)), path = q => [lerp(360, 540, q) + Math.sin(q * 5) * 25, lerp(1460, 1090, q)];
+      for (let i = 0; i < 12; i++) { const q = i / 12 * wq; const [x, y] = path(q), sc = lerp(1.1, 0.5, q);
+        c.save(); c.translate(x + (i % 2 ? 9 : -9), y + 4); c.scale(sc, sc * 0.55); c.fillStyle = 'rgba(90,58,32,0.55)'; c.beginPath(); c.ellipse(0, 0, 11, 24, 0, 0, 6.283); c.fill(); c.restore(); }
+      const [yx, yy] = path(wq);
       // crowds of people coming out of the gate to meet him
       const r = rng(8);
       for (let i = 0; i < 16; i++) { const q = clamp(open * 1.4 - i * 0.05); if (q <= 0) continue;
         const side = i % 2 ? 1 : -1, x = 540 + side * (60 + q * (120 + r() * 340)), y = lerp(1000, 1180 + r() * 260, q);
         figure(c, Object.assign({ x, y, h: lerp(120, 300, q), dir: -side, light: 0.9, alpha: q }, FOLK[i % FOLK.length])); }
+      figure(c, Object.assign({ x: yx, y: yy, h: lerp(400, 200, wq), dir: -1, walk: wq < 1 ? t * 1.2 : null, light: 1 }, YUNUS));
       c.setTransform(1, 0, 0, 1, 0, 0);
       textGlow(c, '100 000+', W / 2, 1720, '600 130px Lora', '#fbe7c6', seg(t, d * 0.35, d * 0.5) * 0.85, '#000', 20);
       arabicCaption(c, 'مِائَةِ أَلْفٍ أَوْ يَزِيدُونَ', t, d * 0.3, d + 1, 280, 96);

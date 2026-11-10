@@ -72,8 +72,12 @@ def chunk(words, max_line=30):
         punct = re.search(r"[.!?…:»,]$", w["w"]) is not None
         strong = re.search(r"[.!?…:»]$", w["w"]) is not None
         if nxt is None or (strong and L > 14) or (punct and L > 34) or L + len(nxt["w"]) > max_line * 2 - 4:
-            # never leave an opening quote or a lone short word dangling at the start of the next cue
-            cues.append(cur); cur = []
+            # never leave a short function word ("de", "la", "l'", "et"...) dangling at the end of a cue
+            carry = []
+            if nxt is not None and not punct:
+                while len(cur) > 2 and (len(cur[-1]["w"]) <= 4 or cur[-1]["w"].endswith("'")) and not re.search(r"[.!?…:»,]$", cur[-1]["w"]):
+                    carry.insert(0, cur.pop())
+            cues.append(cur); cur = carry
     return cues
 
 
