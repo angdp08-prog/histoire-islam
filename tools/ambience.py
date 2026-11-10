@@ -1,4 +1,4 @@
-"""Natural ambience bed (no music): wind, night crickets, dripping water, fire crackle, room tone.
+"""Natural ambience bed (no music): wind, crickets, drips, fire, room tone, rain, sea, thunder, hammer knocks.
 Writes <ep>/ambience.wav following the scene timeline.  Usage: python3 tools/ambience.py episodes/01-yusuf"""
 import json, os, sys, wave
 import numpy as np
@@ -52,14 +52,44 @@ for _ in range(int(TL["total"] * 9)):
 fc += lowpass(rs.standard_normal(N), 0.05) * 0.4
 room = lowpass(rs.standard_normal(N), 0.01); room /= np.abs(room).max()
 
-W = {"canaan": .5, "dream": .15, "well": .45, "shirt": .25, "caravan": .7, "palace": 0, "prison": .12,
-     "king": .35, "brothers": .8, "forgive": .3, "reunion": .35, "death": .45, "outro": .15}
-C = {"dream": .5, "shirt": .45, "death": .25, "outro": .2}
-D = {"well": 1.0, "prison": .4}
-F = {"shirt": 1.0}
-R = {"palace": 1.0, "prison": .8, "king": .3, "brothers": .3, "reunion": .4}
-mixd = (wind * 0.11 * env_for(W) + cr * 0.025 * env_for(C) + dr * 0.08 * env_for(D)
-        + fc * 0.05 * env_for(F) + room * 0.05 * env_for(R))
+# rain: band-limited noise with gusts
+rain = lowpass(rs.standard_normal(N), 0.35) - lowpass(rs.standard_normal(N), 0.02)
+rain /= np.abs(rain).max(); rain *= 0.75 + 0.25 * np.sin(2 * np.pi * 0.11 * t) ** 2
+# sea: deep swells
+sea = lowpass(rs.standard_normal(N), 0.006); sea /= np.abs(sea).max()
+sea *= 0.45 + 0.55 * (0.5 + 0.5 * np.sin(2 * np.pi * 0.12 * t + np.sin(2 * np.pi * 0.031 * t) * 2))
+# thunder: rare low rumbles
+th = np.zeros(N)
+for start in np.arange(1.5, TL["total"], 6.5):
+    a = int((start + rs.uniform(0, 3)) * SR); L = int(3.5 * SR)
+    if a + L < N:
+        tt = np.arange(L) / SR
+        th[a:a + L] += rs.standard_normal(L) * np.exp(-tt * 1.3) * (1 - np.exp(-tt * 30))
+th = lowpass(th, 0.004); th /= max(1e-9, np.abs(th).max())
+# hammer on wood: short knocks
+hm = np.zeros(N)
+for start in np.arange(0, TL["total"], 0.85):
+    a = int((start + rs.uniform(0, 0.25)) * SR); L = int(0.09 * SR)
+    if a + L < N:
+        tt = np.arange(L) / SR
+        hm[a:a + L] += (np.sin(2 * np.pi * 180 * tt) + 0.5 * np.sin(2 * np.pi * 410 * tt)) * np.exp(-tt * 60) * rs.uniform(0.5, 1)
+
+# per-scene gains come from script.json "ambience" (falls back to the episode-1 mix)
+cfg = json.load(open(os.path.join(ep, "script.json"), encoding="utf-8"))
+G = cfg.get("ambience") or {
+    "wind": {"canaan": .5, "dream": .15, "well": .45, "shirt": .25, "caravan": .7, "palace": 0, "prison": .12,
+             "king": .35, "brothers": .8, "forgive": .3, "reunion": .35, "death": .45, "outro": .15},
+    "crickets": {"dream": .5, "shirt": .45, "death": .25, "outro": .2},
+    "drips": {"well": 1.0, "prison": .4, "companions": .4, "forgotten": .4},
+    "fire": {"shirt": 1.0},
+    "room": {"palace": 1.0, "accuse": .8, "women": .8, "prison": .8, "interpret": .8, "king": .3,
+             "release": .4, "brothers": .3, "reunion": .4}}
+SRC = {"wind": (wind, 0.11), "crickets": (cr, 0.025), "drips": (dr, 0.08), "fire": (fc, 0.05), "room": (room, 0.05),
+       "rain": (rain, 0.12), "sea": (sea, 0.16), "thunder": (th, 0.35), "hammer": (hm, 0.06)}
+mixd = np.zeros(N)
+for name, gains in G.items():
+    sig, lvl = SRC[name]
+    mixd += sig * lvl * env_for(gains)
 fade = np.minimum(1, np.minimum(t / 1.5, (TL["total"] - t) / 2.0).clip(0))
 mixd *= fade
 st = np.stack([mixd, np.roll(mixd, 300)], 1)  # light stereo width

@@ -243,7 +243,7 @@ function wheat(ctx, x, y, s, color, dry = false, t = 0) {
 // Faceless figures (flat skin oval, no features). Prophets: face hidden under a soft white light.
 function figure(ctx, o) {
   const { x, y, h = 300, dir = 1, pose = 'stand', robe = '#d9d2c3', wrap = '#efe9dc', skin = '#c48e66',
-    prophet = false, child = false, walk = null, staff = false, light = 1, band = null, hood = true, alpha = 1, armUp = 0 } = o;
+    prophet = false, child = false, walk = null, staff = false, light = 1, band = null, hood = true, alpha = 1, armUp = 0, covered = false } = o;
   ctx.save(); ctx.globalAlpha *= alpha; ctx.translate(x, y); ctx.scale(dir, 1);
   const s = h / 300;
   ctx.scale(s, s);
@@ -330,6 +330,9 @@ function figure(ctx, o) {
       ctx.closePath(); ctx.fill();
       ctx.fillStyle = mix(wrap, '#000000', 0.45); ctx.fillRect(headX - headR * 1.0, headY - headR * 0.72, headR * 1.7, headR * 0.18);
     }
+  }
+  if (covered) { // head hidden inside the garment (refusing to listen)
+    ctx.fillStyle = mix(wrap, '#000000', 0.15); ctx.beginPath(); ctx.ellipse(headX + 2, headY + 4, headR * 1.3, headR * 1.4, 0, 0, 6.283); ctx.fill();
   }
   if (prophet) { // white veil of light on the face
     ctx.globalCompositeOperation = 'lighter';

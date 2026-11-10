@@ -6,7 +6,7 @@ import json, os, re, subprocess, sys
 ep = sys.argv[1]
 cfg = json.load(open(os.path.join(ep, "script.json"), encoding="utf-8"))
 LEAD_FIRST, LEAD, TAIL, OUTRO = 1.2, 0.25, 0.45, 3.5
-CHARS_PER_SEC = 13.5  # estimate when no audio
+CHARS_PER_SEC = cfg.get("est_cps", 13.5)  # estimate when no audio
 
 
 def words_from_alignment(al):
