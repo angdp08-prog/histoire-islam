@@ -10,10 +10,11 @@ N = int(TL["total"] * SR) + SR
 rs = np.random.default_rng(7)
 t = np.arange(N) / SR
 
-def lowpass(x, a):  # one-pole low-pass (applied in the frequency domain)
+def lowpass(x, a, order=4):  # steep (Butterworth-like, order 4) low-pass in the frequency domain:
+    # a one-pole filter let a lot of white-noise hiss through -> heard as crackle under the voice
     fc = a * SR / (2 * np.pi)
     X = np.fft.rfft(x); f = np.fft.rfftfreq(len(x), 1 / SR)
-    return np.fft.irfft(X / (1 + 1j * f / fc), n=len(x))
+    return np.fft.irfft(X / np.sqrt(1 + (f / fc) ** (2 * order)), n=len(x))
 
 def env_for(gains):
     """Per-scene gain envelope with smooth 0.8 s cross-fades."""
@@ -47,13 +48,14 @@ for start in np.arange(0, TL["total"], 1.7):
         dr[a:a + L] += np.sin(2 * np.pi * (900 + 1400 * tt / 0.12) * tt) * np.exp(-tt * 45)
 # fire crackle
 fc = np.zeros(N)
-for _ in range(int(TL["total"] * 9)):
-    a = rs.integers(0, N - 400); fc[a:a + 300] += rs.standard_normal(300) * np.exp(-np.arange(300) / 40) * rs.uniform(0.2, 1)
-fc += lowpass(rs.standard_normal(N), 0.05) * 0.4
+for _ in range(int(TL["total"] * 4)):  # soft wood pops (band-limited, not white clicks)
+    a = rs.integers(0, N - 900); fc[a:a + 800] += rs.standard_normal(800) * np.exp(-np.arange(800) / 120) * rs.uniform(0.2, 1)
+fc = lowpass(fc, 0.25) + lowpass(rs.standard_normal(N), 0.03) * 0.5
+fc /= max(1e-9, np.abs(fc).max())
 room = lowpass(rs.standard_normal(N), 0.01); room /= np.abs(room).max()
 
 # rain: band-limited noise with gusts
-rain = lowpass(rs.standard_normal(N), 0.35) - lowpass(rs.standard_normal(N), 0.02)
+rain = lowpass(rs.standard_normal(N), 0.22) - lowpass(rs.standard_normal(N), 0.02)
 rain /= np.abs(rain).max(); rain *= 0.75 + 0.25 * np.sin(2 * np.pi * 0.11 * t) ** 2
 # sea: deep swells
 sea = lowpass(rs.standard_normal(N), 0.006); sea /= np.abs(sea).max()
@@ -84,7 +86,7 @@ G = cfg.get("ambience") or {
     "fire": {"shirt": 1.0},
     "room": {"palace": 1.0, "accuse": .8, "women": .8, "prison": .8, "interpret": .8, "king": .3,
              "release": .4, "brothers": .3, "reunion": .4}}
-SRC = {"wind": (wind, 0.11), "crickets": (cr, 0.025), "drips": (dr, 0.08), "fire": (fc, 0.05), "room": (room, 0.05),
+SRC = {"wind": (wind, 0.11), "crickets": (cr, 0.025), "drips": (dr, 0.08), "fire": (fc, 0.09), "room": (room, 0.05),
        "rain": (rain, 0.12), "sea": (sea, 0.16), "thunder": (th, 0.35), "hammer": (hm, 0.06)}
 mixd = np.zeros(N)
 for name, gains in G.items():

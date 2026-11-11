@@ -17,7 +17,7 @@ async function openPage(browser) {
   return page;
 }
 async function frameJpeg(page, t) {
-  const b64 = await page.evaluate(t => { draw(t); return document.getElementById('c').toDataURL('image/jpeg', 0.93).slice(23); }, t);
+  const b64 = await page.evaluate(t => { draw(t); return document.getElementById('c').toDataURL('image/jpeg', 0.97).slice(23); }, t);
   return Buffer.from(b64, 'base64');
 }
 (async () => {
@@ -34,7 +34,7 @@ async function frameJpeg(page, t) {
   await Promise.all([...Array(workers).keys()].map(async w => {
     const page = await openPage(browser);
     const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-',
-      '-c:v', 'libx264', '-preset', 'medium', '-crf', '22', '-pix_fmt', 'yuv420p', path.join(tmp, `seg${w}.mp4`)]);
+      '-c:v', 'libx264', '-preset', 'slow', '-tune', 'animation', '-crf', '16', '-pix_fmt', 'yuv420p', path.join(tmp, `seg${w}.mp4`)]);
     for (let f = w * per; f < Math.min(total, (w + 1) * per); f++) {
       const buf = await frameJpeg(page, f / fps);
       if (!ff.stdin.write(buf)) await new Promise(r => ff.stdin.once('drain', r));

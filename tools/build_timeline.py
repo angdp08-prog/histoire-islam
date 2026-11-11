@@ -119,7 +119,9 @@ for i, s in enumerate(cfg["scenes"]):
     if timeline["audio"] and timeline["audio"][-1]["at"] is None:
         timeline["audio"][-1]["at"] = round(vstart, 3)
     dur = lead + vdur + TAIL
-    timeline["scenes"].append({"id": s["id"], "start": round(t, 3), "dur": round(dur, 3), "voice": round(vstart, 3)})
+    timeline["scenes"].append({"id": s["id"], "start": round(t, 3), "dur": round(dur, 3), "voice": round(vstart, 3),
+                               # word times relative to the scene start: scenes.js can fire events on a given word
+                               "words": [{"w": x["w"], "s": round(lead + x["s"], 3)} for x in ws]})
     for c in chunk(ws):
         cue = {"start": round(vstart + c[0]["s"] - 0.08, 3), "end": round(vstart + c[-1]["e"] + 0.25, 3),
                "words": [{"w": x["w"], "s": round(vstart + x["s"], 3)} for x in c], "lines": lines(c)}

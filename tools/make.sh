@@ -26,10 +26,29 @@ if tl["audio"]:
 else:
     subprocess.check_call(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo", "-t", str(tl["total"]), out])
 PY
-HAS_VOICE=$(python3 -c "import json,sys;print(1 if json.load(open(sys.argv[1]+'/timeline.json'))['audio'] else 0)" "$EP")
-if [ "$HAS_VOICE" = 0 ]; then MIX='[2:a]volume=1.4[a]'; else MIX='[1:a]highpass=f=70,acompressor=threshold=-20dB:ratio=3:attack=10:release=200,volume=1.6[v];[2:a]volume=1.0[b];[v][b]amix=inputs=2:normalize=0,loudnorm=I=-15:TP=-1.5:LRA=11[a]'; fi
-ffmpeg -y -loglevel error -i "$S/video.mp4" -i "$S/voice.wav" -i "$EP/ambience.wav" -filter_complex \
-  "$MIX" \
-  -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k -shortest -movflags +faststart "$EP/$NAME.mp4"
+# final mix: voice (gentle compression) + ambience at a FIXED level, then ONE static gain to -15 LUFS + limiter.
+# (no dynamic loudnorm: it pumped the ambience noise up during every pause -> audible hiss)
+python3 - "$EP" "$NAME" <<'PY'
+import json, re, subprocess, sys
+ep, name = sys.argv[1], sys.argv[2]; S = f"{ep}/.segments"
+tl = json.load(open(f"{ep}/timeline.json")); cfg = json.load(open(f"{ep}/script.json", encoding="utf-8"))
+amb = cfg.get("ambience_gain", 0.9)
+if tl["audio"]:
+    mix = ("[0:a]highpass=f=70,acompressor=threshold=-22dB:ratio=2.5:attack=8:release=220:makeup=2,aformat=channel_layouts=stereo[v];"
+           f"[1:a]lowpass=f=9000,volume={amb}[b];[v][b]amix=inputs=2:normalize=0[m]")
+else:
+    mix = "[1:a]lowpass=f=9000,volume=1.4[m]"
+pre = f"{S}/premix.wav"
+subprocess.check_call(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{S}/voice.wav", "-i", f"{ep}/ambience.wav",
+                       "-filter_complex", mix, "-map", "[m]", "-ar", "48000", pre])
+log = subprocess.run(["ffmpeg", "-hide_banner", "-i", pre, "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
+I = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", log)[-1])
+gain = -15.0 - I
+print(f"mix loudness {I:.1f} LUFS -> static gain {gain:+.1f} dB")
+subprocess.check_call(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{S}/video.mp4", "-i", pre, "-filter_complex",
+                       f"[1:a]volume={gain:.2f}dB,alimiter=limit=0.84:attack=5:release=60:level=disabled[a]",
+                       "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "256k", "-shortest", "-movflags", "+faststart",
+                       f"{ep}/{name}.mp4"])
+PY
 rm -rf "$S"
 echo "==> $EP/$NAME.mp4"
