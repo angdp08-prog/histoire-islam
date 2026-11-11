@@ -219,6 +219,7 @@ for i, s in enumerate(cfg["scenes"]):
     if only and s["id"] not in only: continue
     IPA_Q = s["ipa"].split() if s.get("ipa") else None
     audio, words, ph = (synth_piper if PIPER else synth)(s["text"])
+    audio = audio * (0.7 / max(1e-6, float(np.abs(audio).max())))  # peak-normalise: a quiet voice made the fixed mix boost the ambience hiss
     pad = np.zeros(int(0.12 * SR), dtype=np.float32)  # tiny tail so the last word is not clipped
     audio = np.concatenate([audio, pad])
     base = os.path.join(out, f"{i:02d}_{s['id']}")

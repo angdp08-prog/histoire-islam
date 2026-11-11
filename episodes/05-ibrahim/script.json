@@ -1,0 +1,118 @@
+{
+ "title": "Ibrahim",
+ "voice": "local",
+ "scenes": [
+  {
+   "id": "intro",
+   "text": "Il y a très longtemps, en Mésopotamie, un peuple sculptait des idoles de pierre et de bois, et les adorait. Parmi eux grandit un jeune homme : Ibrahim, paix sur lui.",
+   "ipa": "il i a tʁˈɛ lɔ̃tˈɑ̃ ɑ̃ mezɔpɔtamˈi œ̃ pˈœpl skyltˈɛ dez idˈɔl də pjˈɛʁ e də bwˈa e lez adɔʁˈɛ paʁmˈi ˈø ɡʁɑ̃dˈi œ̃ ʒˈœn ˈɔm ibʁaˈim pˈɛ syʁ lˈɥi"
+  },
+  {
+   "id": "star",
+   "text": "Une nuit, il vit une étoile briller. « Est-ce là mon Seigneur ? » Mais quand elle disparut, il dit : « Je n'aime pas ce qui disparaît. »",
+   "ipa": "yn nɥˈi il vˈi yn etwˈal bʁijˈe ˈɛs lˈa mɔ̃ sɛɲˈœʁ mɛ kɑ̃t ˈɛl dispaʁˈy il dˈi ʒə nˈɛm pˈa sə ki dispaʁˈɛ"
+  },
+  {
+   "id": "sky",
+   "text": "Puis la lune se leva, puis le soleil, plus grand encore. Mais tous deux se couchèrent. « Je tourne mon visage vers Celui qui a créé les cieux et la terre. »",
+   "ipa": "pɥˈi la lˈyn sə ləvˈa pɥˈi lə sɔlˈɛj ply ɡʁɑ̃t ɑ̃kˈɔʁ mɛ tu dˈø sə kuʃˈɛʁ ʒə tˈuʁn mɔ̃ vizˈaʒ vɛʁ səlˈɥi ki a kʁeˈe le sjˈø e la tˈɛʁ"
+  },
+  {
+   "id": "father",
+   "text": "Il dit à son père : « Ô mon père, pourquoi adores-tu ce qui n'entend pas, ne voit pas, et ne te sert à rien ? »",
+   "ipa": "il dˈi a sɔ̃ pˈɛʁ ˈo mɔ̃ pˈɛʁ puʁkwˈa adɔʁtˈy sə ki nɑ̃tˈɑ̃ pˈa nə vwˈa pˈa e nə tə sˈɛʁ a ʁjˈɛ̃"
+  },
+  {
+   "id": "ancestors",
+   "text": "Son peuple répondit : « Nous avons trouvé nos ancêtres qui les adoraient. » Il dit : « Vous et vos ancêtres, vous êtes dans un égarement évident. »",
+   "ipa": "sɔ̃ pˈœpl ʁepɔ̃dˈi nuz avˈɔ̃ tʁuvˈe noz ɑ̃sˈɛtʁ ki lez adɔʁˈɛ il dˈi vu e voz ɑ̃sˈɛtʁ vuz ˈɛt dɑ̃z œ̃n eɡaʁmˈɑ̃ evidˈɑ̃"
+  },
+  {
+   "id": "idols",
+   "text": "Un jour de fête, la ville se vida. Ibrahim entra dans le temple, et brisa les idoles en morceaux, toutes, sauf la plus grande.",
+   "ipa": "œ̃ ʒˈuʁ də fˈɛt la vˈil sə vidˈa ibʁaˈim ɑ̃tʁˈa dɑ̃ lə tˈɑ̃pl e bʁizˈa lez idˈɔl ɑ̃ mɔʁsˈo tˈut sof la ply ɡʁˈɑ̃d"
+  },
+  {
+   "id": "accuse",
+   "text": "« Qui a fait cela à nos divinités ? » On l'amena devant la foule : « Est-ce toi, Ibrahim ? » Il répondit : « C'est plutôt la plus grande, que voici, qui l'a fait. Interrogez-les, si elles parlent ! »",
+   "ipa": "ki a fˈɛ səlˈa a no divinitˈe ɔ̃ lamənˈa dəvˈɑ̃ la fˈul ˈɛs twˈa ibʁaˈim il ʁepɔ̃dˈi sɛ plytˈo la ply ɡʁˈɑ̃d kə vwasˈi ki lˈa fˈɛ ɛ̃teʁɔʒelˈe si ɛl pˈaʁl"
+  },
+  {
+   "id": "silence",
+   "text": "Ils baissèrent la tête : « Tu sais bien qu'elles ne parlent pas. » « Adorez-vous donc, en dehors d'Allah, ce qui ne peut ni vous profiter, ni vous nuire ? »",
+   "ipa": "il bɛsˈɛʁ la tˈɛt ty sˈɛ bjˈɛ̃ kɛl nə pˈaʁl pˈa adɔʁevˈu dˈɔ̃k ɑ̃ dəˈɔʁ dalˈa sə ki nə pˈø ni vu pʁɔfitˈe ni vu nɥˈiʁ"
+  },
+  {
+   "id": "fire",
+   "text": "Alors ils crièrent : « Brûlez-le, et secourez vos divinités ! » Ils allumèrent un immense brasier, et y jetèrent Ibrahim.",
+   "ipa": "alˈɔʁ il kʁijˈɛʁ bʁylelˈə e səkuʁˈe vo divinitˈe ilz alymˈɛʁ œ̃n imˈɑ̃s bʁazjˈe e i ʒətˈɛʁ ibʁaˈim"
+  },
+  {
+   "id": "cool",
+   "text": "Mais Allah dit : « Ô feu, sois fraîcheur et paix pour Ibrahim ! »",
+   "ipa": "mɛz alˈa dˈi ˈo fˈø swˈa fʁɛʃˈœʁ e pˈɛ puʁ ibʁaˈim"
+  },
+  {
+   "id": "safe",
+   "text": "Le feu ne le brûla pas. Ils voulaient lui tendre un piège, mais ce sont eux qu'Allah rendit les plus grands perdants.",
+   "ipa": "lə fˈø nə lə bʁylˈa pˈa il vulˈɛ lɥi tˈɑ̃dʁ œ̃ pjˈɛʒ mɛ sə sɔ̃t ˈø kalˈa ʁɑ̃dˈi le ply ɡʁˈɑ̃ pɛʁdˈɑ̃"
+  },
+  {
+   "id": "khalil",
+   "text": "Ibrahim était, à lui seul, toute une communauté, soumise à Allah. Et Allah le prit pour ami intime : Khalil Allah.",
+   "ipa": "ibʁaˈim etˈɛ a lɥi sˈœl tut yn kɔmynotˈe sumˈiz a alˈa e alˈa lə pʁˈi puʁ amˈi ɛ̃tˈim χalˈil alˈa"
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "intro": 0.4,
+   "star": 0.35,
+   "sky": 0.45,
+   "father": 0.1,
+   "ancestors": 0.4,
+   "idols": 0.1,
+   "accuse": 0.45,
+   "silence": 0.3,
+   "fire": 0.5,
+   "cool": 0.25,
+   "safe": 0.3,
+   "khalil": 0.45,
+   "outro": 0.15
+  },
+  "hammer": {
+   "intro": 0.3,
+   "idols": 0.45
+  },
+  "crickets": {
+   "star": 0.6,
+   "sky": 0.25,
+   "silence": 0.2,
+   "cool": 0.35,
+   "khalil": 0.3,
+   "outro": 0.2
+  },
+  "room": {
+   "father": 0.9,
+   "idols": 1.0
+  },
+  "fire": {
+   "father": 0.25,
+   "fire": 1.0,
+   "cool": 0.35,
+   "safe": 0.15
+  },
+  "thunder": {
+   "idols": 0.35,
+   "fire": 0.3
+  }
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "stability": 0.5,
+ "pron": {
+  "Ibrahim": "Ibrâhîm"
+ },
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "tempo": 1.06
+}
