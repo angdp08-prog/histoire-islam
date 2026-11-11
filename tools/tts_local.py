@@ -7,6 +7,7 @@ Needs (outside the repo, see TTS_DIR, default ~/tts):
   kokoro-multi-lang-v1_0/  (k2-fsa/sherpa-onnx release "tts-models": model.onnx, voices.bin, tokens.txt)
   piper/                   (rhasspy/piper release 2023.11.14-2: espeak-ng + espeak-ng-data, for French phonemes)
   vits-piper-fr_FR-upmc-medium/ (sherpa-onnx "tts-models") for "local_voice": "piper:fr_FR-upmc-medium:1" (Pierre)
+Optional per-scene "ipa": one espeak-style IPA token per spoken word (bypasses espeak-ng, e.g. when it cannot run).
 script.json keys: "local_voice" (Kokoro name/blend, or piper:<model>:<speaker>; default ff_siwis), "local_speed" (default 0.92), "pron" {word: spelling for TTS}."""
 import json, os, re, subprocess, sys, wave
 import numpy as np
@@ -46,7 +47,14 @@ else:
 PRON = cfg.get("pron", {})
 
 
+IPA_Q = None  # per-scene hand-written phonemes ("ipa" in script.json): used instead of espeak-ng when given
+
+
 def espeak(text):
+    if IPA_Q is not None:
+        n = len(text.split()); got = IPA_Q[:n]; del IPA_Q[:n]
+        assert len(got) == n, "scene 'ipa' has fewer words than the text"
+        return got
     env = dict(os.environ, LD_LIBRARY_PATH=P)
     r = subprocess.run([os.path.join(P, "espeak-ng"), "--path=" + P, "-q", "--ipa", "-v", "fr-fr", text],
                        capture_output=True, text=True, env=env, check=True)
@@ -209,6 +217,7 @@ def alignment(words):
 
 for i, s in enumerate(cfg["scenes"]):
     if only and s["id"] not in only: continue
+    IPA_Q = s["ipa"].split() if s.get("ipa") else None
     audio, words, ph = (synth_piper if PIPER else synth)(s["text"])
     pad = np.zeros(int(0.12 * SR), dtype=np.float32)  # tiny tail so the last word is not clipped
     audio = np.concatenate([audio, pad])

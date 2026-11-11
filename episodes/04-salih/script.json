@@ -1,0 +1,112 @@
+{
+ "title": "Salih",
+ "voice": "elevenlabs",
+ "scenes": [
+  {
+   "id": "thamud",
+   "text": "Après le peuple de 'Ad vinrent les Thamud. Dans la vallée d'al-Hijr, ils taillaient leurs maisons dans la montagne. Allah leur envoya l'un des leurs, leur frère Salih, paix sur lui.",
+   "ipa": "apʁˈɛ lə pˈœpl də ˈaːd vˈɛ̃ʁ le tamˈud dɑ̃ la valˈe dalˈidʒʁ il tajˈɛ lœʁ mɛzˈɔ̃ dɑ̃ la mɔ̃tˈaɲ alˈa lœʁ ɑ̃vwajˈa lˈœ̃ de lˈœʁ lœʁ fʁˈɛʁ salˈi pˈɛ syʁ lˈɥi"
+  },
+  {
+   "id": "call",
+   "text": "Il leur dit : « Ô mon peuple, adorez Allah. Vous n'avez pas d'autre divinité que Lui. C'est Lui qui vous a créés de la terre, et qui vous y a établis. »",
+   "ipa": "il lœʁ dˈi ˈo mɔ̃ pˈœpl adɔʁˈe alˈa vu navˈe pˈa dˈotʁ divinitˈe kə lˈɥi sɛ lˈɥi ki vuz a kʁeˈe də la tˈɛʁ e ki vuz i a etablˈi"
+  },
+  {
+   "id": "mock",
+   "text": "Mais les notables, pleins d'orgueil, se moquèrent : « Tu n'es qu'un ensorcelé ! Apporte-nous un signe, si tu dis vrai. »",
+   "ipa": "mɛ le nɔtˈabl plˈɛ̃ dɔʁɡˈœj sə mɔkˈɛʁ ty nɛ kœ̃n ɑ̃sɔʁsəlˈe apɔʁtənˈu œ̃ sˈiɲ si ty di vʁˈɛ"
+  },
+  {
+   "id": "camel",
+   "text": "Alors un signe leur fut donné : « Voici la chamelle d'Allah, un signe pour vous. Laissez-la manger sur la terre d'Allah, et ne lui faites aucun mal. »",
+   "ipa": "alˈɔʁ œ̃ sˈiɲ lœʁ fy dɔnˈe vwasˈi la ʃamˈɛl dalˈa œ̃ sˈiɲ puʁ vˈu lɛselˈa mɑ̃ʒˈe syʁ la tˈɛʁ dalˈa e nə lɥi fˈɛt okˈœ̃ mˈal"
+  },
+  {
+   "id": "water",
+   "text": "L'eau fut partagée : un jour pour la chamelle, et un jour pour eux, chacun à son tour.",
+   "ipa": "lˈo fy paʁtaʒˈe œ̃ ʒˈuʁ puʁ la ʃamˈɛl e œ̃ ʒˈuʁ puʁ ˈø ʃakˈœ̃ a sɔ̃ tˈuʁ"
+  },
+  {
+   "id": "plot",
+   "text": "Mais dans la ville, neuf hommes semaient le désordre. Ils appelèrent le plus misérable d'entre eux.",
+   "ipa": "mɛ dɑ̃ la vˈil nœf ˈɔm səmˈɛ lə dezˈɔʁdʁ ilz apəlˈɛʁ lə ply mizeʁˈabl dɑ̃tʁ ˈø"
+  },
+  {
+   "id": "kill",
+   "text": "Il osa, et tua la chamelle. Puis ils défièrent Salih : « Fais donc venir ce dont tu nous menaces ! »",
+   "ipa": "il ozˈa e tyˈa la ʃamˈɛl pɥi il defjˈɛʁ salˈi fɛ dɔ̃k vənˈiʁ sə dɔ̃ ty nu mənˈas"
+  },
+  {
+   "id": "days",
+   "text": "Salih leur dit : « Jouissez encore trois jours dans vos demeures. C'est une promesse qui ne sera pas démentie. »",
+   "ipa": "salˈi lœʁ dˈi ʒwisez ɑ̃kˈɔʁ tʁwa ʒˈuʁ dɑ̃ vo dəmˈœʁ sɛt yn pʁɔmˈɛs ki nə səʁa pa demɑ̃tˈi"
+  },
+  {
+   "id": "cry",
+   "text": "Au matin, le Cri les saisit, et la terre trembla. Ils gisaient dans leurs demeures, comme s'ils n'y avaient jamais habité.",
+   "ipa": "o matˈɛ̃ lə kʁˈi le sɛzˈi e la tɛʁ tʁɑ̃blˈa il ʒizˈɛ dɑ̃ lœʁ dəmˈœʁ kɔm sil ni avɛ ʒamɛ abitˈe"
+  },
+  {
+   "id": "saved",
+   "text": "Mais Allah sauva Salih et ceux qui avaient cru avec lui, par une miséricorde venant de Lui.",
+   "ipa": "mɛ alˈa sovˈa salˈi e sø ki avɛ kʁy avˈɛk lˈɥi paʁ yn mizeʁikˈɔʁd vənɑ̃ də lˈɥi"
+  },
+  {
+   "id": "farewell",
+   "text": "Salih se détourna d'eux : « Ô mon peuple, je vous ai transmis le message de mon Seigneur, et je vous ai conseillés. Mais vous n'aimez pas les conseillers. »",
+   "ipa": "salˈi sə detuʁnˈa dˈø ˈo mɔ̃ pˈœpl ʒə vuz e tʁɑ̃smˈi lə mesˈaʒ də mɔ̃ sɛɲˈœʁ e ʒə vuz e kɔ̃sɛjˈe mɛ vu nɛmˈe pa le kɔ̃sɛjˈe"
+  },
+  {
+   "id": "lesson",
+   "text": "Leurs demeures taillées dans le roc sont restées là, vides et silencieuses. Certes, il y a là un signe. Mais la plupart d'entre eux ne croyaient pas.",
+   "ipa": "lœʁ dəmˈœʁ tajˈe dɑ̃ lə ʁˈɔk sɔ̃ ʁɛstˈe lˈa vˈid e silɑ̃sjˈøz sˈɛʁt il i a la œ̃ sˈiɲ mɛ la plypˈaʁ dɑ̃tʁ ø nə kʁwajɛ pˈa"
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "thamud": 0.45,
+   "call": 0.35,
+   "mock": 0.3,
+   "camel": 0.45,
+   "water": 0.5,
+   "plot": 0.25,
+   "kill": 0.6,
+   "days": 0.55,
+   "cry": 0.9,
+   "saved": 0.4,
+   "farewell": 0.6,
+   "lesson": 0.45,
+   "outro": 0.15
+  },
+  "hammer": {
+   "thamud": 0.35
+  },
+  "crickets": {
+   "mock": 0.3,
+   "plot": 0.45,
+   "lesson": 0.35,
+   "outro": 0.2
+  },
+  "fire": {
+   "mock": 0.6,
+   "plot": 0.9
+  },
+  "thunder": {
+   "cry": 1.0,
+   "days": 0.25
+  },
+  "room": {
+   "cry": 0.5
+  }
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "stability": 0.5,
+ "pron": {
+  "Salih": "Sâlih",
+  "Salih,": "Sâlih"
+ },
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12
+}
