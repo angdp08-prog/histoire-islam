@@ -1,6 +1,6 @@
 {
  "title": "Yunus",
- "voice": "elevenlabs",
+ "voice": "user",
  "scenes": [
   {
    "id": "nineveh",
@@ -117,5 +117,6 @@
   "Yunus,": "Younouss"
  },
  "local_voice": "piper:fr_FR-miro-high",
- "local_speed": 1.12
+ "local_speed": 1.12,
+ "voice_file": "voice_user.mp3"
 }

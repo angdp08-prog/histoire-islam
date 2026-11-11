@@ -19,3 +19,8 @@ Audio : voix + ambiance naturelle (vent, eau, feu, grillons), aucune musique.
 Voix hors ligne (si ElevenLabs est inaccessible) : `tools/tts_local.py` génère la voix avec Kokoro v1.0
 (voix `local_voice`, vitesse `local_speed` dans script.json) et les mêmes fichiers d'alignement ;
 `make.sh` l'utilise automatiquement en secours. Modèles à placer dans `~/tts` (voir l'en-tête du script).
+
+Voix enregistrée / générée ailleurs (un seul fichier, script lu dans l'ordre) :
+`python3 tools/align_voice.py episodes/<ep> voix.mp3 <dossier_audio_de_référence>` aligne la voix mot à mot
+(DTW contre une voix de synthèse du même texte + calage sur les vraies pauses), la découpe par scène et écrit
+`audio/NN_id.mp3/.json`. Mettre `"voice": "user"` dans script.json, puis lancer `make.sh`.
