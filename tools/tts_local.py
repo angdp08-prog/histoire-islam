@@ -21,7 +21,7 @@ out = os.path.join(ep, "audio"); os.makedirs(out, exist_ok=True)
 VOICE = cfg.get("local_voice", "ff_siwis"); SPEED = cfg.get("local_speed", 0.92)
 PIPER = VOICE.startswith("piper:")
 if PIPER:
-    _, pmodel, psid = VOICE.split(":")
+    parts_ = VOICE.split(":"); pmodel = parts_[1]; psid = parts_[2] if len(parts_) > 2 else ""
     pbase = os.path.join(D, "vits-piper-" + pmodel, pmodel + ".onnx")
     pcfg = json.load(open(pbase + ".json", encoding="utf-8"))
     psess = ort.InferenceSession(pbase, providers=["CPUExecutionProvider"])
@@ -116,7 +116,9 @@ def synth(text):
     return audio, words, ph
 
 
-PAUSE = {",": 0.22, ":": 0.32, ";": 0.3, ".": 0.5, "!": 0.5, "?": 0.5, "…": 0.6, "”": 0.15}
+PAUSE = {".": 0.75, "!": 0.75, "?": 0.75, "…": 0.9, ":": 0.55, ";": 0.45, "”": 0.35}  # after a sentence / clause
+COMMA_GAP = 0.38  # minimum breath at each comma inside a sentence
+NOISE = cfg.get("local_noise", [0.667, 0.85])  # piper noise_scale / noise_w (a bit of life in rhythm & pitch)
 
 
 def piper_phrase(ph):
@@ -125,16 +127,34 @@ def piper_phrase(ph):
         if ch in idm: ids += [idm[ch][0], 0]
     ids.append(idm["$"][0])
     feed = {"input": np.array([ids], np.int64), "input_lengths": np.array([len(ids)], np.int64),
-            "scales": np.array([0.667, 1.0 / SPEED, 0.8], np.float32), "sid": np.array([int(psid)], np.int64)}
+            "scales": np.array([NOISE[0], 1.0 / SPEED, NOISE[1]], np.float32)}
+    if psid != "": feed["sid"] = np.array([int(psid)], np.int64)
     a = psess.run(None, feed)[0].reshape(-1).astype(np.float32)
-    # trim leading/trailing silence so pauses are controlled by punctuation
     fr = int(0.01 * SR); e = np.array([np.sqrt((a[k:k + fr] ** 2).mean()) for k in range(0, len(a) - fr, fr)])
     th = max(1e-4, e.max() * 0.04); v = np.where(e > th)[0]
-    return a[max(0, v[0] - 2) * fr: min(len(a), (v[-1] + 4) * fr)] if len(v) else a
+    if len(v): a = a[max(0, v[0] - 2) * fr: min(len(a), (v[-1] + 4) * fr)]; e = e[max(0, v[0] - 2): v[-1] + 4]
+    # internal silences (candidate comma breaths), in 10 ms frames
+    quiet = e < th * 1.5; gaps, k = [], 0
+    while k < len(quiet):
+        if quiet[k]:
+            j = k
+            while j < len(quiet) and quiet[j]: j += 1
+            if j - k >= 8 and k > 5 and j < len(quiet) - 5: gaps.append((k * fr, j * fr))
+            k = j
+        else: k += 1
+    return a, gaps
+
+
+def _place(ws, ph, t0, t1, out):
+    n = [max(1, len(re.sub(r"[ˈˌ]", "", ph[s0:e0]))) if e0 > s0 else 0 for _, s0, e0 in ws]
+    tot = sum(n) or 1; acc = 0
+    for (w, s0, e0), k in zip(ws, n):
+        out.append((w, t0 + (t1 - t0) * acc / tot, t0 + (t1 - t0) * (acc + k) / tot)); acc += k
 
 
 def synth_piper(text):
-    """Synthesize phrase by phrase (cut at punctuation) so word timings stay exact; words placed by phoneme length."""
+    """Synthesize whole sentences (natural intonation), lengthen the breath at each comma,
+    and place words between the detected pauses so subtitles stay in sync."""
     ph, spans = phonemize(text)
     cuts, start = [], 0
     for k, ch in enumerate(ph):
@@ -144,19 +164,35 @@ def synth_piper(text):
     audio, words, t = [], [], 0.0
     for a, b in cuts:
         seg_ph = ph[a:b]; ws = [x for x in spans if a <= x[1] < b or (x[1] == x[2] == b and x[0] == "»")]
-        speak = seg_ph.strip(" “”")
-        if not re.search(r"\w", speak):  # only quote marks / punctuation
+        if not re.search(r"\w", seg_ph.strip(" “”")):
             for w in ws: words.append((w[0], t, t))
             continue
-        x = piper_phrase(seg_ph); dur = len(x) / SR
-        voiced = [max(1, len(re.sub(r"[ˈˌ]", "", ph[s0:e0]))) for _, s0, e0 in ws if e0 > s0]
-        tot = sum(voiced) or 1; acc = 0
-        for w, s0, e0 in ws:
-            if e0 <= s0: words.append((w, t + dur * acc / tot, t + dur * acc / tot)); continue
-            n = max(1, len(re.sub(r"[ˈˌ]", "", ph[s0:e0])))
-            words.append((w, t + dur * acc / tot, t + dur * (acc + n) / tot)); acc += n
-        pz = PAUSE.get(seg_ph.rstrip()[-1:], 0.15)
-        audio += [x, np.zeros(int(pz * SR), np.float32)]; t += dur + pz
+        x, gaps = piper_phrase(seg_ph)
+        # split the sentence's words into comma groups
+        groups, cur = [], []
+        for w in ws:
+            cur.append(w)
+            if w[2] < len(ph) and ph[w[2]:w[2] + 1] == "," : groups.append(cur); cur = []
+        if cur: groups.append(cur)
+        anchors = sorted(sorted(gaps, key=lambda g: g[1] - g[0], reverse=True)[:len(groups) - 1]) if len(gaps) >= len(groups) - 1 else None
+        if anchors is None:  # could not find the pauses: synthesize comma groups separately
+            pieces = []
+            for gi, g in enumerate(groups):
+                g0, g1 = g[0][1], (groups[gi + 1][0][1] if gi + 1 < len(groups) else b)
+                xa, _ = piper_phrase(ph[g0:g1]); pieces.append((xa, g))
+        else:
+            pieces, prev = [], 0
+            for gi, g in enumerate(groups):
+                cut_at = (anchors[gi][0] + anchors[gi][1]) // 2 if gi < len(anchors) else len(x)
+                pieces.append((x[prev:cut_at], g)); prev = cut_at
+        for pi, (xa, g) in enumerate(pieces):
+            d = len(xa) / SR
+            _place(g, ph, t, t + d, words)
+            audio.append(xa); t += d
+            if pi < len(pieces) - 1:
+                audio.append(np.zeros(int(COMMA_GAP * SR * 0.6), np.float32)); t += COMMA_GAP * 0.6
+        pz = PAUSE.get(seg_ph.rstrip()[-1:], 0.3)
+        audio.append(np.zeros(int(pz * SR), np.float32)); t += pz
     return np.concatenate(audio), words, ph
 
 
@@ -181,6 +217,6 @@ for i, s in enumerate(cfg["scenes"]):
     with wave.open(wav, "wb") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
         w.writeframes((np.clip(audio, -1, 1) * 32767).astype(np.int16).tobytes())
-    subprocess.check_call(["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-ar", "44100", "-b:a", "128k", base + ".mp3"]); os.remove(wav)
+    subprocess.check_call(["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-af", cfg.get("local_fx", "bass=g=2:f=140,aecho=0.85:0.6:38|67:0.09|0.05"), "-ar", "44100", "-b:a", "128k", base + ".mp3"]); os.remove(wav)
     json.dump(alignment(words), open(base + ".json", "w"), ensure_ascii=False)
     print("ok", s["id"], round(len(audio) / SR, 2), "s |", ph[:90])

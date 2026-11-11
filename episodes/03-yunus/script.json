@@ -116,6 +116,6 @@
   "Yunus": "Younouss",
   "Yunus,": "Younouss"
  },
- "local_voice": "piper:fr_FR-upmc-medium:1",
- "local_speed": 0.9
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12
 }
