@@ -1,6 +1,6 @@
 {
  "title": "Ibrahim",
- "voice": "local",
+ "voice": "user",
  "scenes": [
   {
    "id": "intro",
@@ -114,5 +114,6 @@
  },
  "local_voice": "piper:fr_FR-miro-high",
  "local_speed": 1.12,
- "tempo": 1.06
+ "voice_file": "voix_off.mp3",
+ "voice_credit": "Algenib (voix fournie par Ange)"
 }
