@@ -279,13 +279,15 @@ function faceless(ctx, hx, hy, r, skin, prophet, covered, wrap) {
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(hx + 3, hy, r * 1.5, 0, 6.283); ctx.fill();
     return;
   }
-  // a plain shaded oval, no features, half in the shadow of the head cloth
+  // a plain oval, no features, almost entirely in the shadow of the head cloth (only a soft rim catches the light)
   const g = ctx.createLinearGradient(hx - r, hy - r, hx + r, hy + r);
-  g.addColorStop(0, mix(skin, '#000000', 0.45)); g.addColorStop(0.55, mix(skin, '#000000', 0.15)); g.addColorStop(1, skin);
+  g.addColorStop(0, mix(skin, '#000000', 0.7)); g.addColorStop(0.6, mix(skin, '#000000', 0.52)); g.addColorStop(1, mix(skin, '#000000', 0.3));
   ctx.fillStyle = g; ctx.beginPath(); ctx.ellipse(hx + 3, hy + 2, r * 0.82, r, 0.05, 0, 6.283); ctx.fill();
+  const sh = ctx.createLinearGradient(0, hy - r, 0, hy + r); sh.addColorStop(0, 'rgba(12,7,4,0.75)'); sh.addColorStop(0.65, 'rgba(12,7,4,0.35)'); sh.addColorStop(1, 'rgba(12,7,4,0.1)');
+  ctx.fillStyle = sh; ctx.beginPath(); ctx.ellipse(hx + 3, hy + 2, r * 0.83, r * 1.01, 0.05, 0, 6.283); ctx.fill();
   if (covered) { ctx.fillStyle = mix(wrap, '#000000', 0.15); ctx.beginPath(); ctx.ellipse(hx + 2, hy + 3, r * 1.25, r * 1.35, 0, 0, 6.283); ctx.fill(); }
 }
-function figure(ctx, o) {
+function figureRaw(ctx, o) {
   const { x, y, h = 300, dir = 1, pose = 'stand', robe = '#d9d2c3', wrap = '#efe9dc', skin = '#c48e66',
     prophet = false, child = false, walk = null, staff = false, light = 1, band = null, hood = true, alpha = 1, armUp = 0,
     covered = false, t = 0, wind = 0, shadow = true, trim = null, inner = null, dua = false, reach = 0, lantern = false,
@@ -332,6 +334,11 @@ function figure(ctx, o) {
     ctx.moveTo(-34, -200); ctx.quadraticCurveTo(-40, -110, -46 + S * 5, bot); ctx.moveTo(-22, -170); ctx.quadraticCurveTo(-24, -90, -30 + S * 5, bot + 2);
     ctx.moveTo(38, -190); ctx.quadraticCurveTo(44, -110, 50 + S * 5, bot); ctx.stroke();
     ctx.strokeStyle = `rgba(255,250,235,${0.16 * light})`; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(46, -222); ctx.quadraticCurveTo(58, -130, 62 + S * 6, bot); ctx.stroke();
+    ctx.strokeStyle = 'rgba(0,0,0,0.07)'; ctx.lineWidth = 2; ctx.beginPath(); // woven stripes
+    [-40, -31, 33, 41].forEach(sx => { ctx.moveTo(sx, -222); ctx.quadraticCurveTo(sx * 1.12, -120, sx * 1.3 + S * 5, bot); }); ctx.stroke();
+    ctx.fillStyle = mix(trimC, '#ffffff', 0.35); // embroidery along the opening
+    for (let k = 1; k < 10; k++) { const q = k / 10; ctx.beginPath(); ctx.arc(lerp(-6, -14 + S * 4, q) - 3, lerp(-240, bot + 4, q), 1.6, 0, 6.283); ctx.arc(lerp(12, 26 + S * 4, q) + 3, lerp(-240, bot + 4, q), 1.6, 0, 6.283); ctx.fill(); }
+    ctx.strokeStyle = trimC; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(hemL + 2, bot + wv(5) - 3); ctx.lineTo(-14 + S * 4, bot + 1); ctx.moveTo(26 + S * 4, bot + 1); ctx.lineTo(hemR - 2, bot + wv(6) - 3); ctx.stroke(); // hem band
     // sash at the waist (visible in the opening)
     ctx.fillStyle = band || mix(robe, '#000000', 0.15); ctx.fillRect(-10, -156, 34, 11);
     ctx.fillRect(4, -147, 6, 34 + wv(7)); ctx.fillRect(12, -147, 5, 26 + wv(8));
@@ -404,12 +411,30 @@ function figure(ctx, o) {
     ctx.restore(); return;
   }
   ctx.fillStyle = prophet ? mix(wrap, '#000000', 0.1) : mix(skin, '#000000', 0.3); ctx.fillRect(hx - 8, hy + headR * 0.6, 16, headR * 0.9);
-  if (prophet) { headCloth(ctx, hx, hy, headR, wrap, light, { flap, turban: true }); faceless(ctx, hx, hy, headR, skin, true, false, wrap); }
+  if (prophet) { headCloth(ctx, hx, hy, headR, wrap, light, { flap, turban: true });
+    if (o.veilOut) { const m = ctx.getTransform(), p = m.transformPoint(new DOMPoint(hx, hy)); _veil = { x: p.x, y: p.y, r: headR * Math.hypot(m.a, m.b) }; } // drawn after the outline pass
+    else faceless(ctx, hx, hy, headR, skin, true, false, wrap); }
   else {
     faceless(ctx, hx, hy, headR, skin, false, covered, wrap);
     if (hood) headCloth(ctx, hx, hy, headR, wrap, light, { flap, agal });
   }
   ctx.restore();
+}
+
+// Inked look: each figure is drawn on its own layer, then put on the scene with a thin soft dark contour
+// (drop-shadow filter). The prophet's veil of light is drawn afterwards on the scene, so it is never outlined.
+let _veil = null; const _figCv = document.createElement('canvas');
+function figure(ctx, o) {
+  const h = o.h || 300, x = o.x, y = o.y, padX = 0.8 * h + 70, x0 = x - padX, y0 = y - 1.3 * h - 70;
+  const w = Math.ceil(padX * 2), hh = Math.ceil(1.3 * h + 70 + 0.15 * h + 30);
+  if (_figCv.width < w || _figCv.height < hh) { _figCv.width = Math.max(_figCv.width, w); _figCv.height = Math.max(_figCv.height, hh); }
+  const c2 = _figCv.getContext('2d'); c2.setTransform(1, 0, 0, 1, 0, 0); c2.globalAlpha = 1; c2.globalCompositeOperation = 'source-over'; c2.filter = 'none';
+  c2.clearRect(0, 0, w, hh); c2.translate(-x0, -y0);
+  _veil = null; figureRaw(c2, Object.assign({}, o, { veilOut: true }));
+  const ink = o.ink === undefined ? 1 : o.ink;
+  ctx.save(); if (ink > 0) ctx.filter = `drop-shadow(0 0 ${1.4 * ink}px rgba(28,15,8,0.9))`;
+  ctx.drawImage(_figCv, 0, 0, w, hh, x0, y0, w, hh); ctx.restore();
+  if (_veil) { ctx.save(); ctx.globalAlpha *= (o.alpha === undefined ? 1 : o.alpha); faceless(ctx, x0 + _veil.x - 3, y0 + _veil.y, _veil.r, '#000000', true); ctx.restore(); }
 }
 function lanternBox(ctx, x, y, s, t, k = 0) {
   ctx.save(); ctx.translate(x, y); ctx.scale(s, s);

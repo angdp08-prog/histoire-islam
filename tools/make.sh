@@ -43,7 +43,7 @@ subprocess.check_call(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{S}/voice.w
                        "-filter_complex", mix, "-map", "[m]", "-ar", "48000", pre])
 log = subprocess.run(["ffmpeg", "-hide_banner", "-i", pre, "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
 I = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", log)[-1])
-gain = -15.0 - I
+gain = (-15.0 if tl["audio"] else -30.0) - I  # no voice yet: keep the ambience bed low (normalising it to -15 LUFS made it hiss)
 print(f"mix loudness {I:.1f} LUFS -> static gain {gain:+.1f} dB")
 subprocess.check_call(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{S}/video.mp4", "-i", pre, "-filter_complex",
                        f"[1:a]volume={gain:.2f}dB,alimiter=limit=0.84:attack=5:release=60:level=disabled[a]",

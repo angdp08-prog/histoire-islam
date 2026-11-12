@@ -395,6 +395,8 @@ function iram(c, t, o = {}) {
         if (lit > 0) { c.fillStyle = hexA('#ffb860', 0.7 * lit); c.beginPath(); archPath(c, wx, yy - 14, 14, 38); c.fill(); c.fillStyle = hexA('#1a0c06', 0.4); } }
     }
     tower(c, 300, b - 60, 110, 560, mix(col, far, 0.5), { lit, t }); tower(c, 790, b - 60, 120, 600, mix(col, far, 0.5), { lit, t });
+    if (o.flags) { flag(c, 300, b - 60 - 560 - 560 / 4 * 0.18, 1.4, t, '#8a2a22', 1); flag(c, 790, b - 60 - 600 - 600 / 4 * 0.18, 1.4, t, '#2a4a7a', 2);
+      flag(c, 110, b - 40 - 720 - 720 / 4 * 0.18, 1.2, t, '#8a2a22', 3); flag(c, 960, b - 40 - 780 - 780 / 5 * 0.18, 1.2, t, '#7a5a1a', 4); }
     haze(c, b - 40, 220, o.sky || '#e8b890', 0.35);
   }
   // colonnade with architrave
@@ -493,8 +495,20 @@ function iconSun(c, x, y, r, f) {
   c.strokeStyle = '#f6c453'; c.lineWidth = 3; for (let k = 0; k < 8; k++) { const a = k * Math.PI / 4; c.beginPath(); c.moveTo(x + Math.cos(a) * r * 0.78, y + Math.sin(a) * r * 0.78); c.lineTo(x + Math.cos(a) * r * 1.05, y + Math.sin(a) * r * 1.05); c.stroke(); }
   c.restore();
 }
-function caravan(c, t, x, y, s, n, dir = 1, col = '#a8784e') {
-  for (let i = 0; i < n; i++) camel(c, x - dir * i * 200 * s, y, s, mix(col, '#000000', i * 0.06), t + i * 0.4, dir, i % 2 ? '#7a3a2a' : '#3a4a6a', { shadow: false });
+// feet that do not slide: the walk cycle is driven by the distance really travelled (one cycle = 0.293 h for a figure)
+const stepOf = (dist, h) => dist / (0.293 * h);
+const camelT = (dist, s) => dist / (120 * s) * 2.094; // camel(): one leg cycle = 2.094 s of its clock and 120*s px of ground
+const turnDir = (t, t0, from = -1, to = 1, dur = 0.4) => lerp(from, to, ease(seg(t, t0, t0 + dur))); // a real turn, not a flip
+function caravan(c, dist, x, groundY, s, n, dir = 1, col = '#a8784e') { // groundY(x) -> feet on the sand
+  for (let i = 0; i < n; i++) { const cx = x - dir * i * 200 * s;
+    camel(c, cx, groundY(cx), s, mix(col, '#000000', i * 0.06), camelT(dist, s) + i * 0.6, dir, i % 2 ? '#7a3a2a' : '#3a4a6a', { shadow: false }); }
+}
+function flag(c, x, y, s, t, col = '#8a2a22', k = 0) { // pennant on a tower, waving
+  c.strokeStyle = '#2a1a10'; c.lineWidth = 3 * s; c.beginPath(); c.moveTo(x, y); c.lineTo(x, y - 70 * s); c.stroke();
+  c.fillStyle = col; c.beginPath(); c.moveTo(x, y - 70 * s);
+  for (let i = 0; i <= 8; i++) { const q = i / 8; c.lineTo(x + q * 60 * s, y - 70 * s + q * 8 * s + Math.sin(t * 5 + k - q * 4) * 5 * s * q); }
+  for (let i = 8; i >= 0; i--) { const q = i / 8; c.lineTo(x + q * 60 * s, y - 48 * s - q * 6 * s + Math.sin(t * 5 + k - q * 4) * 5 * s * q); }
+  c.closePath(); c.fill();
 }
 function sky0(c, stops) { c.save(); c.setTransform(1, 0, 0, 1, 0, 0); sky(c, stops); c.restore(); } // sky in screen space (camera tilts)
 const shake = (t, k, a = 22) => [Math.sin(t * 47) * a * k, Math.cos(t * 39) * a * 0.7 * k];
@@ -528,25 +542,26 @@ const SCENES = {
     grade: 'rgba(255,150,80,0.24)',
     draw(c, t, d) {
       const p = t / d, px = lerp(50, -50, ease(p)), tI = at('ad', 'Iram', 0, 5), tA = at('ad', 'Allah', 0, d * 0.7), tH = at('ad', 'Hud', 0, d * 0.85);
-      const shine = ramp(t, tI - 0.2, 1.0) * (1 - ramp(t, tA, 1.2)), hud = ramp(t, tH - 0.8, 1.2);
+      const shine = ramp(t, tI - 0.2, 1.0) * (1 - ramp(t, tA, 1.2)), hud = ease(seg(t, tH - 2.6, tH + 0.6));
       cam(c, 1.0 + 0.07 * ease(p), W / 2, 1100);
       sky(c, [[0, '#1e1838'], [0.28, '#6a3450'], [0.46, '#d8784e'], [0.58, '#f4b26e']]);
       par(c, 0.05, px, 0, () => { stars(c, t, 50, 4, [0, 0, W, 360], 0.45); sun(c, 270, 880, 78, '#ffc070', 0.95); wisps(c, t, 360, 10, '#ffb890', 0.32, 6, 8); });
       par(c, 0.12, px, 0, () => { ridge(c, 1000, 70, 0.003, 2, '#c98a6e'); haze(c, 1010, 200, '#f0a878', 0.55); });
       par(c, 0.3, px, 0, () => {
-        iram(c, t, { base: 1110, col: '#c4865c', lit: 0.55, sky: '#f0a878', s: 0.5 });
+        iram(c, t, { base: 1110, col: '#c4865c', lit: 0.55, sky: '#f0a878', s: 0.5, flags: true });
+        ridge(c, 1118, 10, 0.004, 3, '#c98a62');
         if (shine > 0) { c.save(); c.globalCompositeOperation = 'lighter'; glow(c, 540, 900, 460, '#ffd8a0', 0.25 * shine); rays(c, 270, 880, 0, 1.0, 1100, 10, '#ffe0b0', 0.07 * shine, t, 5); c.restore(); }
         haze(c, 1100, 140, '#f0a878', 0.35);
       });
       par(c, 0.55, px, 0, () => {
         fgRidge(c, 1210, 70, 0.0028, 7, '#c88454', { rim: 'rgba(255,214,160,0.55)' });
         [[60, 1215, 0.75, 1], [170, 1225, 0.6, 2], [930, 1205, 0.7, 3], [1040, 1220, 0.85, 4]].forEach(([x, y, s, k]) => datePalm(c, x, y, s, '#4a5a2e', t, k));
-        caravan(c, t * 0.9, ((t * 26) % 1500) - 120, ridgeY(500, 1210, 70, 0.0028, 7) + 12, 0.3, 4, 1);
-        [[(t * 34) % 1400 - 200, 1, 0], [980 - (t * 30) % 1300, -1, 1], [700 - (t * 22) % 1300, -1, 5]].forEach(([wx, dr, k]) =>
-          fig(c, FOLK[k], { x: wx, y: ridgeY(wx, 1210, 70, 0.0028, 7) + 30, h: 120, dir: dr, walk: t * 1.1 + k, light: 0.7, t, shadow: false }));
+        caravan(c, t * 17, t * 17 - 60, cx => ridgeY(cx, 1210, 70, 0.0028, 7) + 14, 0.3, 4, 1);
+        [[200 + t * 26, 1, 0, 26], [980 - t * 24, -1, 1, 24], [760 - t * 18, -1, 5, 18], [420 + t * 15, 1, 6, 15], [600 - t * 21, -1, 2, 21]].forEach(([wx, dr, k, v]) =>
+          fig(c, FOLK[k], { x: wx, y: ridgeY(wx, 1210, 70, 0.0028, 7) + 30 + (k % 2) * 14, h: 120 + (k % 2) * 10, dir: dr, walk: stepOf(t * v, 120) + k * 0.3, light: 0.7, t, shadow: false }));
       });
       fgRidge(c, 1440, 110, 0.0022, 11, '#d6955e', { rim: 'rgba(255,224,180,0.7)', shade: 0.35 });
-      if (hud > 0) { const hx = lerp(140, 300, hud); c.save(); c.globalAlpha = hud; fig(c, HUD, { x: hx, y: ridgeY(hx, 1440, 110, 0.0022, 11) + 8, h: 360, dir: 1, walk: hud < 1 ? t * 1.1 : null, light: 1, t, wind: 0.6 }); c.restore(); }
+      if (hud > 0) { const hx = lerp(-180, 300, hud); fig(c, HUD, { x: hx, y: ridgeY(hx, 1440, 110, 0.0022, 11) + 8, h: 360, dir: 1, walk: hud < 1 ? stepOf(hx + 180, 360) : null, light: 1, t, wind: 0.6 }); }
       blurred(c, 7, () => { shrub(c, 960, 1910, 3.2, '#3a2214', t, 3); fgStones(c, 60, 1990, 1.3, '#6a4028', 4); });
       dust(c, t, 34, 9, [0, 700, W, 700], '#ffc890', 0.3);
       c.setTransform(1, 0, 0, 1, 0, 0);
@@ -574,10 +589,10 @@ const SCENES = {
       par(c, 0.05, px, 0, () => { sun(c, 170, 620, 60, '#fff0c0', 0.85); wisps(c, t, 300, 8, '#fff0e0', 0.3, 11, 6); });
       c.save(); c.globalCompositeOperation = 'lighter'; rays(c, 170, 620, 0.8, 0.9, 1700, 9, '#fff0c0', 0.07, t, 9); c.restore();
       par(c, 0.15, px, 0, () => { ridge(c, 1000, 60, 0.003, 4, '#d8a07a'); haze(c, 1020, 200, '#f4c8a0', 0.5); });
-      par(c, 0.35, px, 0, () => { iram(c, t, { base: 1140, col: '#c8905e', s: 0.62, sky: '#f4c8a0', cx: 640 }); haze(c, 1120, 150, '#f4c8a0', 0.35); });
+      par(c, 0.35, px, 0, () => { iram(c, t, { base: 1140, col: '#c8905e', s: 0.62, sky: '#f4c8a0', cx: 640, flags: true }); haze(c, 1120, 150, '#f4c8a0', 0.35); });
       fgRidge(c, 1290, 50, 0.003, 5, '#d4985e', { rim: 'rgba(255,230,190,0.6)' });
       // the people listening: back rows smaller, in the haze
-      for (let i = 0; i < 6; i++) fig(c, FOLK[(i + 3) % FOLK.length], { x: 520 + i * 100, y: 1250 + (i % 2) * 10, h: 250, dir: -1, light: 0.55, t: t + i, alpha: 0.88 });
+      for (let i = 0; i < 6; i++) fig(c, FOLK[(i + 3) % FOLK.length], { x: 520 + i * 100, y: ridgeY(520 + i * 100, 1290, 50, 0.003, 5) + 8 + (i % 2) * 10, h: 250, dir: -1, light: 0.55, t: t + i, alpha: 0.88 });
       haze(c, 1270, 110, '#f4c8a0', 0.25);
       for (let i = 0; i < 4; i++) fig(c, FOLK[i], { x: 560 + i * 140, y: 1370 + (i % 2) * 26, h: 340, dir: -1, light: 0.8, t: t + i * 2, child: i === 2, wind: 0.3 });
       boulder(c, 240, 1340, 320, 80, '#9a6440', 12);
@@ -610,16 +625,16 @@ const SCENES = {
       });
       // the great fortress on the central hill
       tower(c, 560, peakC + 30, 210, 480, '#c48c5e', { grow: fort, t, tiers: 4 });
-      if (fort < 1) [[460, 0], [660, 1]].forEach(([wx, k]) => { const blow = Math.abs(Math.sin(t * 3.4 + k * 1.3)), wy = peakC + 30 - 480 * fort + 6;
+      if (fort < 1) [[520, 0], [604, 1]].forEach(([wx, k]) => { const blow = Math.abs(Math.sin(t * 3.4 + k * 1.3)), wy = peakC + 30 - 480 * fort + 6;
         fig(c, FOLK[k + 2], { x: wx, y: wy, h: 64, dir: k ? -1 : 1, armUp: 0.25 + 0.5 * blow, light: 0.7, t, shadow: false });
         if (blow > 0.93) sparks(c, t * 4, wx + (k ? -20 : 20), wy - 40, 8, 7 + k, 0.9, 1.3); });
       haze(c, 1140, 140, '#f6d0a6', 0.3);
       fgRidge(c, 1280, 40, 0.003, 13, '#cf9460', { rim: 'rgba(255,230,190,0.5)' });
       // workers hauling a block on rollers
-      const hx0 = 980 - (t * 26) % 260;
+      const hx0 = 1010 - t * 20;
       c.fillStyle = '#c08a5e'; c.fillRect(hx0 + 230, 1260, 150, 80); c.fillStyle = hexA('#1a0c06', 0.35); c.fillRect(hx0 + 230, 1325, 150, 15);
       c.strokeStyle = '#6a4a2a'; c.lineWidth = 3; c.beginPath(); c.moveTo(hx0 + 230, 1290); c.lineTo(hx0 - 20, 1240); c.stroke();
-      for (let i = 0; i < 3; i++) lean(c, hx0 + 180 - i * 80, 1340, -0.22, () => fig(c, FOLK[(i + 4) % FOLK.length], { x: hx0 + 180 - i * 80, y: 1340, h: 200, dir: -1, walk: t * 0.8 + i * 0.3, light: 0.75, t, reach: 0.6 }));
+      for (let i = 0; i < 3; i++) lean(c, hx0 + 180 - i * 80, 1340, -0.22, () => fig(c, FOLK[(i + 4) % FOLK.length], { x: hx0 + 180 - i * 80, y: 1340, h: 200, dir: -1, walk: stepOf(t * 20, 200) + i * 0.33, light: 0.75, t, reach: 0.6 }));
       fig(c, HUD, { x: 200, y: 1560, h: 540, dir: 1, reach: point * 0.9, light: 1, t, wind: 0.5 });
       dust(c, t, 40, 27, [0, 700, W, 900], '#fff0c8', 0.3, 10);
       blurred(c, 8, () => fgStones(c, 1000, 1990, 1.3, '#6a4028', 6));
@@ -681,6 +696,7 @@ const SCENES = {
       NOBLES.slice(0, 4).forEach((n, i) => { const x = 200 + i * 225, swell = Math.sin(t * 4 + i) * 0.06;
         fig(c, n, { x, y: fy + (i % 2) * 24, h: lerp(560, 600, i % 2), dir: i < 2 ? 1 : -1, armUp: fists * (0.82 + swell) * (i === 1 ? 0.5 : 1), reach: i === 1 ? fists * 0.7 : 0, t, light: 0.85, wind: 0.2 }); });
       c.setTransform(1, 0, 0, 1, 0, 0);
+      { const dg = c.createLinearGradient(0, 1250, 0, H); dg.addColorStop(0, 'rgba(20,10,5,0)'); dg.addColorStop(0.3, `rgba(20,10,5,${0.55 * tilt})`); dg.addColorStop(1, `rgba(20,10,5,${0.75 * tilt})`); c.fillStyle = dg; c.fillRect(0, 1250, W, H - 1250); }
       arabicCaption(c, 'مَنْ أَشَدُّ مِنَّا قُوَّةً', t, tQ - 0.2, tN - 0.3, 280, 112, '#ffcf9a');
       arabicCaption(c, 'هُوَ أَشَدُّ مِنْهُمْ قُوَّةً', t, at('pride', 'fort', 1, d * 0.85) - 0.3, d + 1, 280, 112);
       textGlow(c, 'Fussilat, 15', W / 2, 395, 'italic 500 34px Lora', '#f3e7d0', seg(t, at('pride', 'fort', 1, d * 0.85) + 0.4, at('pride', 'fort', 1, d * 0.85) + 1.1) * 0.85, '#000', 10);
@@ -692,7 +708,7 @@ const SCENES = {
     grade: 'rgba(200,90,60,0.28)',
     draw(c, t, d) {
       const dismiss = ramp(t, at('refuse', 'preuve', 0, 3) - 0.3, 0.5) * (1 - ramp(t, at('refuse', 'abandonnerons', 0, d * 0.6) - 0.2, 0.6));
-      const turn = t > at('refuse', 'abandonnerons', 0, d * 0.6) - 0.1, venerate = ramp(t, at('refuse', 'abandonnerons', 0, d * 0.6), 0.8);
+      const turn = turnDir(t, at('refuse', 'abandonnerons', 0, d * 0.6) - 0.2), venerate = ramp(t, at('refuse', 'abandonnerons', 0, d * 0.6), 0.8);
       cam(c, 1.05 - 0.04 * ease(t / d), W / 2, 1150);
       sky(c, [[0, '#05060e'], [0.5, '#141226'], [0.68, '#2e1a24']]);
       stars(c, t, 140, 13, [0, 0, W, 800], 0.8); moon(c, 860, 300, 42, 0.8);
@@ -704,7 +720,7 @@ const SCENES = {
       fgRidge(c, 1300, 20, 0.003, 25, '#3e2a1e', { light: 0.3 });
       torch(c, 330, 1400, t, 0, 1.2); torch(c, 1000, 1420, t, 2, 1.2);
       NOBLES.slice(0, 4).forEach((n, i) => { const x = 470 + i * 160;
-        fig(c, n, { x, y: 1500 + (i % 2) * 30, h: 410, dir: turn ? 1 : -1, t, light: 0.6, reach: i === 0 ? dismiss : 0, armUp: turn && i % 2 === 1 ? venerate * 0.7 : 0 }); });
+        fig(c, n, { x, y: 1500 + (i % 2) * 30, h: 410, dir: turnDir(t, at('refuse', 'abandonnerons', 0, d * 0.6) - 0.2 + i * 0.08), t, light: 0.6, reach: i === 0 ? dismiss : 0, armUp: i % 2 === 1 ? venerate * 0.7 : 0 }); });
       fig(c, HUD, { x: 190, y: 1560, h: 520, dir: 1, light: 0.9, t, wind: 0.3 });
       c.save(); c.globalCompositeOperation = 'lighter'; glow(c, 190, 1300, 300, '#fff6dc', 0.12); c.restore();
       dust(c, t, 30, 17, [0, 1000, W, 500], '#ffb070', 0.3, 8);
@@ -725,8 +741,8 @@ const SCENES = {
       c.save(); c.globalCompositeOperation = 'lighter'; glow(c, 760, 1060, 900, '#ffc880', 0.35 * dawn); rays(c, 760, 1060, -Math.PI / 2, 2.2, 1300, 14, '#ffe0b0', 0.06 * dawn, t, 41); c.restore();
       ridge(c, 1080, 60, 0.0026, 27, mix('#1a1428', '#7a5a62', dawn));
       // living creatures: a camel herd on the far dunes, a flight of birds
-      if (life > 0) { c.save(); c.globalAlpha = seg(life, 0, 0.2); caravan(c, t, lerp(1250, 700, life), ridgeY(900, 1080, 60, 0.0026, 27) + 20, 0.22, 4, -1, mix('#2a1e24', '#6a4a40', dawn)); c.restore();
-        for (let i = 0; i < 11; i++) { const r = rng(i + 70), bx = lerp(-120, 1240, clamp(life * 1.25 - r() * 0.25)), by = 560 + r() * 260 - life * 80; bird(c, bx, by, 0.7 + r() * 0.6, t, i, mix('#1a1420', '#3a2a2a', dawn)); } }
+      if (life > 0) { c.save(); c.globalAlpha = seg(life, 0, 0.2); caravan(c, 550 * life, lerp(1250, 700, life), cx => ridgeY(cx, 1080, 60, 0.0026, 27) + 16, 0.22, 4, -1, mix('#2a1e24', '#6a4a40', dawn)); c.restore();
+        for (let i = 0; i < 11; i++) { const r = rng(i + 70), bx = lerp(-120, 1240, clamp(life * 1.25 - r() * 0.25)), by = 420 + r() * 200 - life * 60; bird(c, bx, by, 0.7 + r() * 0.6, t, i, mix('#1a1420', '#3a2a2a', dawn)); } }
       haze(c, 1090, 160, mix('#3a2a40', '#f0b890', dawn), 0.4);
       fgRidge(c, 1230, 40, 0.003, 30, mix('#2a2034', '#a0705a', dawn), { light: dawn * 0.6 });
       sculptDune(c, 400, 1140, 1330, 1420, mix('#4a3040', '#cf9460', dawn), mix('#24161e', '#7a4a34', dawn), hexA('#ffd8a8', 0.15 + 0.55 * dawn));
@@ -780,6 +796,7 @@ const SCENES = {
       sandVeil(c, 0.12 + 0.12 * k, '#9a6438');
       iram(c, t, { base: 1180, col: '#3a2216', sky: '#5a3420', s: 0.72, n: 6 });
       tower(c, 900, 1230, 170, 720, '#33200f', { grow: 1 - 0.38 * ease(fall), ruin: true, tiers: 5 });
+      fgRidge(c, 1205, 14, 0.004, 36, '#5a3420', { light: 0.2 });
       const r = rng(13);
       for (let i = 0; i < 11; i++) { const bx = 900 + (r() - 0.5) * 120 + fall * (80 + r() * 200), by = 1230 - 720 * 0.7 + fall * fall * (420 + r() * 160), rot = fall * (r() - 0.5) * 4;
         if (fall > 0 && fall < 1) { c.save(); c.translate(bx, by); c.rotate(rot); c.fillStyle = '#3a2416'; c.fillRect(-18, -13, 36, 26); c.restore(); } }
@@ -789,7 +806,7 @@ const SCENES = {
       blowingSand(c, t, 900, 0.35 + 0.3 * k, 3); blowingSand(c, t * 1.3, 1200, 0.4, 5);
       // people running before the wind, bent and wrapped in their cloaks
       for (let i = 0; i < 5; i++) { const x = ((t * (120 + i * 18) + i * 260) % 1500) - 200, y = ridgeY(x, 1330, 40, 0.003, 37) + 40 + (i % 2) * 70;
-        lean(c, x, y, 0.2, () => fig(c, FOLK[(i + 2) % FOLK.length], { x, y, h: 300 + (i % 2) * 60, dir: 1, walk: t * 2 + i, light: 0.4, t, wind: 1, covered: true })); }
+        lean(c, x, y, 0.2, () => fig(c, FOLK[(i + 2) % FOLK.length], { x, y, h: 300 + (i % 2) * 60, dir: 1, walk: stepOf(t * (120 + i * 18), 300 + (i % 2) * 60) + i * 0.4, light: 0.4, t, wind: 1, covered: true })); }
       dust(c, t, 180, 61, [-100, 600, W + 200, 1300], '#e0b080', 0.5, 60);
       c.fillStyle = `rgba(30,14,6,${0.35 * hit})`; c.fillRect(-200, -200, W + 400, H + 400);
       c.setTransform(1, 0, 0, 1, 0, 0);
@@ -814,7 +831,7 @@ const SCENES = {
       // hollow palm trunks, overturned, half buried
       const sh = ramp(t, tO - 0.3, 1.2);
       c.save(); c.globalAlpha = 0.35 + 0.65 * sh;
-      palmTrunk(c, 1020, 1255, 300, 3.08, 0.7, '#4e321e', '#a8703e', 0.3);
+      palmTrunk(c, 1020, 1300, 300, 3.08, 0.7, '#4e321e', '#a8703e', 0.3);
       palmTrunk(c, 560, 1290, 340, -0.08, 0.8, '#4e321e', '#a8703e', 0.45);
       palmTrunk(c, -40, 1350, 520, 0.05, 1.15, '#5a3a24', '#a8703e', 0.35);
       c.restore();
@@ -844,13 +861,14 @@ const SCENES = {
       ridge(c, 1080, 50, 0.003, 41, '#a07a7a'); haze(c, 1110, 160, '#f4c8a8', 0.5);
       rock(c, 90, 1190, 520, 700, '#6a4434', 43, { lightX: 1 }); rock(c, 1040, 1190, 420, 520, '#7a5040', 45, { lightX: -1 });
       fgRidge(c, 1180, 20, 0.003, 47, '#c09270');
-      c.fillStyle = 'rgba(255,235,200,0.22)'; c.beginPath(); c.moveTo(160, H + 100); c.quadraticCurveTo(520, 1400, 900, 1120); c.lineTo(940, 1124); c.quadraticCurveTo(620, 1440, 420, H + 100); c.fill();
-      const path = q => [lerp(200, 880, q), lerp(1700, 1130, q) - Math.sin(q * Math.PI) * 60];
+      c.fillStyle = 'rgba(255,235,200,0.22)'; c.beginPath(); c.moveTo(160, H + 100); c.quadraticCurveTo(520, 1420, 900, 1176); c.lineTo(940, 1178); c.quadraticCurveTo(620, 1460, 420, H + 100); c.fill();
+      const path = q => [lerp(200, 880, q), lerp(1700, 1180, q) - Math.sin(q * Math.PI) * 50];
+      const stepsAt = q => { let acc = 0, [px, py] = path(0); for (let k = 1; k <= 30; k++) { const qq = q * k / 30, [nx, ny] = path(qq); acc += Math.hypot(nx - px, (ny - py) * 2.2) / (0.293 * lerp(420, 120, qq)); px = nx; py = ny; } return acc; };
       for (let i = 6; i >= 0; i--) {
         const q = clamp(go * 0.9 + 0.05 - i * 0.075); if (q <= 0) continue;
         const [x, y] = path(q), h = lerp(420, 120, q);
         const who = i === 0 ? HUD : Object.assign({}, FOLK[i], { lantern: i % 2 === 1 });
-        fig(c, who, { x, y, h, dir: 1, walk: t * 1.15 + i * 0.37, light: 0.9, t, alpha: 1 - seg(q, 0.9, 1), wind: 0.4, child: i === 4 });
+        fig(c, who, { x, y, h, dir: 1, walk: stepsAt(q) + i * 0.37, light: 0.9, t, alpha: 1 - seg(q, 0.9, 1), wind: 0.4, child: i === 4 });
       }
       blurred(c, 6, () => { fgStones(c, 990, 1990, 1.3, '#4a2c1c', 8); shrub(c, 60, 1920, 3, '#2a1c12', t, 6); });
       c.setTransform(1, 0, 0, 1, 0, 0);

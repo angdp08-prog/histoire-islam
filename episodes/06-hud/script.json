@@ -1,6 +1,6 @@
 {
  "title": "Hud",
- "voice": "local",
+ "voice": "user",
  "scenes": [
   {
    "id": "ad",
@@ -65,42 +65,23 @@
  ],
  "ambience": {
   "wind": {
-   "ad": 0.5,
-   "call": 0.4,
-   "towers": 0.35,
-   "forgive": 0.3,
-   "pride": 0.4,
-   "refuse": 0.25,
-   "trust": 0.55,
-   "cloud": 0.5,
-   "wind": 1.0,
-   "seven": 1.0,
-   "saved": 0.35,
-   "lesson": 0.45,
-   "outro": 0.15
-  },
-  "hammer": {
-   "towers": 0.5
-  },
-  "rain": {
-   "forgive": 0.25
-  },
-  "fire": {
-   "refuse": 0.8
-  },
-  "crickets": {
-   "refuse": 0.35,
-   "trust": 0.2,
-   "lesson": 0.2,
-   "outro": 0.2
+   "ad": 0.35,
+   "call": 0.25,
+   "towers": 0.2,
+   "forgive": 0.2,
+   "pride": 0.25,
+   "refuse": 0.15,
+   "trust": 0.35,
+   "cloud": 0.35,
+   "wind": 0.8,
+   "seven": 0.8,
+   "saved": 0.25,
+   "lesson": 0.3,
+   "outro": 0.1
   },
   "thunder": {
-   "cloud": 0.5,
-   "wind": 0.9,
-   "seven": 0.6
-  },
-  "room": {
-   "wind": 0.4,
+   "cloud": 0.4,
+   "wind": 0.7,
    "seven": 0.5
   }
  },
@@ -112,5 +93,8 @@
   "Hud,": "Houd"
  },
  "local_voice": "piper:fr_FR-miro-high",
- "local_speed": 1.12
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "voice_credit": "voix fournie par Ange",
+ "ambience_gain": 0.6
 }
