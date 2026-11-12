@@ -42,7 +42,7 @@ function draw(t) {
     grades.forEach(([col, a]) => { ctx.globalAlpha = a; ctx.fillStyle = col; ctx.fillRect(0, 0, W, H); }); ctx.restore(); }
   else post(ctx, t, null);
   // fade in from black at start
-  if (t < 0.8) { ctx.fillStyle = `rgba(0,0,0,${1 - seg(t, 0, 0.8)})`; ctx.fillRect(0, 0, W, H); }
+  if (t < 0.8 && !window.NO_INTRO_FADE) { ctx.fillStyle = `rgba(0,0,0,${1 - seg(t, 0, 0.8)})`; ctx.fillRect(0, 0, W, H); }
   subtitles(ctx, t, TL.cues);
 }
 window.draw = draw;

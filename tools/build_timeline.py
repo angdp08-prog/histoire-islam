@@ -5,7 +5,11 @@ import json, os, re, subprocess, sys
 
 ep = sys.argv[1]
 cfg = json.load(open(os.path.join(ep, "script.json"), encoding="utf-8"))
-LEAD_FIRST, LEAD, TAIL, OUTRO = 1.2, 0.25, 0.45, 3.5
+LEAD_FIRST, LEAD, TAIL, OUTRO = cfg.get("lead_first", 1.2), 0.25, 0.45, cfg.get("outro", 3.5)  # lead_first ~0.3: hook spoken in the 1st second
+KEYS = {k.lower() for k in cfg.get("keywords", [])}  # key words drawn bigger in the subtitles
+def is_key(w):
+    m = re.findall(r"[\w'-]+", w)
+    return bool(m) and m[0].lower().split("'")[-1] in KEYS
 CHARS_PER_SEC = cfg.get("est_cps", 13.5)  # estimate when no audio
 
 
@@ -124,7 +128,7 @@ for i, s in enumerate(cfg["scenes"]):
                                "words": [{"w": x["w"], "s": round(lead + x["s"], 3)} for x in ws]})
     for c in chunk(ws):
         cue = {"start": round(vstart + c[0]["s"] - 0.08, 3), "end": round(vstart + c[-1]["e"] + 0.25, 3),
-               "words": [{"w": x["w"], "s": round(vstart + x["s"], 3)} for x in c], "lines": lines(c)}
+               "words": [dict({"w": x["w"], "s": round(vstart + x["s"], 3)}, **({"k": 1} if is_key(x["w"]) else {})) for x in c], "lines": lines(c)}
         timeline["cues"].append(cue)
     t += dur
 # make cues not overlap

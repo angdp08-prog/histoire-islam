@@ -1,0 +1,139 @@
+{
+ "title": "Moussa",
+ "voice": "user",
+ "lead_first": 0.3,
+ "outro": 3.0,
+ "keywords": [
+  "mer",
+  "deux",
+  "montagne",
+  "Pharaon",
+  "fleuve",
+  "rendrons",
+  "tuez",
+  "feu",
+  "serpent",
+  "main",
+  "prosternés",
+  "armée",
+  "rattrapés",
+  "Jamais",
+  "guider",
+  "frappe",
+  "sec",
+  "refermèrent",
+  "sauvés",
+  "issue",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "La mer s'est fendue en deux. Chaque côté se dressait comme une immense montagne."
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire de Moussa, paix sur lui. Et ce qu'il a dit face à la mer, quand tout semblait perdu… tu ne l'oublieras jamais."
+  },
+  {
+   "id": "pharaoh",
+   "text": "En Égypte, Pharaon se croyait tout-puissant. Il faisait tuer les nouveau-nés garçons des fils d'Israël."
+  },
+  {
+   "id": "river",
+   "text": "Allah inspira à la mère de Moussa : « Jette-le dans le fleuve. Ne crains pas : Nous te le rendrons. »"
+  },
+  {
+   "id": "palace",
+   "text": "Le fleuve le porta jusqu'au palais de Pharaon. Son épouse dit : « Ne le tuez pas. » Et Allah le rendit à sa mère, comme promis."
+  },
+  {
+   "id": "fire",
+   "text": "Des années plus tard, Moussa vit un feu près du mont Tour. Là, il fut appelé : « Ô Moussa, c'est Moi, Allah, le Seigneur des mondes. »"
+  },
+  {
+   "id": "signs",
+   "text": "Devant Pharaon, il jeta son bâton : un serpent, bien visible. Puis sa main sortit blanche, éclatante."
+  },
+  {
+   "id": "magic",
+   "text": "Les magiciens jetèrent leurs cordes. Le bâton de Moussa avala tout leur trucage. Et les magiciens tombèrent prosternés."
+  },
+  {
+   "id": "night",
+   "text": "Pharaon s'entêta. Moussa partit de nuit avec son peuple… et Pharaon les poursuivit avec son armée."
+  },
+  {
+   "id": "trapped",
+   "text": "À l'aube : devant eux, la mer. Derrière eux, l'armée. Les siens crièrent : « Nous sommes rattrapés ! »"
+  },
+  {
+   "id": "kalla",
+   "text": "Moussa répondit : « Jamais ! Mon Seigneur est avec moi. Il va me guider. »"
+  },
+  {
+   "id": "split",
+   "text": "Allah lui révéla : « Frappe la mer de ton bâton. » Elle se fendit, et ils passèrent sur un chemin sec."
+  },
+  {
+   "id": "drown",
+   "text": "Pharaon s'élança derrière eux… et les eaux se refermèrent sur lui et son armée. Moussa et les siens furent sauvés."
+  },
+  {
+   "id": "lesson",
+   "text": "Quand tous les chemins semblent fermés, souviens-toi : Celui qui a ouvert la mer peut t'ouvrir une issue."
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.35,
+   "promise": 0.25,
+   "pharaoh": 0.15,
+   "river": 0.15,
+   "palace": 0.1,
+   "fire": 0.3,
+   "signs": 0.1,
+   "magic": 0.12,
+   "night": 0.3,
+   "trapped": 0.4,
+   "kalla": 0.35,
+   "split": 0.4,
+   "drown": 0.4,
+   "lesson": 0.2,
+   "cta": 0.2,
+   "outro": 0.3
+  },
+  "sea": {
+   "hook": 0.6,
+   "promise": 0.3,
+   "river": 0.25,
+   "palace": 0.15,
+   "trapped": 0.5,
+   "kalla": 0.4,
+   "split": 0.7,
+   "drown": 0.8,
+   "lesson": 0.4,
+   "cta": 0.5,
+   "outro": 0.6
+  },
+  "thunder": {
+   "split": 0.35,
+   "drown": 0.45
+  }
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "pron": {
+  "Moussa": "Moussa",
+  "Tour": "Tour"
+ },
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5
+}

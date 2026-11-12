@@ -53,3 +53,13 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   dessinée par-dessus la base), cycle de pas piloté par la distance parcourue (`stepOf(dist, h)`, `camelT(dist, s)` dans
   `episodes/06-hud/scenes.js`), pas de modulo qui fait sauter un personnage à l'écran, pas d'apparition en fondu au milieu
   d'une scène (on entre par le bord), demi-tours progressifs (`turnDir`), travailleurs/objets posés sur ce qui les porte.
+
+## Viralité (demande d'Ange du 12/11/2026) — outils ajoutés avec l'épisode 7 (`episodes/07-musa/`)
+- **Accroche immédiate** : `"lead_first": 0.3` dans script.json (la 1re phrase tombe dès 0,3 s) et `window.NO_INTRO_FADE = true`
+  dans scenes.js (pas de fondu au noir : la 1re image est là dès la 1re frame). Titre de série + « Épisode N » petits dès la 1re seconde.
+- **Mots-clés plus gros** dans les sous-titres : `"keywords": [...]` dans script.json (dorés, plus grands, petit « pop » à l'énonciation).
+- **Boucle** : la scène `cta` + `outro` reprennent l'image de l'accroche (`heroShot(c, T)` avec un temps continu) : la dernière image = la première.
+  `"outro": 3.0` règle la durée de l'écran final.
+- **Couverture TikTok** : `SCENES.cover` dans scenes.js, puis `node tools/cover.js episodes/<ep>` → `cover.png` (1080x1920).
+- `figure({..., veilGlow: 0.3})` atténue le halo du voile de lumière sur les très grands plans (évite l'éblouissement).
+- `"est_cps": 15.5` : minutage estimé au rythme réel de la voix d'Ange (Hud : ~15-16 caractères/s).

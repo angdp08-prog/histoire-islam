@@ -270,10 +270,10 @@ function headCloth(ctx, hx, hy, r, wrap, light, o) { // ghutra / turban framing 
   if (o.turban) { ctx.fillStyle = lt; ctx.beginPath(); ctx.ellipse(hx - r * 0.1, hy - r * 0.95, r * 1.12, r * 0.5, -0.1, 0, 6.283); ctx.fill();
     ctx.strokeStyle = hexA(dk, 0.45); ctx.lineWidth = 2; for (let k = 0; k < 3; k++) { ctx.beginPath(); ctx.ellipse(hx - r * 0.1, hy - r * (0.75 + k * 0.18), r * 1.05, r * 0.3, -0.1, Math.PI * 1.05, Math.PI * 1.95); ctx.stroke(); } }
 }
-function faceless(ctx, hx, hy, r, skin, prophet, covered, wrap) {
-  if (prophet) { // veil of white light: no face, no features, ever
+function faceless(ctx, hx, hy, r, skin, prophet, covered, wrap, veilGlow = 1) {
+  if (prophet) { // veil of white light: no face, no features, ever (veilGlow < 1 tames the halo on very large figures)
     ctx.save(); ctx.globalCompositeOperation = 'lighter';
-    glow(ctx, hx + 3, hy, r * 3.0, '#fff6dc', 0.6); ctx.restore();
+    glow(ctx, hx + 3, hy, r * lerp(1.8, 3.0, Math.min(1, veilGlow)), '#fff6dc', 0.6 * veilGlow); ctx.restore();
     const g = ctx.createRadialGradient(hx + 3, hy, 0, hx + 3, hy, r * 1.5);
     g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(0.7, 'rgba(255,253,245,0.98)'); g.addColorStop(1, 'rgba(255,250,235,0)');
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(hx + 3, hy, r * 1.5, 0, 6.283); ctx.fill();
@@ -434,7 +434,7 @@ function figure(ctx, o) {
   const ink = o.ink === undefined ? 1 : o.ink;
   ctx.save(); if (ink > 0) ctx.filter = `drop-shadow(0 0 ${1.4 * ink}px rgba(28,15,8,0.9))`;
   ctx.drawImage(_figCv, 0, 0, w, hh, x0, y0, w, hh); ctx.restore();
-  if (_veil) { ctx.save(); ctx.globalAlpha *= (o.alpha === undefined ? 1 : o.alpha); faceless(ctx, x0 + _veil.x - 3, y0 + _veil.y, _veil.r, '#000000', true); ctx.restore(); }
+  if (_veil) { ctx.save(); ctx.globalAlpha *= (o.alpha === undefined ? 1 : o.alpha); faceless(ctx, x0 + _veil.x - 3, y0 + _veil.y, _veil.r, '#000000', true, false, null, o.veilGlow === undefined ? 1 : o.veilGlow); ctx.restore(); }
 }
 function lanternBox(ctx, x, y, s, t, k = 0) {
   ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
@@ -532,24 +532,32 @@ function subtitles(ctx, t, cues) {
   const c = cues.find(c => t >= c.start && t < c.end);
   if (!c) return;
   const a = seg(t, c.start, c.start + 0.18) * (1 - seg(t, c.end - 0.15, c.end));
-  ctx.save(); ctx.font = '600 54px Lora'; ctx.textBaseline = 'middle';
-  const lh = 74, n = c.lines.length, y0 = 1470 - (n - 1) * lh / 2;
+  // key words (cue word with k: 1, from script.json "keywords") are drawn larger, in gold, with a small pop when spoken
+  const font = (k, pop = 0) => k ? `700 ${Math.round(68 * (1 + pop))}px Lora` : '600 54px Lora';
+  ctx.save(); ctx.textBaseline = 'middle';
+  const lh = c.words.some(w => w.k) ? 82 : 74, n = c.lines.length, y0 = 1470 - (n - 1) * lh / 2;
   c.lines.forEach((idxs, li) => {
     const parts = idxs.map(i => c.words[i]);
-    const widths = parts.map(p => ctx.measureText(p.w).width), space = ctx.measureText(' ').width;
+    const widths = parts.map(p => { ctx.font = font(p.k); return ctx.measureText(p.w).width; });
+    ctx.font = font(0); const space = ctx.measureText(' ').width;
     const total = widths.reduce((s, w) => s + w, 0) + space * (parts.length - 1);
-    let x = W / 2 - total / 2; const y = y0 + li * lh;
+    let x = W / 2 - total / 2; const y = y0 + li * lh, fit = Math.min(1, (W - 90) / total);
+    ctx.save(); if (fit < 1) { ctx.translate(W / 2, y); ctx.scale(fit, fit); ctx.translate(-W / 2, -y); } // never wider than the frame
     parts.forEach((p, k) => {
       const spoken = t >= p.s, cur = spoken && (k === parts.length - 1 && li === n - 1 ? true : (() => {
         const nextIdx = idxs[k + 1] !== undefined ? idxs[k + 1] : (c.lines[li + 1] || [])[0];
         return nextIdx === undefined || t < c.words[nextIdx].s; })());
+      const pop = p.k && spoken ? 0.07 * Math.max(0, 1 - (t - p.s) / 0.25) : 0;
+      ctx.font = font(p.k, pop); ctx.textAlign = 'center';
+      const cx = x + widths[k] / 2;
       ctx.globalAlpha = a;
-      ctx.lineJoin = 'round'; ctx.lineWidth = 10; ctx.strokeStyle = 'rgba(12,8,6,0.82)';
-      ctx.shadowColor = 'rgba(0,0,0,0.6)'; ctx.shadowBlur = 18; ctx.strokeText(p.w, x, y); ctx.shadowBlur = 0;
-      ctx.fillStyle = cur ? '#ffd27a' : (spoken ? '#ffffff' : 'rgba(255,255,255,0.78)');
-      ctx.fillText(p.w, x, y);
+      ctx.lineJoin = 'round'; ctx.lineWidth = p.k ? 12 : 10; ctx.strokeStyle = 'rgba(12,8,6,0.82)';
+      ctx.shadowColor = 'rgba(0,0,0,0.6)'; ctx.shadowBlur = 18; ctx.strokeText(p.w, cx, y); ctx.shadowBlur = 0;
+      ctx.fillStyle = p.k ? (spoken ? '#ffd27a' : 'rgba(255,226,160,0.8)') : (cur ? '#ffd27a' : (spoken ? '#ffffff' : 'rgba(255,255,255,0.78)'));
+      ctx.fillText(p.w, cx, y);
       x += widths[k] + space;
     });
+    ctx.restore();
   });
   ctx.restore();
 }
