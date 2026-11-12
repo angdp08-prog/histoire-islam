@@ -38,6 +38,10 @@ Ancienne méthode : `python3 tools/align_voice.py episodes/<ep> voix.mp3 <dossie
 (DTW contre une voix de synthèse du même texte + calage sur les vraies pauses), la découpe par scène et écrit
 `audio/NN_id.mp3/.json`. Mettre `"voice": "user"` dans script.json, puis lancer `make.sh`.
 
+## Épisode de référence : `episodes/06-hud/` (validé par Ange le 12/11/2026)
+Tout nouvel épisode prend 06-hud comme modèle : niveau de détail des décors et des personnages, mise en scène,
+synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et son `SCRIPT_VOIX_OFF.md` avant d'écrire.
+
 ## Règles d'Ange (12/11/2026) — à respecter pour chaque nouvel épisode
 - **Pas de voix off générée** (ni ElevenLabs, ni Piper/Kokoro) : `"voice": "user"` sans audio, le minutage des mots est estimé
   (sous-titres et `at()` restent calés) et la vidéo sort avec l'ambiance seule. Ange envoie ensuite SA voix, calée avec
