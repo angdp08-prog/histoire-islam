@@ -1,0 +1,116 @@
+{
+ "title": "Hud",
+ "voice": "local",
+ "scenes": [
+  {
+   "id": "ad",
+   "text": "Au pays des dunes d'al-Ahqaf vivait le peuple de 'Ad. Ils bâtirent Iram aux colonnes, dont nulle pareille ne fut créée dans les contrées. Allah leur envoya leur frère Hud, paix sur lui.",
+   "ipa": "o peˈi de dˈyn dalakˈaf vivˈɛ lə pˈœpl də ˈaːd il batˈiʁ iʁˈam o kɔlˈɔn dɔ̃ nˈyl paʁˈɛj nə fy kʁeˈe dɑ̃ le kɔ̃tʁˈe alˈa lœʁ ɑ̃vwajˈa lœʁ fʁˈɛʁ ˈud pˈɛ syʁ lˈɥi"
+  },
+  {
+   "id": "call",
+   "text": "Il leur dit : « Ô mon peuple, adorez Allah. Vous n'avez pas d'autre divinité que Lui. Je ne vous demande aucun salaire : mon salaire n'incombe qu'au Seigneur des mondes. »",
+   "ipa": "il lœʁ dˈi ˈo mɔ̃ pˈœpl adɔʁˈe alˈa vu navˈe pˈa dˈotʁ divinitˈe kə lˈɥi ʒə nə vu dəmˈɑ̃d okˈœ̃ salˈɛʁ mɔ̃ salˈɛʁ nɛ̃kˈɔ̃b ko sɛɲˈœʁ de mˈɔ̃d"
+  },
+  {
+   "id": "towers",
+   "text": "Il les mit en garde : « Bâtissez-vous sur chaque colline un monument, par pure vanité ? Et vous élevez des forteresses, comme si vous alliez vivre éternellement ! »",
+   "ipa": "il le mi tɑ̃ gˈaʁd batisevˈu syʁ ʃak kɔlˈin œ̃ mɔnymˈɑ̃ paʁ pˈyʁ vanitˈe e vuz elvˈe de fɔʁtəʁˈɛs kɔm si vuz aljˈe vˈivʁ etɛʁnɛlmˈɑ̃"
+  },
+  {
+   "id": "forgive",
+   "text": "« Implorez le pardon de votre Seigneur, puis revenez à Lui. Il enverra du ciel une pluie abondante, et ajoutera force à votre force. »",
+   "ipa": "ɛ̃plɔʁˈe lə paʁdˈɔ̃ də vɔtʁ sɛɲˈœʁ pɥi ʁəvənˈe a lˈɥi il ɑ̃vɛʁˈa dy sjˈɛl yn plɥˈi abɔ̃dˈɑ̃t e aʒutʁˈa fˈɔʁs a vɔtʁ fˈɔʁs"
+  },
+  {
+   "id": "pride",
+   "text": "Mais ils s'enflèrent d'orgueil sur terre : « Qui est plus fort que nous ? » Ne voyaient-ils pas qu'Allah, qui les a créés, est plus fort qu'eux ?",
+   "ipa": "mɛ il sɑ̃flˈɛʁ dɔʁɡˈœj syʁ tˈɛʁ ki ɛ ply fˈɔʁ kə nˈu nə vwajɛtˈil pˈa kalˈa ki lez a kʁeˈe ɛ ply fˈɔʁ kˈø"
+  },
+  {
+   "id": "refuse",
+   "text": "Ils répondirent : « Ô Hud, tu ne nous as apporté aucune preuve. Nous n'abandonnerons pas nos divinités sur ta parole. »",
+   "ipa": "il ʁepɔ̃dˈiʁ ˈo ˈud ty nə nuz a apɔʁtˈe okˈyn pʁˈœv nu nabɑ̃dɔnʁˈɔ̃ pa no divinitˈe syʁ ta paʁˈɔl"
+  },
+  {
+   "id": "trust",
+   "text": "Hud répondit : « Je place ma confiance en Allah, mon Seigneur et votre Seigneur. Il n'est pas d'être vivant qu'Il ne tienne en Son pouvoir. »",
+   "ipa": "ˈud ʁepɔ̃dˈi ʒə plas ma kɔ̃fjˈɑ̃s ɑ̃n alˈa mɔ̃ sɛɲˈœʁ e vɔtʁ sɛɲˈœʁ il nɛ pa dˈɛtʁ vivˈɑ̃ kil nə tjˈɛn ɑ̃ sɔ̃ puvwˈaʁ"
+  },
+  {
+   "id": "cloud",
+   "text": "Puis un jour, ils virent un nuage s'avancer vers leurs vallées. Ils dirent : « Voici un nuage qui va nous donner la pluie ! »",
+   "ipa": "pɥiz œ̃ ʒˈuʁ il vˈiʁt œ̃ nyˈaʒ savɑ̃sˈe vɛʁ lœʁ valˈe il dˈiʁ vwasˈi œ̃ nyˈaʒ ki va nu dɔnˈe la plɥˈi"
+  },
+  {
+   "id": "wind",
+   "text": "Non ! C'était ce qu'ils avaient voulu hâter : un vent porteur d'un châtiment douloureux, qui détruit tout, par l'ordre de son Seigneur.",
+   "ipa": "nˈɔ̃ setˈɛ sə kilz avɛ vulˈy atˈe œ̃ vˈɑ̃ pɔʁtˈœʁ dœ̃ ʃatimˈɑ̃ duluʁˈø ki detʁˈɥi tˈu paʁ lˈɔʁdʁ də sɔ̃ sɛɲˈœʁ"
+  },
+  {
+   "id": "seven",
+   "text": "Il souffla sur eux sept nuits et huit jours, sans répit. On y voyait les gens renversés, comme des troncs de palmiers évidés.",
+   "ipa": "il suflˈa syʁ ˈø sɛt nɥˈi e ɥit ʒˈuʁ sɑ̃ ʁepˈi ɔ̃n i vwajˈɛ le ʒˈɑ̃ ʁɑ̃vɛʁsˈe kɔm de tʁˈɔ̃ də palmjˈe evidˈe"
+  },
+  {
+   "id": "saved",
+   "text": "Mais Allah sauva Hud et ceux qui avaient cru avec lui, par une miséricorde venant de Lui.",
+   "ipa": "mɛ alˈa sovˈa ˈud e sø ki avɛ kʁˈy avˈɛk lˈɥi paʁ yn mizeʁikˈɔʁd vənɑ̃ də lˈɥi"
+  },
+  {
+   "id": "lesson",
+   "text": "Au matin, on ne voyait plus que leurs demeures, désertes. Tels furent les 'Ad : ils avaient renié les signes de leur Seigneur.",
+   "ipa": "o matˈɛ̃ ɔ̃ nə vwajˈɛ ply kə lœʁ dəmˈœʁ dezˈɛʁt tɛl fˈyʁ lez ˈaːd ilz avɛ ʁənjˈe le sˈiɲ də lœʁ sɛɲˈœʁ"
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "ad": 0.5,
+   "call": 0.4,
+   "towers": 0.35,
+   "forgive": 0.3,
+   "pride": 0.4,
+   "refuse": 0.25,
+   "trust": 0.55,
+   "cloud": 0.5,
+   "wind": 1.0,
+   "seven": 1.0,
+   "saved": 0.35,
+   "lesson": 0.45,
+   "outro": 0.15
+  },
+  "hammer": {
+   "towers": 0.5
+  },
+  "rain": {
+   "forgive": 0.25
+  },
+  "fire": {
+   "refuse": 0.8
+  },
+  "crickets": {
+   "refuse": 0.35,
+   "trust": 0.2,
+   "lesson": 0.2,
+   "outro": 0.2
+  },
+  "thunder": {
+   "cloud": 0.5,
+   "wind": 0.9,
+   "seven": 0.6
+  },
+  "room": {
+   "wind": 0.4,
+   "seven": 0.5
+  }
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "stability": 0.5,
+ "pron": {
+  "Hud": "Houd",
+  "Hud,": "Houd"
+ },
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12
+}
