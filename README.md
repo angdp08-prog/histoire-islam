@@ -66,3 +66,10 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
 - **Fond musical halal** (demande d'Ange du 13/11/2026) : `tools/music_voices.py` synthétise un chœur fredonné (« mmm/ouh »),
   **voix uniquement, sans instrument ni percussion**, accords lents en ré mineur. Intensité par scène : `"music_level"` ; activé par
   `"music": {"file": "music.wav", "gain": 0.5}` dans script.json. make.sh le génère et le mixe sous la voix avec ducking (sidechain).
+
+## Épisode 8 (`episodes/08-sulayman/`) — nouveaux éléments réutilisables
+- `ant()` (fourmi détaillée, marche tripode, se dresse avec `rear`), `antHill()`, `soundRings()`, `hoopoe()` (huppe perchée / en vol, crête `crest`),
+  `perchBird()` + `BIRDS` (espèces variées), `throne()`, `scroll()` (lettre scellée qui se déroule, Basmala), `hall()` (salle du trône),
+  `city()` / `cedar()` / `towerHouse()` (maisons-tours du Yémen), `crystalFloor()` + `reflect()` (sol de cristal sur l'eau), `blink()` (clin d'œil plein écran),
+  `blurLayer()` (flou de profondeur appliqué à toute une couche, mise au point qui bascule), `topShade()` (lisibilité des légendes arabes).
+- Les djinns sont nommés dans le texte mais jamais dessinés.

@@ -1,0 +1,149 @@
+{
+ "title": "Soulayman",
+ "voice": "user",
+ "lead_first": 0.3,
+ "outro": 3.0,
+ "keywords": [
+  "fourmi",
+  "prophète",
+  "trône",
+  "clin",
+  "oiseaux",
+  "vent",
+  "armées",
+  "écrasent",
+  "sourit",
+  "remercier",
+  "huppe",
+  "Saba",
+  "soleil",
+  "lettre",
+  "soumis",
+  "apportera",
+  "cligné",
+  "là",
+  "reconnaissant",
+  "ingrat",
+  "cristal",
+  "soumets",
+  "merci",
+  "grandeur",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Une fourmi a averti tout son peuple. Et un prophète a entendu sa voix."
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire de Soulayman, paix sur lui. Et d'un trône immense, apporté de très loin… en moins d'un clin d'œil."
+  },
+  {
+   "id": "kingdom",
+   "text": "Fils de Dawud, il reçut un royaume que nul n'aura après lui. Il comprenait le langage des oiseaux, et le vent soufflait sur son ordre."
+  },
+  {
+   "id": "army",
+   "text": "Un jour, ses armées avançaient en rangs : des hommes, des djinns et des oiseaux."
+  },
+  {
+   "id": "ant",
+   "text": "Dans la vallée des fourmis, l'une d'elles cria : « Ô fourmis, entrez dans vos demeures, que Soulayman et ses armées ne vous écrasent sans le savoir ! »"
+  },
+  {
+   "id": "smile",
+   "text": "Soulayman sourit en l'entendant, et pria : « Seigneur, inspire-moi de Te remercier pour Tes bienfaits. »"
+  },
+  {
+   "id": "hoopoe",
+   "text": "Puis il passa en revue les oiseaux : « Pourquoi ne vois-je pas la huppe ? »"
+  },
+  {
+   "id": "saba",
+   "text": "La huppe revint : « J'ai vu à Saba une reine qui possède un trône immense. Elle et son peuple se prosternent devant le soleil. »"
+  },
+  {
+   "id": "letter",
+   "text": "Soulayman renvoya la huppe avec une lettre : « Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux. Venez à moi en soumis. »"
+  },
+  {
+   "id": "throne",
+   "text": "Il demanda alors : « Qui m'apportera son trône ? » Celui qui avait une science du Livre dit : « Je te l'apporterai avant que tu n'aies cligné de l'œil. »"
+  },
+  {
+   "id": "miracle",
+   "text": "Et le trône fut là, devant lui. Soulayman dit : « Ceci est une grâce de mon Seigneur, pour m'éprouver : serai-je reconnaissant, ou ingrat ? »"
+  },
+  {
+   "id": "queen",
+   "text": "La reine entra dans un palais au sol de cristal, qu'elle prit pour de l'eau. Et elle dit : « Je me soumets, avec Soulayman, à Allah, Seigneur des mondes. »"
+  },
+  {
+   "id": "lesson",
+   "text": "Le vent, les oiseaux, un royaume… et à chaque bienfait, sa réponse : merci, mon Seigneur. La vraie grandeur, c'est de dire merci."
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.3,
+   "promise": 0.25,
+   "kingdom": 0.4,
+   "army": 0.35,
+   "ant": 0.2,
+   "smile": 0.2,
+   "hoopoe": 0.25,
+   "saba": 0.3,
+   "letter": 0.3,
+   "throne": 0.2,
+   "miracle": 0.3,
+   "queen": 0.15,
+   "lesson": 0.25,
+   "cta": 0.25,
+   "outro": 0.3
+  },
+  "thunder": {
+   "army": 0.2,
+   "throne": 0.25,
+   "miracle": 0.35
+  }
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "pron": {
+  "Soulayman": "Soulayman",
+  "Dawud": "Daoud",
+  "Saba": "Saba"
+ },
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.75,
+  "promise": 0.6,
+  "kingdom": 0.55,
+  "army": 0.6,
+  "ant": 0.55,
+  "smile": 0.6,
+  "hoopoe": 0.45,
+  "saba": 0.55,
+  "letter": 0.6,
+  "throne": 0.75,
+  "miracle": 1.0,
+  "queen": 0.8,
+  "lesson": 0.8,
+  "cta": 0.65,
+  "outro": 0.75
+ }
+}
