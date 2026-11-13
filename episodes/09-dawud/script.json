@@ -1,0 +1,37 @@
+{
+ "title": "Dawud",
+ "voice": "user",
+ "lead_first": 0.3,
+ "outro": 3.0,
+ "keywords": ["petite", "immense", "géant", "montagnes", "Talout", "fleuve", "gorgée", "burent", "Jalout", "aucune", "Combien", "endurance", "victoire", "Dawud", "fronde", "pierre", "effondra", "sagesse", "oiseaux", "fer", "Zabour", "nombre", "endurent", "commentaire"],
+ "scenes": [
+  {"id": "hook", "text": "Une petite armée face à une armée immense. Et un jeune homme, seul, a fait tomber leur géant."},
+  {"id": "promise", "text": "C'est l'histoire de Dawud, paix sur lui. Et ce jour-là n'était qu'un début : bientôt, même les montagnes allaient glorifier Allah avec lui."},
+  {"id": "king", "text": "Les fils d'Israël demandèrent un roi pour combattre. Leur prophète leur dit : « Allah vous a envoyé Talout comme roi. »"},
+  {"id": "river", "text": "En chemin, une épreuve : un fleuve. « Celui qui en boira n'est pas des miens, sauf une gorgée, au creux de la main. » Mais presque tous burent."},
+  {"id": "few", "text": "Seul un petit nombre traversa avec Talout. Et en face, se dressait Jalout, avec son armée immense."},
+  {"id": "faith", "text": "Certains dirent : « Nous n'avons aucune force contre Jalout. » Mais les croyants répondirent : « Combien de fois une petite troupe a vaincu une grande troupe, par la permission d'Allah ! »"},
+  {"id": "dua", "text": "Et ils prièrent : « Seigneur, déverse sur nous l'endurance, affermis nos pas, et donne-nous la victoire. »"},
+  {"id": "duel", "text": "Jalout s'avança, couvert de fer. Et face à lui sortit un jeune homme : Dawud."},
+  {"id": "sling", "text": "Les exégètes rapportent qu'il n'avait qu'une fronde. Une pierre partit… et le géant s'effondra."},
+  {"id": "victory", "text": "« Ils les mirent en déroute, par la permission d'Allah, et Dawud tua Jalout. » Allah lui donna la royauté et la sagesse."},
+  {"id": "mountains", "text": "Et la promesse ? Quand Dawud glorifiait Allah, les montagnes et les oiseaux répétaient avec lui, matin et soir."},
+  {"id": "iron", "text": "Pour lui, Allah rendit le fer souple : il en fit des cottes de mailles pour protéger les hommes. Et il reçut le Zabour."},
+  {"id": "lesson", "text": "La victoire ne se compte pas en nombre. Allah est avec ceux qui endurent."},
+  {"id": "cta", "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."}
+ ],
+ "ambience": {
+  "wind": {"hook": 0.3, "promise": 0.25, "king": 0.25, "river": 0.25, "few": 0.35, "faith": 0.3, "dua": 0.2, "duel": 0.4, "sling": 0.35, "victory": 0.3, "mountains": 0.3, "iron": 0.15, "lesson": 0.25, "cta": 0.25, "outro": 0.3},
+  "thunder": {"few": 0.2, "duel": 0.3, "sling": 0.35}
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "pron": {"Dawud": "Daoud", "Talout": "Talout", "Jalout": "Jalout", "Zabour": "Zabour"},
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {"file": "music.wav", "gain": 0.3, "duck": true},
+ "music_level": {"hook": 0.8, "promise": 0.6, "king": 0.55, "river": 0.55, "few": 0.65, "faith": 0.7, "dua": 0.75, "duel": 0.8, "sling": 1.0, "victory": 0.9, "mountains": 0.85, "iron": 0.6, "lesson": 0.8, "cta": 0.65, "outro": 0.8}
+}

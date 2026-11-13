@@ -73,3 +73,10 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `city()` / `cedar()` / `towerHouse()` (maisons-tours du Yémen), `crystalFloor()` + `reflect()` (sol de cristal sur l'eau), `blink()` (clin d'œil plein écran),
   `blurLayer()` (flou de profondeur appliqué à toute une couche, mise au point qui bascule), `topShade()` (lisibilité des légendes arabes).
 - Les djinns sont nommés dans le texte mais jamais dessinés.
+
+## Épisode 9 (`episodes/09-dawud/`) — nouveaux éléments réutilisables
+- `giant()` (Jalout : guerrier géant en armure à écailles, casque à cimier, bouclier rond, lance ; la tête reste dans l'ombre du casque ; `fall` 0→1 le fait tomber en arrière autour de ses pieds),
+  `slingFx()` (fronde qui tournoie, `spin`, `tilt`, ou pend après le tir avec `released`), `stoneFx()` (pierre en vol + traînée), `impact()`,
+  `crown()` (couronne de Talout), `sheep()`, `plain()` (plaine d'herbes sèches), `echoRidge()` + `lightRings()` (montagnes qui « répondent » : impulsions de lumière
+  le long des crêtes), `circleBirds()`, `anvil()`, `mail()` (cotte de mailles qui se forme anneau par anneau), `reeds()`, `lightning()`, `enemyRanks()` / `hostRanks()`.
+- La chute de Jalout est montrée sans violence : une pierre, un éclair de lumière, une chute dans la poussière. Fronde et pierre sont annoncées « selon les exégètes ».
