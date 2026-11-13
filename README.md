@@ -63,3 +63,6 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
 - **Couverture TikTok** : `SCENES.cover` dans scenes.js, puis `node tools/cover.js episodes/<ep>` → `cover.png` (1080x1920).
 - `figure({..., veilGlow: 0.3})` atténue le halo du voile de lumière sur les très grands plans (évite l'éblouissement).
 - `"est_cps": 15.5` : minutage estimé au rythme réel de la voix d'Ange (Hud : ~15-16 caractères/s).
+- **Fond musical halal** (demande d'Ange du 13/11/2026) : `tools/music_voices.py` synthétise un chœur fredonné (« mmm/ouh »),
+  **voix uniquement, sans instrument ni percussion**, accords lents en ré mineur. Intensité par scène : `"music_level"` ; activé par
+  `"music": {"file": "music.wav", "gain": 0.5}` dans script.json. make.sh le génère et le mixe sous la voix avec ducking (sidechain).

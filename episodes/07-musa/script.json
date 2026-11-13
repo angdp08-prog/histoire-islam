@@ -81,7 +81,7 @@
   },
   {
    "id": "lesson",
-   "text": "Quand tous les chemins semblent fermés, souviens-toi : Celui qui a ouvert la mer peut t'ouvrir une issue."
+   "text": "Quand tous les chemins semblent fermés, souviens-toi : Celui qui a ouvert la mer peut ouvrir une issue."
   },
   {
    "id": "cta",
@@ -135,5 +135,29 @@
  "local_speed": 1.12,
  "voice_file": "voix_off.mp3",
  "ambience_gain": 0.6,
- "est_cps": 15.5
+ "est_cps": 15.5,
+ "voice_credit": "voix fournie par Ange (Algenib)",
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.8,
+  "promise": 0.6,
+  "pharaoh": 0.45,
+  "river": 0.55,
+  "palace": 0.55,
+  "fire": 0.6,
+  "signs": 0.45,
+  "magic": 0.5,
+  "night": 0.55,
+  "trapped": 0.7,
+  "kalla": 0.9,
+  "split": 1.0,
+  "drown": 0.8,
+  "lesson": 0.8,
+  "cta": 0.65,
+  "outro": 0.75
+ }
 }

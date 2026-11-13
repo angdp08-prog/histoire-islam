@@ -8,6 +8,8 @@ VOICE=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]+'/script.js
 if [ "$VOICE" != user ] && { ! ls "$EP"/audio/*.mp3 >/dev/null 2>&1 || [ "${FORCE_TTS:-0}" = 1 ]; }; then python3 tools/tts.py "$EP" || { echo "!! ElevenLabs failed: trying local Kokoro voice (tools/tts_local.py)"; python3 tools/tts_local.py "$EP"; } || echo "!! TTS failed: building without voice"; fi
 python3 tools/build_timeline.py "$EP"
 python3 tools/ambience.py "$EP"
+# optional halal background bed (voices only, no instruments): "music" in script.json
+if python3 -c "import json,sys;sys.exit(0 if json.load(open(sys.argv[1]+'/script.json')).get('music') else 1)" "$EP"; then python3 tools/music_voices.py "$EP"; fi
 node tools/render.js "$EP" --workers "${WORKERS:-4}"
 S="$EP/.segments"
 ffmpeg -y -loglevel error -f concat -safe 0 -i "$S/list.txt" -c copy "$S/video.mp4"
@@ -33,13 +35,18 @@ import json, re, subprocess, sys
 ep, name = sys.argv[1], sys.argv[2]; S = f"{ep}/.segments"
 tl = json.load(open(f"{ep}/timeline.json")); cfg = json.load(open(f"{ep}/script.json", encoding="utf-8"))
 amb = cfg.get("ambience_gain", 0.9)
+mus = cfg.get("music"); mfile = f"{ep}/{mus['file']}" if mus else None
 if tl["audio"]:
     mix = ("[0:a]highpass=f=70,acompressor=threshold=-22dB:ratio=2.5:attack=8:release=220:makeup=2,aformat=channel_layouts=stereo[v];"
            f"[1:a]lowpass=f=9000,volume={amb}[b];[v][b]amix=inputs=2:normalize=0[m]")
+    if mfile:  # music bed, ducked under the voice (sidechain)
+        mix = ("[0:a]highpass=f=70,acompressor=threshold=-22dB:ratio=2.5:attack=8:release=220:makeup=2,aformat=channel_layouts=stereo,asplit[v][vk];"
+               f"[1:a]lowpass=f=9000,volume={amb}[b];[2:a]lowpass=f=6000,volume={mus.get('gain', 0.5)},aformat=channel_layouts=stereo[mu];"
+               "[mu][vk]sidechaincompress=threshold=0.03:ratio=3:attack=60:release=700[md];[v][b][md]amix=inputs=3:normalize=0[m]")
 else:
     mix = "[1:a]lowpass=f=9000,volume=1.4[m]"
 pre = f"{S}/premix.wav"
-subprocess.check_call(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{S}/voice.wav", "-i", f"{ep}/ambience.wav",
+subprocess.check_call(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{S}/voice.wav", "-i", f"{ep}/ambience.wav", *(["-i", mfile] if mfile and tl["audio"] else []),
                        "-filter_complex", mix, "-map", "[m]", "-ar", "48000", pre])
 log = subprocess.run(["ffmpeg", "-hide_banner", "-i", pre, "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
 I = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", log)[-1])
