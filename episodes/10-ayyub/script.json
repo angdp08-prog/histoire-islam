@@ -1,0 +1,37 @@
+{
+ "title": "Ayyoub",
+ "voice": "user",
+ "lead_first": 0.3,
+ "outro": 3.0,
+ "keywords": ["tout", "perdu", "foi", "Ayyoub", "geste", "comblé", "remerciait", "épreuve", "enfants", "maladie", "années", "femme", "abandonner", "plainte", "patientait", "mal", "miséricordieux", "Frappe", "pied", "fraîche", "source", "jaillit", "retira", "rendit", "autant", "endurant", "excellent", "abandon", "oublie", "commentaire"],
+ "scenes": [
+  {"id": "hook", "text": "Il a tout perdu : ses biens, ses enfants, sa santé. Mais jamais, il n'a perdu sa foi."},
+  {"id": "promise", "text": "C'est l'histoire d'Ayyoub, paix sur lui. Et la fin de son épreuve allait tenir en un seul geste, que personne n'aurait imaginé."},
+  {"id": "wealth", "text": "Ayyoub était un homme comblé : des troupeaux, des terres, une grande famille. Et pour chaque bienfait, il remerciait Allah."},
+  {"id": "loss", "text": "Puis vint l'épreuve. Ses troupeaux disparurent, ses terres se vidèrent… et il perdit ses enfants."},
+  {"id": "illness", "text": "Enfin, la maladie frappa son corps. Pendant de longues années, il resta souffrant, et les gens s'éloignèrent de lui."},
+  {"id": "wife", "text": "Les exégètes rapportent que seule sa femme resta à ses côtés. Elle travaillait pour le nourrir, sans jamais l'abandonner."},
+  {"id": "patience", "text": "Et Ayyoub ? Pas une plainte contre son Seigneur. Il patientait, et il invoquait Allah."},
+  {"id": "dua", "text": "Un jour, il appela son Seigneur : « Le mal m'a touché… et Tu es le plus miséricordieux des miséricordieux. »"},
+  {"id": "strike", "text": "Et la réponse arriva : « Frappe le sol de ton pied. Voici une eau fraîche, pour te laver et pour boire. »"},
+  {"id": "heal", "text": "Il frappa le sol, et une source jaillit. Il se lava, il but… et Allah lui retira tout son mal."},
+  {"id": "restore", "text": "Puis Allah lui rendit les siens, et autant qu'eux avec eux : une miséricorde de Sa part, et un rappel pour ceux qui réfléchissent."},
+  {"id": "praise", "text": "Et Allah dit de lui : « Nous l'avons trouvé endurant. Quel excellent serviteur ! Il revenait sans cesse vers Allah. »"},
+  {"id": "lesson", "text": "L'épreuve n'est pas un abandon. Celui qui patiente et qui invoque, Allah ne l'oublie jamais."},
+  {"id": "cta", "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."}
+ ],
+ "ambience": {
+  "wind": {"hook": 0.3, "promise": 0.2, "wealth": 0.15, "loss": 0.4, "illness": 0.3, "wife": 0.2, "patience": 0.2, "dua": 0.15, "strike": 0.25, "heal": 0.15, "restore": 0.15, "praise": 0.15, "lesson": 0.2, "cta": 0.25, "outro": 0.3},
+  "thunder": {"loss": 0.25}
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "pron": {"Ayyoub": "A-youb"},
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {"file": "music.wav", "gain": 0.3, "duck": true},
+ "music_level": {"hook": 0.8, "promise": 0.6, "wealth": 0.55, "loss": 0.7, "illness": 0.7, "wife": 0.65, "patience": 0.6, "dua": 0.9, "strike": 0.85, "heal": 1.0, "restore": 0.9, "praise": 0.8, "lesson": 0.8, "cta": 0.65, "outro": 0.8}
+}

@@ -80,3 +80,10 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `crown()` (couronne de Talout), `sheep()`, `plain()` (plaine d'herbes sèches), `echoRidge()` + `lightRings()` (montagnes qui « répondent » : impulsions de lumière
   le long des crêtes), `circleBirds()`, `anvil()`, `mail()` (cotte de mailles qui se forme anneau par anneau), `reeds()`, `lightning()`, `enemyRanks()` / `hostRanks()`.
 - La chute de Jalout est montrée sans violence : une pierre, un éclair de lumière, une chute dans la poussière. Fronde et pierre sont annoncées « selon les exégètes ».
+
+## Épisode 10 (`episodes/10-ayyub/`) — nouveaux éléments réutilisables
+- `tree()` (arbre à branches récursives : `leaf` 0 = mort et nu, 1 = en feuilles, `bloom`, `lastLeaves`), `house()` (maison en briques crues, poutres, porte, fenêtre éclairée `lamp`, `ruin` effondre un angle),
+  `fence()` (enclos, `broken`), `dryGround()` (terre craquelée, `glow` + `wet` : lumière / eau qui monte par les fissures), `spring()` (source qui jaillit : jet, gouttes, bassin, rides),
+  `oilLamp()` (lampe à huile qui s'éteint avec fumée), `bowl()`, `wheatD()` / `field()` (blé qui sèche en continu), `valley()` (vallée verte → sèche, `dry` 0→1), `herd()`, `camels()`,
+  `shelter()` (abri de toile), `oven()` (four à pain), `stomp()` (gros plan : pied en sandale + ourlet blanc qui frappe le sol), `moonArc()` (les années qui passent), `ridgeW()` / `hazeW()` (couches lointaines très larges pour les grands panoramiques).
+- Piège corrigé : les fondus enchaînés dessinent une scène à t légèrement négatif → `(t * k) % 1` devient négatif (rayon d'ellipse négatif = crash du rendu). Les fonctions à phase (`spring`, `lightRings`, `sparkle`, `oilLamp`) décalent `t += 100`.
