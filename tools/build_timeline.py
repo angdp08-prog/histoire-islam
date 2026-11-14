@@ -5,7 +5,7 @@ import json, os, re, subprocess, sys
 
 ep = sys.argv[1]
 cfg = json.load(open(os.path.join(ep, "script.json"), encoding="utf-8"))
-LEAD_FIRST, LEAD, TAIL, OUTRO = cfg.get("lead_first", 1.2), 0.25, 0.45, cfg.get("outro", 3.5)  # lead_first ~0.3: hook spoken in the 1st second
+LEAD_FIRST, LEAD, TAIL, OUTRO = cfg.get("lead_first", 1.2), cfg.get("lead", 0.25), cfg.get("tail", 0.45), cfg.get("outro", 3.5)  # lead_first ~0.3: hook spoken in the 1st second
 KEYS = {k.lower() for k in cfg.get("keywords", [])}  # key words drawn bigger in the subtitles
 def is_key(w):
     m = re.findall(r"[\w'-]+", w)
@@ -122,7 +122,7 @@ for i, s in enumerate(cfg["scenes"]):
     vstart = t + lead
     if timeline["audio"] and timeline["audio"][-1]["at"] is None:
         timeline["audio"][-1]["at"] = round(vstart, 3)
-    dur = lead + vdur + TAIL
+    dur = lead + vdur + s.get("hold", TAIL)  # "hold" per scene: extra time to let an image breathe after the sentence
     timeline["scenes"].append({"id": s["id"], "start": round(t, 3), "dur": round(dur, 3), "voice": round(vstart, 3),
                                # word times relative to the scene start: scenes.js can fire events on a given word
                                "words": [{"w": x["w"], "s": round(lead + x["s"], 3)} for x in ws]})

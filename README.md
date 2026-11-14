@@ -54,6 +54,22 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `episodes/06-hud/scenes.js`), pas de modulo qui fait sauter un personnage à l'écran, pas d'apparition en fondu au milieu
   d'une scène (on entre par le bord), demi-tours progressifs (`turnDir`), travailleurs/objets posés sur ce qui les porte.
 
+## Règles d'Ange (14/11/2026) — qualité, rythme, longueur : PRIORITAIRES sur tout le reste
+- **Prendre son temps, raconter clairement** : les épisodes 9-10 faisaient « rushés ». L'histoire est racontée dans l'ordre, avec les
+  liaisons (qui, où, pourquoi, ce qui se passe ensuite), une idée par phrase, sans sauter d'étape. Plus de détails vrais et sourcés
+  (Coran d'abord, puis tafsir reconnus, signalés comme tels), moins de formules choc enchaînées.
+- **Longueur du script : 1 800 à 2 000 caractères MAXIMUM** (espaces compris) pour tout le texte de la voix off — c'est la limite du
+  générateur de voix d'Ange (copier-coller). Toujours compter (`len()` du texte intégral) et l'indiquer dans SCRIPT_VOIX_OFF.md.
+- **Respiration** : `"tail": 0.9` dans script.json (silence après chaque scène, au lieu de 0,45 s), et `"hold": 1.5`-`2.5` sur les scènes
+  fortes (pic émotionnel, miracle, leçon) pour laisser l'image vivre. Viser ~2 min 15 - 2 min 40 de vidéo avec la voix d'Ange.
+- **Zéro défaut d'image** (vérifier chaque scène sur une planche d'images AVANT le rendu, puis sur la vidéo finale) :
+  personne ne vole, les pieds touchent toujours le sol (y = ligne de sol calculée : `ridgeY`, bord du rocher, plancher), pas de pied qui
+  décolle pendant une marche (cycle `stepOf(distance, h)`), pas de glissement ; pas de figure posée sur une pente sans que la pente soit
+  sous ses pieds ; décors qui s'emboîtent (aucun trou, aucune bande vide entre deux couches, aucun bord de dessin visible quand la caméra
+  bouge ou zoome : dessiner les couches plus larges que le cadre) ; rien de coupé bizarrement par le cadre ; objets posés sur ce qui les
+  porte ; aucune forme ratée (si un dessin ne se lit pas du premier coup, on le refait ou on le retire) ; pas de chute ou de rotation
+  qui fait traverser le sol.
+
 ## Viralité (demande d'Ange du 12/11/2026) — outils ajoutés avec l'épisode 7 (`episodes/07-musa/`)
 - **Accroche immédiate** : `"lead_first": 0.3` dans script.json (la 1re phrase tombe dès 0,3 s) et `window.NO_INTRO_FADE = true`
   dans scenes.js (pas de fondu au noir : la 1re image est là dès la 1re frame). Titre de série + « Épisode N » petits dès la 1re seconde.
