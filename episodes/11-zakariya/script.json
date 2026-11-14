@@ -1,0 +1,169 @@
+{
+ "title": "Zakariya",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "vieillard",
+  "stérile",
+  "fils",
+  "Zakariya",
+  "signe",
+  "Maryam",
+  "nourriture",
+  "Allah",
+  "enfant",
+  "secret",
+  "blancs",
+  "malheureux",
+  "anges",
+  "Yahya",
+  "personne",
+  "comment",
+  "facile",
+  "rien",
+  "parler",
+  "gestes",
+  "glorifiez",
+  "naquit",
+  "sagesse",
+  "tard",
+  "impossible",
+  "commentaire",
+  "bien",
+  "espoir",
+  "crainte",
+  "guérit"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Un vieillard aux cheveux blancs. Une femme stérile. Et pourtant, Allah leur annonça un fils.",
+   "hold": 1.2
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire de Zakariya, paix sur lui. Et le signe de cette promesse, personne ne s'y attendait."
+  },
+  {
+   "id": "temple",
+   "text": "Zakariya servait Allah au Temple de Jérusalem. Il avait la charge d'une jeune fille pieuse : Maryam, que sa mère avait vouée à Allah avant même sa naissance."
+  },
+  {
+   "id": "fruits",
+   "text": "Chaque fois qu'il entrait auprès d'elle, il trouvait de la nourriture. Des fruits hors saison, disent les exégètes. « D'où te vient cela ? » « Cela vient d'Allah. »",
+   "hold": 1.2
+  },
+  {
+   "id": "hope",
+   "text": "Alors, à cet endroit même, Zakariya pria. Car lui aussi espérait l'impossible : un enfant."
+  },
+  {
+   "id": "dua",
+   "text": "Il appela son Seigneur, en secret : « Mes os sont affaiblis, ma tête s'est couverte de blancs… et jamais, en Te priant, je n'ai été malheureux. »",
+   "hold": 1.5
+  },
+  {
+   "id": "heir",
+   "text": "« Ma femme est stérile. Accorde-moi, de Ta part, un descendant qui héritera de moi. »"
+  },
+  {
+   "id": "angels",
+   "text": "Et pendant qu'il priait, debout dans le sanctuaire, les anges l'appelèrent : « Allah t'annonce la bonne nouvelle de Yahya ! »",
+   "hold": 2.0
+  },
+  {
+   "id": "name",
+   "text": "Un nom que personne n'avait porté avant lui."
+  },
+  {
+   "id": "how",
+   "text": "Bouleversé, Zakariya demanda : « Seigneur, comment aurais-je un fils ? Je suis si vieux, et ma femme est stérile ! » Il lui fut répondu : « C'est facile pour Moi. Je t'ai créé auparavant, alors que tu n'étais rien. »",
+   "hold": 1.2
+  },
+  {
+   "id": "sign",
+   "text": "Il demanda un signe. Le voici : pendant trois jours, en pleine santé, il ne pourrait parler aux gens que par gestes."
+  },
+  {
+   "id": "gestures",
+   "text": "Il sortit vers son peuple, et leur fit signe : « Glorifiez Allah, matin et soir. »"
+  },
+  {
+   "id": "birth",
+   "text": "Et la promesse s'accomplit : Allah guérit sa femme, et Yahya naquit. Allah lui donna la sagesse dès l'enfance, et la bonté envers ses parents.",
+   "hold": 2.0
+  },
+  {
+   "id": "praise",
+   "text": "Allah dit d'eux : « Ils se hâtaient vers le bien, et Nous invoquaient avec espoir et crainte. »"
+  },
+  {
+   "id": "lesson",
+   "text": "Il n'est jamais trop tard pour demander à Allah. Ce qui est impossible pour toi est facile pour Lui.",
+   "hold": 1.8
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.25,
+   "promise": 0.2,
+   "temple": 0.15,
+   "fruits": 0.12,
+   "hope": 0.15,
+   "dua": 0.12,
+   "heir": 0.15,
+   "angels": 0.2,
+   "name": 0.15,
+   "how": 0.15,
+   "sign": 0.18,
+   "gestures": 0.25,
+   "birth": 0.12,
+   "lesson": 0.2,
+   "cta": 0.22,
+   "outro": 0.25,
+   "praise": 0.15
+  }
+ },
+ "pron": {
+  "Zakariya": "Za-ka-ri-ya",
+  "Yahya": "Yah-ya",
+  "Maryam": "Mar-yam"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.8,
+  "promise": 0.6,
+  "temple": 0.55,
+  "fruits": 0.65,
+  "hope": 0.6,
+  "dua": 0.9,
+  "heir": 0.8,
+  "angels": 1.0,
+  "name": 0.85,
+  "how": 0.75,
+  "sign": 0.7,
+  "gestures": 0.7,
+  "birth": 1.0,
+  "lesson": 0.85,
+  "cta": 0.65,
+  "outro": 0.8,
+  "praise": 0.85
+ }
+}
