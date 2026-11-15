@@ -1,0 +1,183 @@
+{
+ "title": "Ismaïl",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "rêve",
+  "sacrifier",
+  "fils",
+  "ordonné",
+  "dernier",
+  "instant",
+  "Ismaïl",
+  "Hajar",
+  "bébé",
+  "aride",
+  "Mecque",
+  "Allah",
+  "abandonnera",
+  "Seigneur",
+  "Maison",
+  "soif",
+  "Safa",
+  "Marwa",
+  "Sept",
+  "jaillit",
+  "Zamzam",
+  "aujourd'hui",
+  "songe",
+  "révélation",
+  "immoler",
+  "père",
+  "endurants",
+  "soumirent",
+  "front",
+  "Ibrahim",
+  "vision",
+  "bienfaisants",
+  "bélier",
+  "Aïd",
+  "Kaaba",
+  "accepte",
+  "confiance",
+  "seul",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Un père a vu en rêve qu'il devait sacrifier son fils. Et son fils lui a répondu : « Fais ce qui t'est ordonné. »",
+   "hold": 1.2
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire d'Ismaïl, paix sur lui. Et ce qui s'est passé au dernier instant a tout changé."
+  },
+  {
+   "id": "valley",
+   "text": "Bien avant, Ibrahim conduisit sa femme Hajar et leur bébé Ismaïl dans une vallée aride, sans eau ni culture : là où se trouve aujourd'hui La Mecque."
+  },
+  {
+   "id": "leave",
+   "text": "Sur l'ordre d'Allah, il les y laissa. Hajar demanda : « Est-ce Allah qui t'a ordonné cela ? » « Oui. » « Alors Il ne nous abandonnera pas. »",
+   "hold": 1.2
+  },
+  {
+   "id": "prayer",
+   "text": "En s'éloignant, Ibrahim pria : « Seigneur, j'ai établi une partie de ma descendance dans une vallée sans culture, près de Ta Maison sacrée. »"
+  },
+  {
+   "id": "run",
+   "text": "Bientôt, l'eau vint à manquer. L'enfant pleurait de soif. Hajar courut entre deux collines, Safa et Marwa, cherchant quelqu'un. Sept fois."
+  },
+  {
+   "id": "zamzam",
+   "text": "Alors, près de l'enfant, l'eau jaillit du sol : un ange avait frappé la terre, rapporte le hadith. C'était Zamzam, qui coule encore aujourd'hui.",
+   "hold": 1.8
+  },
+  {
+   "id": "dream",
+   "text": "Ismaïl grandit. Et quand il fut en âge d'accompagner son père, Ibrahim vit ce songe. Or le songe d'un prophète est une révélation."
+  },
+  {
+   "id": "ask",
+   "text": "Il lui dit : « Ô mon fils, je me vois en songe en train de t'immoler. Qu'en penses-tu ? »"
+  },
+  {
+   "id": "answer",
+   "text": "« Ô mon père, fais ce qui t'est ordonné. Tu me trouveras, s'il plaît à Allah, parmi les endurants. »",
+   "hold": 1.8
+  },
+  {
+   "id": "submit",
+   "text": "Tous deux se soumirent à Allah. Et Ibrahim coucha son fils, le front contre terre…",
+   "hold": 1.2
+  },
+  {
+   "id": "call",
+   "text": "C'est alors qu'Allah l'appela : « Ô Ibrahim ! Tu as confirmé la vision. C'est ainsi que Nous récompensons les bienfaisants. »",
+   "hold": 2.2
+  },
+  {
+   "id": "ram",
+   "text": "Allah racheta Ismaïl par un sacrifice immense : un bélier. C'est ce que les musulmans commémorent à chaque Aïd al-Adha.",
+   "hold": 1.0
+  },
+  {
+   "id": "kaaba",
+   "text": "Des années plus tard, le père et le fils élevèrent ensemble les fondations de la Kaaba : « Seigneur, accepte cela de notre part. »"
+  },
+  {
+   "id": "lesson",
+   "text": "Hajar l'avait dit : Allah ne nous abandonnera pas. Quand tu Lui fais confiance, Il ne te laisse jamais seul.",
+   "hold": 1.8
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.25,
+   "promise": 0.2,
+   "valley": 0.28,
+   "leave": 0.2,
+   "prayer": 0.3,
+   "run": 0.3,
+   "zamzam": 0.15,
+   "dream": 0.12,
+   "ask": 0.2,
+   "answer": 0.2,
+   "submit": 0.4,
+   "call": 0.3,
+   "ram": 0.2,
+   "kaaba": 0.2,
+   "lesson": 0.2,
+   "cta": 0.2,
+   "outro": 0.2
+  }
+ },
+ "pron": {
+  "Ismaïl": "Is-ma-ïl",
+  "Hajar": "Ha-jar",
+  "Safa": "Sa-fa",
+  "Marwa": "Mar-oua",
+  "Zamzam": "Zam-zam",
+  "Kaaba": "Ka-a-ba",
+  "Aïd al-Adha": "a-ïd al-ad-ha"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.8,
+  "promise": 0.6,
+  "valley": 0.7,
+  "leave": 0.7,
+  "prayer": 0.7,
+  "run": 0.75,
+  "zamzam": 1.0,
+  "dream": 0.7,
+  "ask": 0.7,
+  "answer": 0.9,
+  "submit": 0.85,
+  "call": 1.0,
+  "ram": 0.9,
+  "kaaba": 0.7,
+  "lesson": 0.85,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
