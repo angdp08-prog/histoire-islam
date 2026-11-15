@@ -1,0 +1,188 @@
+{
+ "title": "Issa",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "nouveau-né",
+  "berceau",
+  "mère",
+  "peuple",
+  "Issa",
+  "Jésus",
+  "mots",
+  "voix",
+  "Maryam",
+  "prière",
+  "Jibril",
+  "refuge",
+  "pur",
+  "fils",
+  "facile",
+  "palmier",
+  "morte",
+  "ruisseau",
+  "dattes",
+  "silence",
+  "inouïe",
+  "mot",
+  "bébé",
+  "parla",
+  "serviteur",
+  "Livre",
+  "prophète",
+  "paix",
+  "né",
+  "mourrai",
+  "ressuscité",
+  "aveugle",
+  "lépreux",
+  "vie",
+  "permission",
+  "tué",
+  "crucifié",
+  "élevé",
+  "défendre",
+  "calme",
+  "toi",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Un nouveau-né a parlé dans son berceau, pour défendre sa mère devant tout son peuple.",
+   "hold": 1.2
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire de Issa, Jésus, paix sur lui. Et ses premiers mots ont laissé tout le monde sans voix."
+  },
+  {
+   "id": "maryam",
+   "text": "Sa mère, Maryam, était une jeune femme pure et pieuse, qui consacrait sa vie à la prière.",
+   "hold": 0.9
+  },
+  {
+   "id": "angel",
+   "text": "Un jour, à l'écart des siens, l'ange Jibril lui apparut sous la forme d'un homme. Elle dit : « Je cherche refuge auprès du Tout Miséricordieux ! »"
+  },
+  {
+   "id": "news",
+   "text": "« Je ne suis que le messager de ton Seigneur, venu te donner un fils pur. »"
+  },
+  {
+   "id": "how",
+   "text": "« Comment aurais-je un fils, alors qu'aucun homme ne m'a touchée ? » « C'est facile pour Moi », dit ton Seigneur.",
+   "hold": 1.2
+  },
+  {
+   "id": "palm",
+   "text": "Elle se retira dans un lieu éloigné. Les douleurs la menèrent au tronc d'un palmier : « Si seulement j'étais morte avant cela ! »"
+  },
+  {
+   "id": "dates",
+   "text": "Une voix l'appela d'en bas : « Ne t'attriste pas. Ton Seigneur a fait couler un ruisseau à tes pieds. Secoue le palmier : des dattes fraîches tomberont. »",
+   "hold": 1.5
+  },
+  {
+   "id": "vow",
+   "text": "« Et si tu vois quelqu'un, dis : j'ai fait vœu de silence, je ne parlerai à personne aujourd'hui. »"
+  },
+  {
+   "id": "return",
+   "text": "Elle revint vers les siens, portant l'enfant. « Ô Maryam, tu as fait une chose inouïe ! Ton père n'était pas un homme mauvais. »"
+  },
+  {
+   "id": "point",
+   "text": "Maryam ne dit pas un mot. Elle montra simplement le bébé. « Comment parler à un nouveau-né au berceau ? »"
+  },
+  {
+   "id": "speak",
+   "text": "Alors le bébé parla : « Je suis le serviteur d'Allah. Il m'a donné le Livre et m'a fait prophète. »",
+   "hold": 2.2
+  },
+  {
+   "id": "peace",
+   "text": "« Que la paix soit sur moi le jour où je suis né, le jour où je mourrai, et le jour où je serai ressuscité vivant. »",
+   "hold": 1.5
+  },
+  {
+   "id": "miracles",
+   "text": "Devenu homme, il guérit l'aveugle et le lépreux, et rendit la vie à des morts. Mais toujours, il précisait : « par la permission d'Allah. »"
+  },
+  {
+   "id": "raised",
+   "text": "Et quand ses ennemis voulurent le tuer, ils ne l'ont ni tué, ni crucifié : Allah l'a élevé vers Lui.",
+   "hold": 1.6
+  },
+  {
+   "id": "lesson",
+   "text": "Maryam n'a pas eu à se défendre. Quand tu es dans le vrai, garde ton calme : Allah peut parler pour toi.",
+   "hold": 1.8
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.22,
+   "promise": 0.2,
+   "maryam": 0.08,
+   "angel": 0.12,
+   "news": 0.1,
+   "how": 0.1,
+   "palm": 0.35,
+   "dates": 0.25,
+   "vow": 0.2,
+   "return": 0.25,
+   "point": 0.2,
+   "speak": 0.15,
+   "peace": 0.25,
+   "miracles": 0.22,
+   "raised": 0.3,
+   "lesson": 0.2,
+   "cta": 0.2,
+   "outro": 0.2
+  }
+ },
+ "pron": {
+  "Issa": "I-ssa (le « i » long, « ss » dur)",
+  "Maryam": "Mar-yam",
+  "Jibril": "Ji-bril"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.8,
+  "promise": 0.6,
+  "maryam": 0.65,
+  "angel": 0.7,
+  "news": 0.75,
+  "how": 0.8,
+  "palm": 0.75,
+  "dates": 0.9,
+  "vow": 0.7,
+  "return": 0.75,
+  "point": 0.85,
+  "speak": 1.0,
+  "peace": 0.95,
+  "miracles": 0.8,
+  "raised": 1.0,
+  "lesson": 0.85,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}

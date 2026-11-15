@@ -103,3 +103,10 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `oilLamp()` (lampe à huile qui s'éteint avec fumée), `bowl()`, `wheatD()` / `field()` (blé qui sèche en continu), `valley()` (vallée verte → sèche, `dry` 0→1), `herd()`, `camels()`,
   `shelter()` (abri de toile), `oven()` (four à pain), `stomp()` (gros plan : pied en sandale + ourlet blanc qui frappe le sol), `moonArc()` (les années qui passent), `ridgeW()` / `hazeW()` (couches lointaines très larges pour les grands panoramiques).
 - Piège corrigé : les fondus enchaînés dessinent une scène à t légèrement négatif → `(t * k) % 1` devient négatif (rayon d'ellipse négatif = crash du rendu). Les fonctions à phase (`spring`, `lightRings`, `sparkle`, `oilLamp`) décalent `t += 100`.
+
+## Épisode 13 (`episodes/13-issa/`) — nouveaux éléments réutilisables
+- `issaHero()` (place du village au crépuscule : foule disposée en arc `CROWD`, berceau, Maryam ; `speak`, `recoil`, `accuse`, `point`, `hush`), `village()` (collines, maisons en terrasse, oliviers, dallage),
+  `babyLight()` (lumière du bébé qui parle : halo, rayons, anneaux), `brook()` (ruisseau qui arrive par la gauche, `k` 0→1), `fallingDates()` (dattes qui tombent avec gravité et rebond),
+  `hangingCurtain()` (le voile tendu entre deux poteaux, Maryam 17), `bier()` (brancard et linceul, lumière), `flowLine()` / `healGlow()` (guérisons), `eastPlace()`, `heavens()`, `oliveGrove()`, `palmGround()`.
+- `datePalm()` porte désormais de vrais régimes de petites dattes (plus de « boules orange »). `village()` passe `t + 100` aux maisons : `smoke()` plantait à t négatif (fondus, outro).
+- L'ange Jibril n'est jamais dessiné : une colonne de lumière et la mention « l'ange n'est jamais représenté ».
