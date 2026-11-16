@@ -1,0 +1,195 @@
+{
+ "title": "Shu'ayb",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "peuple",
+  "nuage",
+  "châtiment",
+  "Shu'ayb",
+  "balance",
+  "défi",
+  "Madyan",
+  "caravanes",
+  "trichait",
+  "mesure",
+  "Allah",
+  "poids",
+  "corruption",
+  "chemin",
+  "menaçaient",
+  "moquèrent",
+  "prière",
+  "pères",
+  "douceur",
+  "réformer",
+  "réussite",
+  "lapidé",
+  "chasserons",
+  "clan",
+  "puissant",
+  "j'attends",
+  "ciel",
+  "véridique",
+  "chaleur",
+  "abri",
+  "ombre",
+  "l'Ombre",
+  "Cri",
+  "tremblement",
+  "miséricorde",
+  "sauva",
+  "vide",
+  "messages",
+  "conseillés",
+  "gramme",
+  "honnête",
+  "personne",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Tout un peuple a couru s'abriter à l'ombre d'un nuage. Ce nuage, c'était leur châtiment.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire de Shu'ayb, paix sur lui. Et tout a commencé par une simple balance… et un défi lancé au ciel."
+  },
+  {
+   "id": "madyan",
+   "text": "Shu'ayb vivait à Madyan, une cité de marchands, sur la route des caravanes, entourée d'arbres touffus."
+  },
+  {
+   "id": "fraud",
+   "text": "Mais sur le marché, on trichait. On réduisait la mesure, on faussait la balance, et on dépouillait les gens de leurs biens.",
+   "hold": 1.0
+  },
+  {
+   "id": "call",
+   "text": "Allah leur envoya l'un des leurs, Shu'ayb : « Ô mon peuple, adorez Allah. Donnez la pleine mesure et le juste poids. Ne semez pas la corruption sur la terre. »"
+  },
+  {
+   "id": "roads",
+   "text": "Mais ils s'asseyaient sur chaque chemin, menaçaient ceux qui venaient l'écouter, et les détournaient de la voie d'Allah."
+  },
+  {
+   "id": "mock",
+   "text": "Ils se moquèrent : « Est-ce ta prière qui t'ordonne de laisser ce qu'adoraient nos pères, et de ne plus faire de nos biens ce que nous voulons ? »"
+  },
+  {
+   "id": "reply",
+   "text": "Il répondit avec douceur : « Je ne veux que réformer, autant que je le peux. Ma réussite ne dépend que d'Allah. »",
+   "hold": 1.5
+  },
+  {
+   "id": "threat",
+   "text": "Les chefs menacèrent : « Sans ton clan, nous t'aurions lapidé ! Nous te chasserons de la cité, toi et ceux qui ont cru. »"
+  },
+  {
+   "id": "clan",
+   "text": "« Mon clan est-il plus puissant à vos yeux qu'Allah ? Attendez. Moi aussi, j'attends. »",
+   "hold": 1.0
+  },
+  {
+   "id": "defy",
+   "text": "Alors ils lancèrent leur défi : « Fais donc tomber sur nous un morceau du ciel, si tu es véridique ! »",
+   "hold": 1.0
+  },
+  {
+   "id": "heat",
+   "text": "Selon les exégètes, une chaleur terrible s'abattit sur eux pendant des jours. Aucun abri ne les protégeait."
+  },
+  {
+   "id": "cloud",
+   "text": "Puis un nuage parut. Ils coururent tous à son ombre… C'était le châtiment du jour de l'Ombre. Le Cri et le tremblement les saisirent.",
+   "hold": 2.0
+  },
+  {
+   "id": "saved",
+   "text": "Par Sa miséricorde, Allah sauva Shu'ayb et ceux qui avaient cru avec lui. Et la cité resta vide, comme si personne n'y avait jamais vécu.",
+   "hold": 1.8
+  },
+  {
+   "id": "farewell",
+   "text": "Shu'ayb se détourna : « Ô mon peuple, je vous ai transmis les messages de mon Seigneur, et je vous ai conseillés. »",
+   "hold": 1.5
+  },
+  {
+   "id": "lesson",
+   "text": "Un gramme volé, ça paraît petit. Mais Allah voit chaque balance. Sois honnête, même quand personne ne regarde.",
+   "hold": 1.8
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.3,
+   "promise": 0.2,
+   "madyan": 0.15,
+   "fraud": 0.12,
+   "call": 0.15,
+   "roads": 0.2,
+   "mock": 0.15,
+   "reply": 0.12,
+   "threat": 0.22,
+   "clan": 0.18,
+   "defy": 0.3,
+   "heat": 0.35,
+   "cloud": 0.4,
+   "saved": 0.2,
+   "farewell": 0.25,
+   "lesson": 0.12,
+   "cta": 0.25,
+   "outro": 0.3
+  },
+  "thunder": {
+   "hook": 0.1,
+   "defy": 0.12,
+   "cloud": 0.4
+  }
+ },
+ "pron": {
+  "Shu'ayb": "Chou-'aïb (« Chou » puis « aïb », petite coupure entre les deux)",
+  "Madyan": "Mad-yane",
+  "Allah": "Al-lah"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "madyan": 0.6,
+  "fraud": 0.65,
+  "call": 0.7,
+  "roads": 0.7,
+  "mock": 0.65,
+  "reply": 0.85,
+  "threat": 0.75,
+  "clan": 0.85,
+  "defy": 0.8,
+  "heat": 0.75,
+  "cloud": 0.95,
+  "saved": 1.0,
+  "farewell": 0.9,
+  "lesson": 0.9,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
