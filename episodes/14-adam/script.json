@@ -1,0 +1,189 @@
+{
+ "title": "Adam",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "anges",
+  "prosternés",
+  "homme",
+  "Sauf",
+  "Adam",
+  "premier",
+  "refus",
+  "ennemi",
+  "successeur",
+  "sang",
+  "sais",
+  "argile",
+  "esprit",
+  "vie",
+  "noms",
+  "Gloire",
+  "nomma",
+  "honneur",
+  "Iblis",
+  "orgueil",
+  "meilleur",
+  "feu",
+  "chassé",
+  "délai",
+  "égarer",
+  "Paradis",
+  "arbre",
+  "murmura",
+  "éternité",
+  "royaume",
+  "jura",
+  "oublia",
+  "faute",
+  "excuse",
+  "tort",
+  "pardonnes",
+  "perdants",
+  "paroles",
+  "repentir",
+  "Miséricordieux",
+  "terre",
+  "promesse",
+  "guidance",
+  "craindre",
+  "entêté",
+  "repenti",
+  "différence",
+  "retour",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Tous les anges se sont prosternés devant un homme. Sauf un.",
+   "hold": 1.2
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire d'Adam, paix sur lui, le tout premier homme. Et ce refus a fait naître un ennemi qui est toujours là aujourd'hui."
+  },
+  {
+   "id": "khalifa",
+   "text": "Allah annonça aux anges : « Je vais établir sur la terre un successeur. » « Vas-Tu y mettre quelqu'un qui versera le sang ? » « Je sais ce que vous ne savez pas. »"
+  },
+  {
+   "id": "clay",
+   "text": "Il le créa d'argile, lui donna sa forme, puis insuffla en lui de Son esprit. Et Adam prit vie.",
+   "hold": 1.5
+  },
+  {
+   "id": "names",
+   "text": "Allah lui apprit les noms de toutes choses. Les anges dirent : « Gloire à Toi ! Nous ne savons que ce que Tu nous as appris. » Et Adam les nomma, un à un."
+  },
+  {
+   "id": "order",
+   "text": "Alors Allah ordonna aux anges de se prosterner devant Adam, en signe d'honneur. Tous se prosternèrent…",
+   "hold": 1.0
+  },
+  {
+   "id": "refuse",
+   "text": "Sauf Iblis. Plein d'orgueil, il refusa : « Je suis meilleur que lui. Tu m'as créé de feu, et lui d'argile. »",
+   "hold": 1.5
+  },
+  {
+   "id": "vow",
+   "text": "Il fut chassé. Il demanda un délai, et jura d'égarer les enfants d'Adam jusqu'au dernier Jour."
+  },
+  {
+   "id": "garden",
+   "text": "Adam et son épouse habitèrent le Paradis. Tout leur était permis, sauf un arbre : « N'approchez pas de cet arbre. »"
+  },
+  {
+   "id": "whisper",
+   "text": "Mais Satan leur murmura : « Voulez-vous l'arbre de l'éternité, et un royaume qui ne périt jamais ? » Et il leur jura qu'il était de bon conseil."
+  },
+  {
+   "id": "eat",
+   "text": "Adam oublia, et ils en mangèrent. Aussitôt, ils comprirent leur faute.",
+   "hold": 1.2
+  },
+  {
+   "id": "repent",
+   "text": "Ils ne cherchèrent aucune excuse : « Seigneur, nous nous sommes fait du tort. Si Tu ne nous pardonnes pas, nous serons perdants. »",
+   "hold": 2.0
+  },
+  {
+   "id": "forgiven",
+   "text": "Adam reçut de son Seigneur des paroles, et Allah accepta son repentir. Il est l'Accueillant au repentir, le Très Miséricordieux.",
+   "hold": 1.6
+  },
+  {
+   "id": "earth",
+   "text": "Puis ils descendirent sur la terre, avec une promesse : ceux qui suivront Sa guidance n'auront rien à craindre."
+  },
+  {
+   "id": "lesson",
+   "text": "Iblis a désobéi, et s'est entêté. Adam a désobéi, et s'est repenti. La différence, ce n'est pas la faute : c'est le retour vers Allah.",
+   "hold": 1.8
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.22,
+   "promise": 0.2,
+   "khalifa": 0.12,
+   "clay": 0.25,
+   "names": 0.1,
+   "order": 0.12,
+   "refuse": 0.3,
+   "vow": 0.38,
+   "garden": 0.12,
+   "whisper": 0.22,
+   "eat": 0.25,
+   "repent": 0.3,
+   "forgiven": 0.15,
+   "earth": 0.3,
+   "lesson": 0.2,
+   "cta": 0.2,
+   "outro": 0.2
+  }
+ },
+ "pron": {
+  "Adam": "A-dam (le « a » final ouvert, « dame »)",
+  "Iblis": "Ib-liss",
+  "Allah": "Al-lah"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "khalifa": 0.7,
+  "clay": 0.8,
+  "names": 0.7,
+  "order": 0.85,
+  "refuse": 0.9,
+  "vow": 0.75,
+  "garden": 0.65,
+  "whisper": 0.7,
+  "eat": 0.75,
+  "repent": 0.95,
+  "forgiven": 1.0,
+  "earth": 0.8,
+  "lesson": 0.85,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
