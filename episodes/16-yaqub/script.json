@@ -1,0 +1,189 @@
+{
+ "title": "Ya'qub",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "pleuré",
+  "blancs",
+  "chemise",
+  "vue",
+  "Ya'qub",
+  "senti",
+  "changé",
+  "Canaan",
+  "Yusuf",
+  "rêve",
+  "étoiles",
+  "soleil",
+  "lune",
+  "jaloux",
+  "loup",
+  "faux",
+  "patience",
+  "secours",
+  "famine",
+  "Égypte",
+  "chagrin",
+  "blanchirent",
+  "tristesse",
+  "consumer",
+  "plains",
+  "désespérez",
+  "miséricorde",
+  "odeur",
+  "recouvra",
+  "pardon",
+  "réalisa",
+  "perdu",
+  "jamais",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Un père a pleuré son fils si longtemps que ses yeux sont devenus blancs. Puis une simple chemise lui a rendu la vue.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire de Ya'qub, paix sur lui. Et ce qu'il a senti, de très loin, a tout changé…"
+  },
+  {
+   "id": "canaan",
+   "text": "Ya'qub, fils d'Ishaq et petit-fils d'Ibrahim, vivait au pays de Canaan avec ses fils. Son cœur était très attaché au jeune Yusuf et à son petit frère."
+  },
+  {
+   "id": "dream",
+   "text": "Un matin, Yusuf lui raconta un rêve : onze étoiles, le soleil et la lune se prosternaient devant lui. Ya'qub lui dit : « Ne le raconte pas à tes frères. »",
+   "hold": 1.0
+  },
+  {
+   "id": "wolf",
+   "text": "Mais les frères, jaloux, voulurent emmener Yusuf. Ya'qub hésita : « J'ai peur que le loup ne le dévore. »"
+  },
+  {
+   "id": "shirt",
+   "text": "Le soir, ils revinrent en pleurant, avec sa chemise tachée d'un faux sang : « Le loup l'a mangé ! »",
+   "hold": 1.0
+  },
+  {
+   "id": "patience",
+   "text": "Ya'qub ne les crut pas. Il dit seulement : « Une belle patience. C'est Allah qu'on appelle au secours. »",
+   "hold": 1.5
+  },
+  {
+   "id": "years",
+   "text": "Les années passèrent. Puis vint la famine, et il perdit aussi son plus jeune fils, retenu en Égypte."
+  },
+  {
+   "id": "tears",
+   "text": "Ya'qub se détourna : « Ô mon chagrin pour Yusuf ! » Il pleura tant que ses yeux blanchirent de tristesse.",
+   "hold": 2.0
+  },
+  {
+   "id": "complaint",
+   "text": "Ses fils lui dirent : « Tu vas te consumer ! » Il répondit : « Je ne me plains qu'à Allah de mon chagrin. »",
+   "hold": 1.5
+  },
+  {
+   "id": "hope",
+   "text": "« Allez, cherchez Yusuf et son frère. Ne désespérez pas de la miséricorde d'Allah. »",
+   "hold": 1.5
+  },
+  {
+   "id": "scent",
+   "text": "En Égypte, Yusuf se fit reconnaître et confia sa chemise à ses frères. La caravane partit… et Ya'qub dit : « Je sens l'odeur de Yusuf ! »",
+   "hold": 1.0
+  },
+  {
+   "id": "sight",
+   "text": "Le porteur de la bonne nouvelle posa la chemise sur son visage. Et Ya'qub recouvra la vue.",
+   "hold": 2.0
+  },
+  {
+   "id": "pardon",
+   "text": "Ses fils baissèrent la tête : « Ô notre père, implore pardon pour nos fautes. » Il répondit : « Je demanderai pardon pour vous à mon Seigneur. »",
+   "hold": 1.0
+  },
+  {
+   "id": "reunion",
+   "text": "Toute la famille partit en Égypte. Yusuf accueillit son père, et le rêve d'autrefois se réalisa.",
+   "hold": 1.5
+  },
+  {
+   "id": "lesson",
+   "text": "Même quand tout semble perdu, ne désespère jamais de la miséricorde d'Allah.",
+   "hold": 1.8
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.25,
+   "promise": 0.2,
+   "canaan": 0.15,
+   "dream": 0.12,
+   "wolf": 0.2,
+   "shirt": 0.25,
+   "patience": 0.15,
+   "years": 0.3,
+   "tears": 0.3,
+   "complaint": 0.18,
+   "hope": 0.2,
+   "scent": 0.35,
+   "sight": 0.25,
+   "pardon": 0.15,
+   "reunion": 0.15,
+   "lesson": 0.12,
+   "cta": 0.2,
+   "outro": 0.25
+  },
+  "thunder": {
+   "tears": 0.08
+  }
+ },
+ "pron": {
+  "Ya'qub": "Ya-'coub (« Ya », petite coupure, « coub »)",
+  "Yusuf": "You-souf",
+  "Ishaq": "Is-hak",
+  "Canaan": "Ka-na-an",
+  "Allah": "Al-lah"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "canaan": 0.6,
+  "dream": 0.7,
+  "wolf": 0.65,
+  "shirt": 0.75,
+  "patience": 0.85,
+  "years": 0.7,
+  "tears": 0.95,
+  "complaint": 0.9,
+  "hope": 0.85,
+  "scent": 0.85,
+  "sight": 1.0,
+  "pardon": 0.85,
+  "reunion": 0.95,
+  "lesson": 0.9,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}

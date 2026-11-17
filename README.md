@@ -110,3 +110,10 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `hangingCurtain()` (le voile tendu entre deux poteaux, Maryam 17), `bier()` (brancard et linceul, lumière), `flowLine()` / `healGlow()` (guérisons), `eastPlace()`, `heavens()`, `oliveGrove()`, `palmGround()`.
 - `datePalm()` porte désormais de vrais régimes de petites dattes (plus de « boules orange »). `village()` passe `t + 100` aux maisons : `smoke()` plantait à t négatif (fondus, outro).
 - L'ange Jibril n'est jamais dessiné : une colonne de lumière et la mention « l'ange n'est jamais représenté ».
+
+## Épisode 16 (`episodes/16-yaqub/`) — nouveaux éléments réutilisables
+- `qamis()` (la chemise de Yusuf : tunique à manches, plis, encolure brodée ; `stain` = faux sang sobre, `glow` = chemise de la bonne nouvelle, `flut` = flotte au vent),
+  `blindFx(c, k)` (la cécité montrée par l'image elle-même : flou, désaturation, voile blanc — jamais sur un visage), `whiteOut()`, `scentRibbon()` (l'odeur portée par le vent :
+  rubans de lumière chaude le long d'un chemin), `wolfSil()` (loup en silhouette lointaine), `dreamBodies()` (onze étoiles, soleil et lune qui s'inclinent),
+  `canaanLand()` (collines de Canaan : chaînes lointaines, terrasses d'oliviers, pâturage ; `night`, `dry`), `camp()` (maison, tente, enclos, moutons), `egyptHall()`, `egyptRoad()`, `desertWide()`.
+- Boucle : l'outro blanchit l'image puis repart sur la première image (pâle) de l'accroche.
