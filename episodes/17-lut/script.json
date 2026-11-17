@@ -1,0 +1,179 @@
+{
+ "title": "Lut",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "retournée",
+  "seule",
+  "maison",
+  "Lut",
+  "hommes",
+  "Ibrahim",
+  "Morte",
+  "turpitude",
+  "routes",
+  "craindrez-vous",
+  "confiance",
+  "chassez-les",
+  "purs",
+  "sauve-moi",
+  "beauté",
+  "terrible",
+  "accourut",
+  "porte",
+  "sensé",
+  "force",
+  "messagers",
+  "atteindront",
+  "aveugla",
+  "retourne",
+  "aube",
+  "Cri",
+  "renversée",
+  "pierres",
+  "sauva",
+  "signe",
+  "droit",
+  "courage",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Une ville entière a été retournée sens dessus dessous. Et une seule maison en est sortie saine et sauve.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire de Lut, paix sur lui. Et les invités qui ont frappé à sa porte, une nuit, n'étaient pas des hommes…"
+  },
+  {
+   "id": "valley",
+   "text": "Lut, neveu d'Ibrahim, avait cru en lui. Allah l'envoya vers les cités de la vallée, près de la mer Morte selon les exégètes."
+  },
+  {
+   "id": "sin",
+   "text": "Ce peuple commettait une turpitude qu'aucun peuple n'avait commise avant lui. Ils coupaient les routes et faisaient le mal en pleine assemblée."
+  },
+  {
+   "id": "call",
+   "text": "Lut leur dit : « Ne craindrez-vous pas Allah ? Je suis pour vous un messager digne de confiance. »",
+   "hold": 1.0
+  },
+  {
+   "id": "mock",
+   "text": "Ils se moquèrent : « Chassez-les de votre cité ! Ce sont des gens qui veulent rester purs ! »"
+  },
+  {
+   "id": "dua",
+   "text": "Seul face à eux, Lut leva les mains : « Seigneur, sauve-moi, ainsi que ma famille, de ce qu'ils font. »",
+   "hold": 1.5
+  },
+  {
+   "id": "guests",
+   "text": "Un soir, des jeunes hommes d'une grande beauté arrivèrent chez lui. Lut fut accablé d'angoisse : « C'est un jour terrible ! »",
+   "hold": 1.0
+  },
+  {
+   "id": "crowd",
+   "text": "Car son peuple accourut vers sa maison. Lut se dressa devant la porte : « Craignez Allah, ne me déshonorez pas devant mes hôtes ! »"
+  },
+  {
+   "id": "alone",
+   "text": "« N'y a-t-il pas parmi vous un homme sensé ? Si seulement j'avais la force de vous résister ! »",
+   "hold": 1.5
+  },
+  {
+   "id": "reveal",
+   "text": "Alors les invités parlèrent : « Ô Lut, nous sommes les messagers de ton Seigneur. Ils ne t'atteindront pas. » Et Allah aveugla ceux qui forçaient la porte.",
+   "hold": 1.5
+  },
+  {
+   "id": "night",
+   "text": "« Pars avec ta famille dans la nuit, et que personne ne se retourne, sauf ta femme. Leur rendez-vous, c'est l'aube. »",
+   "hold": 1.0
+  },
+  {
+   "id": "dawn",
+   "text": "À l'aube, le Cri les saisit. La cité fut renversée de fond en comble, et une pluie de pierres d'argile s'abattit sur elle.",
+   "hold": 2.0
+  },
+  {
+   "id": "saved",
+   "text": "Allah sauva Lut et les croyants de sa maison : la seule maison de croyants de toute la cité. Et ces lieux sont restés un signe pour ceux qui réfléchissent.",
+   "hold": 1.5
+  },
+  {
+   "id": "lesson",
+   "text": "Rester droit quand tout le monde se trompe : c'est ça, le vrai courage.",
+   "hold": 1.8
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.3,
+   "promise": 0.2,
+   "valley": 0.15,
+   "sin": 0.2,
+   "call": 0.15,
+   "mock": 0.2,
+   "dua": 0.2,
+   "guests": 0.18,
+   "crowd": 0.25,
+   "alone": 0.22,
+   "reveal": 0.25,
+   "night": 0.3,
+   "dawn": 0.4,
+   "saved": 0.2,
+   "lesson": 0.12,
+   "cta": 0.2,
+   "outro": 0.25
+  },
+  "thunder": {
+   "dawn": 0.12,
+   "alone": 0.05
+  }
+ },
+ "pron": {
+  "Lut": "Lout (« ou » long)",
+  "Ibrahim": "Ib-ra-him",
+  "Allah": "Al-lah"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "valley": 0.6,
+  "sin": 0.65,
+  "call": 0.7,
+  "mock": 0.65,
+  "dua": 0.85,
+  "guests": 0.75,
+  "crowd": 0.8,
+  "alone": 0.85,
+  "reveal": 0.95,
+  "night": 0.8,
+  "dawn": 1.0,
+  "saved": 0.95,
+  "lesson": 0.9,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}

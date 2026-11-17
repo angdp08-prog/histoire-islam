@@ -117,3 +117,10 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   rubans de lumière chaude le long d'un chemin), `wolfSil()` (loup en silhouette lointaine), `dreamBodies()` (onze étoiles, soleil et lune qui s'inclinent),
   `canaanLand()` (collines de Canaan : chaînes lointaines, terrasses d'oliviers, pâturage ; `night`, `dry`), `camp()` (maison, tente, enclos, moutons), `egyptHall()`, `egyptRoad()`, `desertWide()`.
 - Boucle : l'outro blanchit l'image puis repart sur la première image (pâle) de l'accroche.
+
+## Épisode 17 (`episodes/17-lut/`) — nouveaux éléments réutilisables
+- `valleyLand()` (vallée de la mer Morte : plateau de Moab, mer turquoise laiteuse, croûtes de sel, champs et palmeraies ; `night`, `ash` = lieux désolés aujourd'hui, `mid` pour poser une cité),
+  `sodomCity()` (cité sur un tell : maisons étagées, tour, rempart crénelé à tours et porte ; `lamp`, `only` = une seule maison éclairée, `gateLit`), `earthSlab()` + `overturn()` (la cité arrachée avec
+  sa motte de terre, soulevée, retournée puis engloutie : « Nous la renversâmes de fond en comble »), `stoneRain()` (pierres d'argile incandescentes), `bigDust()`, `cracks()`, `emberGlow()`.
+- `streetSet()` / `lutHouse()` (rue de nuit en perspective, porte qui s'ouvre sur la lumière `open`, lumière qui filtre `leak`), `drawMob()` (foule aux torches qui descend la rue, pas pilotés
+  par la distance, `recoil` = aveuglée qui recule en se protégeant), `heldTorch()`, `guests()` (les anges jamais dessinés : trois colonnes de lumière), `roofTop()`, `squareSet()`.
