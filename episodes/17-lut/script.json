@@ -93,16 +93,6 @@
   {
    "id": "night",
    "text": "« Pars avec ta famille dans la nuit, et que personne ne se retourne, sauf ta femme. Leur rendez-vous, c'est l'aube. »",
-   "hold": 1.0
-  },
-  {
-   "id": "dawn",
-   "text": "À l'aube, le Cri les saisit. La cité fut renversée de fond en comble, et une pluie de pierres d'argile s'abattit sur elle.",
-   "hold": 2.0
-  },
-  {
-   "id": "saved",
-   "text": "Allah sauva Lut et les croyants de sa maison : la seule maison de croyants de toute la cité. Et ces lieux sont restés un signe pour ceux qui réfléchissent.",
    "hold": 1.5
   },
   {

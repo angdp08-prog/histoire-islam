@@ -2624,16 +2624,18 @@ const SCENES = {
           cam(cc, lerp(1.0, 1.12, ease(seg(q, 0, 2.6))), 540, 1100);
           cc.save(); cc.globalCompositeOperation = 'lighter'; glow(cc, 540, 1000, 700, '#ff9a60', 0.25); cc.restore();
           canaanLand(cc, t, { fy: 1500, sky: 'dusk', to: 'night', k: 0.4, sun: false, seed: 17, night: 0.3 });
-          const lift = ease(seg(q, 0, 0.8)), y = lerp(1400, 1060, lift) + Math.sin(t * 2) * 6;
-          arm(cc, 1350, 1700, 780, y - 80, 1.6, BROS[0].robe, BROS[0].skin, -2.4, true);
-          qamis(cc, 600, y + 90, 1.55, { t, flut: 0.6, stain: ramp(t, tFa - 0.4, 0.6), ang: -0.06 }); }],
+          // held up by two hands at the sleeve ends (same framing as the 'tears' close-up): nothing floats
+          const lift = ease(seg(q, 0, 0.8)), dy = lerp(260, 0, lift) + Math.sin(t * 2) * 4;
+          qamis(cc, 540, 1240 + dy, 1.9, { t, flut: 0.25, stain: ramp(t, tFa - 0.4, 0.6), ang: 0.02 });
+          arm(cc, -260, 1900 + dy, 270, 1230 + dy, 1.5, BROS[0].robe, BROS[0].skin, 0.9, false);
+          arm(cc, 1340, 1900 + dy, 810, 1230 + dy, 1.5, mix(BROS[0].robe, '#000000', 0.08), BROS[0].skin, -0.9, false); }],
         [tLo - 0.3, (cc, q) => { const k = ease(seg(q, 0, d - tLo)); cam(cc, lerp(1.05, 1.15, k), 560, 1320); // before their father at the door, the shirt held out
           canaanLand(cc, t, { fy: 1300, sky: 'night', to: 'dusk', k: 0.4, sun: false, moon: 0.8, moonX: 900, moonY: 600, stars: 0.5, seed: 17, night: 0.5 });
           camp(cc, t, 260, 1306, 0.85, { lamp: 1, sheep: false, night: 0.4, doorOpen: true });
           cc.save(); cc.globalCompositeOperation = 'lighter'; glow(cc, 280, 1480, 460, '#ffb060', 0.3); cc.restore();
           fig(cc, YAQ, { x: 300, y: 1600, h: 470, dir: 1, light: 0.95, t, wind: 0.2, staff: true });
           const o = { x: 640, y: 1630, h: 400, dir: -1, light: 0.8, t, wind: 0.2, reach: 0.9 }; fig(cc, BROS[0], o);
-          const [hx, hy] = handOf(o); qamis(cc, hx - 30, hy + 70, 0.5, { t, stain: 1, flut: 0.3, ang: 0.1 });
+          const [hx, hy] = handOf(o); qamis(cc, hx - 72, hy + 6, 0.5, { t, stain: 1, flut: 0.15, ang: 0.05 }); // hung from the hand by its sleeve end
           [[800, 1560], [930, 1600], [1040, 1570], [860, 1740]].forEach(([x, y], i) => lean(cc, x, y, -0.05, () => fig(cc, BROS[i + 1], { x, y, h: 340 + (y - 1560) * 0.8, dir: -1, light: 0.7, t: t + i, wind: 0.2, armUp: i === 1 ? 0.35 : 0 }))); }],
       ]);
       c.setTransform(1, 0, 0, 1, 0, 0); topShade(c, 1);
