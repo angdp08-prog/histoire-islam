@@ -1,0 +1,179 @@
+{
+ "title": "Harun",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "barbe",
+  "frère",
+  "prophète",
+  "Harun",
+  "calmé",
+  "colère",
+  "assistant",
+  "renforce",
+  "exaucée",
+  "miséricorde",
+  "Pharaon",
+  "mer",
+  "quarante",
+  "montagne",
+  "Remplace-moi",
+  "veau",
+  "mugissait",
+  "adorer",
+  "épreuve",
+  "Miséricordieux",
+  "Suivez-moi",
+  "faible",
+  "tuer",
+  "Tablettes",
+  "tête",
+  "mère",
+  "divisé",
+  "pardonne-moi",
+  "brûlé",
+  "Paix",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Un prophète, saisi par la tête et par la barbe… par son propre frère, prophète lui aussi.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire de Harun, paix sur lui. Et la phrase qu'il a dite à cet instant… a calmé la colère d'un prophète."
+  },
+  {
+   "id": "ask",
+   "text": "Quand Allah envoya Moussa vers Pharaon, Moussa fit une demande : « Donne-moi un assistant de ma famille, Harun, mon frère. Renforce par lui ma force. »",
+   "hold": 1.0
+  },
+  {
+   "id": "granted",
+   "text": "Car Harun parlait mieux que lui. Allah répondit : « Ta demande est exaucée, ô Moussa. » Et par Sa miséricorde, Il fit de Harun un prophète.",
+   "hold": 1.0
+  },
+  {
+   "id": "pharaoh",
+   "text": "Ensemble, les deux frères parlèrent à Pharaon, avec douceur, comme Allah l'avait ordonné. Et après la mer, ils guidèrent les fils d'Israël dans le désert.",
+   "hold": 0.5
+  },
+  {
+   "id": "mountain",
+   "text": "Un jour, Moussa partit pour quarante nuits au rendez-vous de son Seigneur, sur la montagne. Il dit à Harun : « Remplace-moi auprès de mon peuple, agis en bien. »",
+   "hold": 1.0
+  },
+  {
+   "id": "calf",
+   "text": "Mais en son absence, le Samiri prit leurs bijoux, et en sortit un veau : un corps qui mugissait. Et beaucoup se mirent à l'adorer.",
+   "hold": 1.0
+  },
+  {
+   "id": "warn",
+   "text": "Harun se dressa : « Ô mon peuple, ce n'est qu'une épreuve ! Votre Seigneur, c'est le Tout Miséricordieux. Suivez-moi ! »",
+   "hold": 0.8
+  },
+  {
+   "id": "refuse",
+   "text": "Ils répondirent : « Nous l'adorerons jusqu'au retour de Moussa. » Ils le jugèrent faible… et faillirent le tuer.",
+   "hold": 1.0
+  },
+  {
+   "id": "return",
+   "text": "Moussa revint, plein de colère et de tristesse. Il jeta les Tablettes, et saisit son frère par la tête.",
+   "hold": 1.2
+  },
+  {
+   "id": "plea",
+   "text": "Harun lui dit : « Ô fils de ma mère ! Ne me prends pas par la barbe. J'ai eu peur que tu me dises : tu as divisé les fils d'Israël. »",
+   "hold": 2.0
+  },
+  {
+   "id": "calm",
+   "text": "Alors la colère de Moussa s'apaisa. Il pria : « Seigneur, pardonne-moi, ainsi qu'à mon frère, et fais-nous entrer dans Ta miséricorde. »",
+   "hold": 1.5
+  },
+  {
+   "id": "burn",
+   "text": "Le veau fut brûlé, et sa poussière dispersée dans la mer. Moussa reprit les Tablettes.",
+   "hold": 1.0
+  },
+  {
+   "id": "peace",
+   "text": "Et Allah a dit : « Paix sur Moussa et Harun. »",
+   "hold": 1.5
+  },
+  {
+   "id": "lesson",
+   "text": "Demande à Allah un frère qui te renforce… et sois ce frère pour quelqu'un.",
+   "hold": 1.5
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.3,
+   "promise": 0.2,
+   "ask": 0.2,
+   "granted": 0.15,
+   "pharaoh": 0.18,
+   "mountain": 0.32,
+   "calf": 0.22,
+   "warn": 0.28,
+   "refuse": 0.3,
+   "return": 0.36,
+   "plea": 0.25,
+   "calm": 0.15,
+   "burn": 0.25,
+   "peace": 0.15,
+   "lesson": 0.15,
+   "cta": 0.18,
+   "outro": 0.2
+  }
+ },
+ "pron": {
+  "Harun": "Ha-roune",
+  "Moussa": "Mou-ssa",
+  "Samiri": "Sa-mi-ri",
+  "Allah": "Al-lah",
+  "Israël": "Is-ra-èl"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "ask": 0.65,
+  "granted": 0.75,
+  "pharaoh": 0.7,
+  "mountain": 0.8,
+  "calf": 0.75,
+  "warn": 0.85,
+  "refuse": 0.85,
+  "return": 0.95,
+  "plea": 1.0,
+  "calm": 0.95,
+  "burn": 0.8,
+  "peace": 0.95,
+  "lesson": 0.9,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
