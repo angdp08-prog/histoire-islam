@@ -124,3 +124,11 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   sa motte de terre, soulevée, retournée puis engloutie : « Nous la renversâmes de fond en comble »), `stoneRain()` (pierres d'argile incandescentes), `bigDust()`, `cracks()`, `emberGlow()`.
 - `streetSet()` / `lutHouse()` (rue de nuit en perspective, porte qui s'ouvre sur la lumière `open`, lumière qui filtre `leak`), `drawMob()` (foule aux torches qui descend la rue, pas pilotés
   par la distance, `recoil` = aveuglée qui recule en se protégeant), `heldTorch()`, `guests()` (les anges jamais dessinés : trois colonnes de lumière), `roofTop()`, `squareSet()`.
+
+## Épisode 18 (`episodes/18-yahya/`) — nouveaux éléments réutilisables
+- `yahHero()` (cour du Temple de Jérusalem remplie : foule assise en rangs en perspective `SEATED` avec allée centrale, rangs proches floutés, gens assis sur le haut du mur `wallCrowd()`,
+  Yahya sur les marches dans la lumière de la porte), `streamIn()` (la foule qui entre par les deux bords, pas pilotés par la distance), `fiveDots()` (compteur des cinq paroles, 1 à 5),
+  `village18()` (= `village()` + ciel et soleil : `village()` seul ne dessine pas de ciel → bande noire en haut), `rehal()` (lutrin en X avec livre ouvert), `muskPouch()` (bourse de musc + `scentRibbon()`),
+  `rope()` / `ropeCoil()` / `farHand()` (prisonnier mené à la corde, corde qui tombe), `fortress()` (forteresse : remparts en pierre de taille, deux tours, portes qui se ferment `close`), `runnerSet()` (plaine au couchant qui défile, `px` = distance).
+- Le Prophète Muhammad ﷺ est seulement nommé (texte), jamais montré. La peur de Yahya (« que la terre m'engloutisse ») est une vision sombre (fissures, désaturation), pas un événement.
+- Arabe en très gros corps : éviter l'alif suscrit (ٰ) et les voyelles dans les titres géants (Amiri les décroche) → `'يحيى'` sans voyelles.

@@ -1,0 +1,183 @@
+{
+ "title": "Yahya",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "temple",
+  "terrasses",
+  "cinq",
+  "paroles",
+  "Yahya",
+  "stérile",
+  "nom",
+  "personne",
+  "Livre",
+  "sagesse",
+  "enfant",
+  "tendresse",
+  "parents",
+  "authentique",
+  "commandements",
+  "tarda",
+  "Issa",
+  "transmets-les",
+  "engloutisse",
+  "rempli",
+  "seul",
+  "détournez",
+  "jeûnez",
+  "musc",
+  "parfum",
+  "aumône",
+  "prisonnier",
+  "rachète",
+  "souvenez-vous",
+  "forteresse",
+  "abri",
+  "paix",
+  "ressuscité",
+  "aujourd'hui",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Un temple rempli jusque sur ses terrasses. Tout un peuple, venu écouter cinq paroles.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire de Yahya, paix sur lui. Et ces cinq paroles… valent encore pour toi aujourd'hui."
+  },
+  {
+   "id": "name",
+   "text": "Son père, Zakariya, était un vieillard, et sa mère était stérile. Mais Allah leur donna un fils, et choisit Lui-même son nom : Yahya. Personne ne l'avait porté avant lui.",
+   "hold": 1.0
+  },
+  {
+   "id": "book",
+   "text": "Allah lui dit : « Ô Yahya, tiens fermement le Livre. » Et Il lui donna la sagesse alors qu'il n'était qu'un enfant.",
+   "hold": 1.5
+  },
+  {
+   "id": "heart",
+   "text": "Allah le fit plein de tendresse, pur et pieux. Bon envers ses parents, jamais tyrannique, jamais désobéissant.",
+   "hold": 0.5
+  },
+  {
+   "id": "mission",
+   "text": "Le Prophète Muhammad, paix et bénédictions sur lui, a raconté, dans un hadith authentique, qu'Allah ordonna à Yahya cinq commandements, à vivre et à enseigner aux fils d'Israël.",
+   "hold": 0.5
+  },
+  {
+   "id": "delay",
+   "text": "Mais Yahya tarda à les annoncer. Alors Issa, paix sur lui, vint lui dire : « Transmets-les, ou c'est moi qui le ferai. »",
+   "hold": 0.5
+  },
+  {
+   "id": "fear",
+   "text": "Yahya répondit : « Si tu me devances, j'ai peur que la terre m'engloutisse, ou d'être châtié. »",
+   "hold": 1.5
+  },
+  {
+   "id": "temple",
+   "text": "Alors il rassembla les fils d'Israël à Jérusalem, dans le Temple. Il fut rempli, et les gens s'assirent jusque sur les terrasses.",
+   "hold": 2.0
+  },
+  {
+   "id": "one",
+   "text": "« Adorez Allah seul, sans rien Lui associer. Et quand vous priez, ne vous détournez pas. »",
+   "hold": 1.0
+  },
+  {
+   "id": "fast",
+   "text": "« Jeûnez : le jeûneur est comme un homme qui porte une bourse de musc au milieu des gens. Tous en sentent le parfum. »",
+   "hold": 1.0
+  },
+  {
+   "id": "alms",
+   "text": "« Donnez l'aumône : c'est comme un prisonnier, déjà conduit à la mort, qui rachète sa vie à ses ennemis. »",
+   "hold": 1.0
+  },
+  {
+   "id": "dhikr",
+   "text": "« Et souvenez-vous d'Allah : comme un homme poursuivi, qui court jusqu'à une forteresse et s'y met à l'abri. »",
+   "hold": 2.0
+  },
+  {
+   "id": "peace",
+   "text": "Allah a dit de lui : « Paix sur lui le jour de sa naissance, le jour de sa mort, et le jour où il sera ressuscité vivant. »",
+   "hold": 1.5
+  },
+  {
+   "id": "lesson",
+   "text": "Le bien que tu sais, ne le garde pas pour plus tard. Transmets-le aujourd'hui.",
+   "hold": 1.8
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.25,
+   "promise": 0.18,
+   "name": 0.15,
+   "book": 0.15,
+   "heart": 0.12,
+   "mission": 0.15,
+   "delay": 0.18,
+   "fear": 0.3,
+   "temple": 0.22,
+   "one": 0.15,
+   "fast": 0.15,
+   "alms": 0.2,
+   "dhikr": 0.35,
+   "peace": 0.18,
+   "lesson": 0.12,
+   "cta": 0.18,
+   "outro": 0.2
+  }
+ },
+ "pron": {
+  "Yahya": "Yah-ya",
+  "Zakariya": "Za-ka-ri-ya",
+  "Issa": "I-ssa",
+  "Muhammad": "Mou-ham-mad",
+  "Allah": "Al-lah"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "name": 0.65,
+  "book": 0.75,
+  "heart": 0.65,
+  "mission": 0.7,
+  "delay": 0.7,
+  "fear": 0.85,
+  "temple": 1.0,
+  "one": 0.8,
+  "fast": 0.75,
+  "alms": 0.8,
+  "dhikr": 0.95,
+  "peace": 0.95,
+  "lesson": 0.9,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
