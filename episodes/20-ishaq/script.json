@@ -1,0 +1,174 @@
+{
+ "title": "Ishaq",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "inconnus",
+  "fils",
+  "Ishaq",
+  "prophètes",
+  "vieilli",
+  "hôtes",
+  "Paix",
+  "veau",
+  "mains",
+  "peur",
+  "messagers",
+  "garçon",
+  "rire",
+  "Yaqub",
+  "Malheur",
+  "stérile",
+  "vieillard",
+  "l'ordre",
+  "ordre",
+  "miséricorde",
+  "naquit",
+  "Louange",
+  "prophète",
+  "clairvoyance",
+  "Livre",
+  "Yusuf",
+  "jamais",
+  "espérer",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Une femme âgée, qui n'avait jamais pu avoir d'enfant… Un jour, des inconnus sont venus lui annoncer un fils.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire d'Ishaq, paix sur lui. Et ce que ces invités ont annoncé ce jour-là… allait donner naissance à toute une lignée de prophètes.",
+   "hold": 0.6
+  },
+  {
+   "id": "home",
+   "text": "Ibrahim, paix sur lui, vivait sous la tente avec sa femme, Sara. Tous deux avaient vieilli, et Sara n'avait jamais eu d'enfant. Ibrahim, lui, aimait recevoir ses hôtes.",
+   "hold": 1.0
+  },
+  {
+   "id": "guests",
+   "text": "« As-tu appris l'histoire des hôtes honorés d'Ibrahim ? » demande le Coran. Un jour, des hommes inconnus se présentèrent. « Paix ! » dirent-ils. « Paix ! » répondit Ibrahim.",
+   "hold": 0.8
+  },
+  {
+   "id": "calf",
+   "text": "Il alla discrètement vers sa famille, et revint avec un veau gras, rôti. Il le leur présenta : « Ne mangez-vous pas ? »",
+   "hold": 0.8
+  },
+  {
+   "id": "fear",
+   "text": "Mais leurs mains ne touchaient pas au plat. Ibrahim les trouva étranges, et ressentit de la peur. Car un invité qui refuse le repas pouvait cacher une mauvaise intention, selon les exégètes.",
+   "hold": 1.2
+  },
+  {
+   "id": "reveal",
+   "text": "« N'aie pas peur ! » dirent-ils. « Nous sommes des messagers. Et nous t'annonçons un garçon plein de savoir. »",
+   "hold": 1.0
+  },
+  {
+   "id": "laugh",
+   "text": "Sa femme, debout tout près, se mit à rire. Et on lui annonça Ishaq… et, après Ishaq, Yaqub.",
+   "hold": 1.2
+  },
+  {
+   "id": "wonder",
+   "text": "Elle s'avança, stupéfaite : « Malheur à moi ! Vais-je enfanter, moi, une vieille femme stérile, alors que mon mari que voici est un vieillard ? »",
+   "hold": 1.2
+  },
+  {
+   "id": "mercy",
+   "text": "Ils répondirent : « T'étonnes-tu de l'ordre d'Allah ? Que Sa miséricorde et Ses bénédictions soient sur vous, gens de cette maison ! »",
+   "hold": 2.2
+  },
+  {
+   "id": "birth",
+   "text": "Et la promesse s'accomplit : Ishaq naquit. Ibrahim dit : « Louange à Allah, qui, malgré ma vieillesse, m'a donné Ismaël et Ishaq ! »",
+   "hold": 1.5
+  },
+  {
+   "id": "prophet",
+   "text": "Ishaq grandit, et Allah fit de lui un prophète parmi les gens de bien, doué de force et de clairvoyance.",
+   "hold": 1.0
+  },
+  {
+   "id": "lineage",
+   "text": "Puis vint Yaqub, puis Yusuf… Allah plaça dans la descendance d'Ibrahim la prophétie et le Livre.",
+   "hold": 1.2
+  },
+  {
+   "id": "lesson",
+   "text": "Pour Allah, il n'est jamais trop tard. Alors n'arrête jamais d'espérer.",
+   "hold": 1.8
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire.",
+   "hold": 0.9
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.25,
+   "promise": 0.2,
+   "home": 0.22,
+   "guests": 0.3,
+   "calf": 0.2,
+   "fear": 0.32,
+   "reveal": 0.25,
+   "laugh": 0.18,
+   "wonder": 0.22,
+   "mercy": 0.15,
+   "birth": 0.15,
+   "prophet": 0.25,
+   "lineage": 0.18,
+   "lesson": 0.15,
+   "cta": 0.18,
+   "outro": 0.2
+  }
+ },
+ "pron": {
+  "Ishaq": "Is-hâq",
+  "Ibrahim": "I-bra-him",
+  "Sara": "Sa-ra",
+  "Yaqub": "Ya-qoub",
+  "Yusuf": "You-souf",
+  "Ismaël": "Is-ma-èl",
+  "Allah": "Al-lah"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "home": 0.6,
+  "guests": 0.65,
+  "calf": 0.6,
+  "fear": 0.85,
+  "reveal": 0.9,
+  "laugh": 0.75,
+  "wonder": 0.85,
+  "mercy": 1.0,
+  "birth": 0.95,
+  "prophet": 0.8,
+  "lineage": 0.9,
+  "lesson": 0.9,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}

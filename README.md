@@ -132,3 +132,10 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `rope()` / `ropeCoil()` / `farHand()` (prisonnier mené à la corde, corde qui tombe), `fortress()` (forteresse : remparts en pierre de taille, deux tours, portes qui se ferment `close`), `runnerSet()` (plaine au couchant qui défile, `px` = distance).
 - Le Prophète Muhammad ﷺ est seulement nommé (texte), jamais montré. La peur de Yahya (« que la terre m'engloutisse ») est une vision sombre (fissures, désaturation), pas un événement.
 - Arabe en très gros corps : éviter l'alif suscrit (ٰ) et les voyelles dans les titres géants (Amiri les décroche) → `'يحيى'` sans voyelles.
+
+## Épisode 20 (`episodes/20-ishaq/`) — nouveaux éléments réutilisables
+- `ishHero()` (le campement d'Ibrahim au crépuscule : tente, Sara à l'entrée, plat du veau rôti, les trois hôtes en lumière, Ibrahim ; `gk` intensité des lumières, `rings`, `gold`
+  = pluie de lumière de la miséricorde, `sUp`/`sReach`/`iReach` gestes), `campSet()` (plan large du campement : `land` = options de `canaanLand()`, `night`, `lamp`, `fire`, `leaf`/`bloom` de l'arbre),
+  `ibrTent()` (tente en poil de chèvre `bedTent()` + tapis `rug()`, coussins `cushion()`, jarres `jar()`, feu), `feastTray()` (grand plateau de cuivre, riz, veau rôti, herbes, dattes, vapeur `steam`),
+  `liveCalf()` (veau vivant, robe brune et blanche), `guestLight()` / `guests3()` (les anges jamais dessinés : colonnes de lumière douce, flaque de lumière au sol, poussières qui montent),
+  `oldTree()` (l'arbre nu qui reverdit et fleurit), `plaque()` (cartouche doré d'un nom, pour une lignée).
