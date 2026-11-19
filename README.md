@@ -139,3 +139,13 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `ibrTent()` (tente en poil de chèvre `bedTent()` + tapis `rug()`, coussins `cushion()`, jarres `jar()`, feu), `feastTray()` (grand plateau de cuivre, riz, veau rôti, herbes, dattes, vapeur `steam`),
   `liveCalf()` (veau vivant, robe brune et blanche), `guestLight()` / `guests3()` (les anges jamais dessinés : colonnes de lumière douce, flaque de lumière au sol, poussières qui montent),
   `oldTree()` (l'arbre nu qui reverdit et fleurit), `plaque()` (cartouche doré d'un nom, pour une lignée).
+
+## Épisode 21 (`episodes/21-ilyas/`) — nouveaux éléments réutilisables
+- `lebanon()` (la chaîne du Liban enneigée au-dessus de la Beqaa : `snowRange()` = sommets avec neige dans les ravines et faces à l'ombre, crête de cèdres, champs en perspective
+  `fieldsBeqaa()` ; `sky` parmi `SKY21` dusk/day/gold/dawn/night/storm, `storm`, `night`, `city` = fonction de dessin posée sur la crête, `px` parallaxe), `cityIdol()` (= `sodomCity()` + l'idole sur la tour, feu et fumée).
+- `baal()` (l'idole : statue de bronze qui marche, masse levée, lance fourchue, haute couronne à cornes ; tête lisse sans aucun trait ; `fire` = lumière des braseros, `dim` = orage),
+  `pedestal21()`, `brazier()` (trépied, flammes, fumée ; `k` 0 = braises), `portico()` / `courtBack()` (la cour du temple : colonnade, dallage, idole, braseros), `iHero()` (le plan héros : foule
+  prosternée `PROS` + `crowdFig()` avec modes `bow` 0→1 (se courbent, s'agenouillent, se prosternent), `raise`, `turn`/`point` (se retournent et accusent), `leave` (s'en vont, pas pilotés par la distance)).
+- `carving()` + `roughIdol()` + `malletPose()` + `chips()` (atelier : statue à moitié taillée, mains au ciseau et au maillet, coups calés sur des mots), `callRings()` (l'appel qui part et ne revient pas),
+  `recite()` + `risingVerse()` (lutrin, Livre ouvert, lecteur assis ; le verset qui monte en lignes d'or), `nightCities()` / `skyline()` (le monde aujourd'hui la nuit : dômes, minarets, fenêtres), `spur()` / `spurY()` (éperon rocheux en hauteur).
+- La fin du peuple d'Ilyas n'est pas détaillée par le Coran : rien n'est inventé à l'image (orage, braseros qui s'éteignent, lumière sur les croyants).

@@ -1,0 +1,175 @@
+{
+ "title": "Ilyas",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "ville",
+  "Baal",
+  "seul",
+  "Ilyas",
+  "menteur",
+  "récite",
+  "Baalbek",
+  "Liban",
+  "idole",
+  "statue",
+  "l'orage",
+  "messagers",
+  "craignez-vous",
+  "Meilleur",
+  "créateurs",
+  "Seigneur",
+  "mains",
+  "entendre",
+  "créés",
+  "seul",
+  "châtiment",
+  "élus",
+  "souvenir",
+  "Paix",
+  "bienfaisants",
+  "croyants",
+  "taire",
+  "aujourd'hui",
+  "vérité",
+  "nombre",
+  "droit",
+  "jamais",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Toute une ville se prosternait devant une idole nommée Baal. Un seul homme s'est levé face à eux.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire d'Ilyas, paix sur lui. Son peuple l'a traité de menteur… mais ce qu'Allah a dit de lui, on le récite encore aujourd'hui.",
+   "hold": 0.6
+  },
+  {
+   "id": "city",
+   "text": "Selon les exégètes, cela se passait à Baalbek, au pied des montagnes du Liban. Le nom même de la ville viendrait de leur idole, Baal.",
+   "hold": 0.9
+  },
+  {
+   "id": "idol",
+   "text": "Les gens avaient délaissé l'adoration d'Allah. Ils invoquaient une grande statue, Baal, et se prosternaient devant elle. Selon les historiens, on l'adorait dans toute la région comme le maître de l'orage et de la pluie.",
+   "hold": 1.0
+  },
+  {
+   "id": "call",
+   "text": "Alors Allah envoya Ilyas, du nombre des messagers. Il se tint devant son peuple et dit : « Ne craignez-vous pas Allah ? »",
+   "hold": 0.9
+  },
+  {
+   "id": "question",
+   "text": "« Invoquez-vous Baal, et délaissez-vous le Meilleur des créateurs ? Allah, votre Seigneur, et le Seigneur de vos premiers ancêtres ! »",
+   "hold": 1.4
+  },
+  {
+   "id": "hands",
+   "text": "Une statue façonnée de leurs propres mains, qui ne pouvait ni entendre ni répondre… à la place de Celui qui les avait créés, eux et leurs pères.",
+   "hold": 1.2
+  },
+  {
+   "id": "reject",
+   "text": "Mais son peuple le traita de menteur. Ilyas resta debout, presque seul, face à toute une ville.",
+   "hold": 1.4
+  },
+  {
+   "id": "warn",
+   "text": "Le Coran ne raconte pas leur fin en détail. Il annonce seulement : ceux qui l'ont démenti seront amenés au châtiment… sauf les serviteurs élus d'Allah.",
+   "hold": 1.0
+  },
+  {
+   "id": "peace",
+   "text": "Puis Allah perpétua son souvenir parmi les générations suivantes, avec ces mots : « Paix sur Ilyas ! »",
+   "hold": 2.2
+  },
+  {
+   "id": "honor",
+   "text": "« Ainsi récompensons-Nous les bienfaisants. Il était de Nos serviteurs croyants. » Le Coran le cite avec Zakariya, Yahya et Issa, parmi les gens de bien.",
+   "hold": 1.0
+  },
+  {
+   "id": "today",
+   "text": "Ce peuple voulait faire taire sa voix. Aujourd'hui, partout dans le monde, des croyants récitent encore : paix sur Ilyas.",
+   "hold": 1.5
+  },
+  {
+   "id": "lesson",
+   "text": "La vérité ne se mesure pas au nombre de ceux qui la suivent. Reste droit, même seul : Allah n'oublie jamais les siens.",
+   "hold": 1.8
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire.",
+   "hold": 0.9
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.25,
+   "promise": 0.2,
+   "city": 0.3,
+   "idol": 0.22,
+   "call": 0.28,
+   "question": 0.3,
+   "hands": 0.15,
+   "reject": 0.35,
+   "warn": 0.4,
+   "peace": 0.18,
+   "honor": 0.15,
+   "today": 0.15,
+   "lesson": 0.25,
+   "cta": 0.18,
+   "outro": 0.2
+  },
+  "thunder": {
+   "warn": 0.5,
+   "idol": 0.15
+  }
+ },
+ "pron": {
+  "Ilyas": "Il-yâs",
+  "Baal": "Ba-al",
+  "Baalbek": "Ba-al-bek",
+  "Zakariya": "Za-ka-ri-ya",
+  "Yahya": "Yah-ya",
+  "Issa": "Î-sa",
+  "Allah": "Al-lah"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "city": 0.55,
+  "idol": 0.7,
+  "call": 0.8,
+  "question": 0.9,
+  "hands": 0.7,
+  "reject": 0.85,
+  "warn": 0.9,
+  "peace": 1.0,
+  "honor": 0.85,
+  "today": 0.95,
+  "lesson": 0.9,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
