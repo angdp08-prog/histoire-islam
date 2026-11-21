@@ -1,0 +1,172 @@
+{
+ "title": "Idris",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "quatrième",
+  "ciel",
+  "Idris",
+  "mystérieuse",
+  "fin",
+  "déluge",
+  "Akhnukh",
+  "Nuh",
+  "calame",
+  "premier",
+  "trente",
+  "feuillets",
+  "l'étude",
+  "écritures",
+  "seul",
+  "véridique",
+  "prophète",
+  "endurants",
+  "miséricorde",
+  "élevâmes",
+  "rang",
+  "prophétie",
+  "cieux",
+  "Jibril",
+  "Adam",
+  "Yusuf",
+  "Bienvenue",
+  "vertueux",
+  "verset",
+  "vérité",
+  "patience",
+  "plume",
+  "élève",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Une nuit, le Prophète Muhammad l'a rencontré… au quatrième ciel. Qui était cet homme ?",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire d'Idris, paix sur lui. Le Coran dit de lui une phrase mystérieuse… et à la fin, tu sauras ce qu'elle veut dire.",
+   "hold": 0.6
+  },
+  {
+   "id": "era",
+   "text": "Selon les historiens musulmans, Idris vécut aux premiers temps de l'humanité, après Adam et son fils Shith, bien avant le déluge. Son nom serait Akhnukh, et Nuh serait l'un de ses descendants.",
+   "hold": 0.9
+  },
+  {
+   "id": "pen",
+   "text": "Selon un récit rapporté par Ibn Hibban, il fut le premier à écrire avec le calame. Et Allah lui révéla trente feuillets.",
+   "hold": 0.9
+  },
+  {
+   "id": "study",
+   "text": "Il enseignait à son peuple ce qu'il recevait. On dit même que son nom, Idris, vient de l'étude, tant il étudiait les écritures.",
+   "hold": 0.9
+  },
+  {
+   "id": "call",
+   "text": "Il appelait les gens à adorer Allah seul, à être justes et patients. Le Coran le décrit en deux mots : « un homme véridique, et un prophète ».",
+   "hold": 1.0
+  },
+  {
+   "id": "patience",
+   "text": "Ailleurs, Allah le cite avec Ismaïl et Dhul-Kifl : « Tous étaient du nombre des endurants. Nous les fîmes entrer dans Notre miséricorde, car ils étaient du nombre des gens de bien. »",
+   "hold": 1.2
+  },
+  {
+   "id": "verse",
+   "text": "Puis vient la phrase mystérieuse. Allah dit d'Idris : « Et Nous l'élevâmes à un haut rang. »",
+   "hold": 2.0
+  },
+  {
+   "id": "meaning",
+   "text": "Que veut-elle dire ? Les exégètes donnent deux explications. Pour beaucoup, c'est le rang de la prophétie, l'un des plus hauts qui soient. Mais Qatada et d'autres y voient aussi une place réelle… dans les cieux.",
+   "hold": 1.0
+  },
+  {
+   "id": "miraj",
+   "text": "Car cette fameuse nuit, le Prophète Muhammad monta de ciel en ciel avec l'ange Jibril. À chaque ciel, un prophète l'accueillait : Adam au premier, Yahya et Issa au deuxième, Yusuf au troisième…",
+   "hold": 0.8
+  },
+  {
+   "id": "fourth",
+   "text": "Et au quatrième, il trouva Idris, qui lui dit : « Bienvenue au frère vertueux, et au prophète vertueux ! » Et le récit cite alors ce verset : « Nous l'élevâmes à un haut rang. »",
+   "hold": 2.0
+  },
+  {
+   "id": "lesson",
+   "text": "Idris n'a laissé ni palais ni trésor. Juste la vérité, la patience… et la plume. Retiens ceci : ceux qui s'élèvent vraiment, c'est Allah qui les élève.",
+   "hold": 1.6
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire.",
+   "hold": 0.9
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.22,
+   "promise": 0.2,
+   "era": 0.28,
+   "pen": 0.18,
+   "study": 0.18,
+   "call": 0.25,
+   "patience": 0.25,
+   "verse": 0.15,
+   "meaning": 0.22,
+   "miraj": 0.15,
+   "fourth": 0.12,
+   "lesson": 0.2,
+   "cta": 0.22,
+   "outro": 0.18
+  },
+  "thunder": {}
+ },
+ "pron": {
+  "Idris": "Id-rîs",
+  "Akhnukh": "Akh-noukh",
+  "Shith": "Chîth",
+  "Nuh": "Noûh",
+  "Ibn Hibban": "Ibn Hib-bâne",
+  "Dhul-Kifl": "Dhoul-Kifl",
+  "Ismaïl": "Is-ma-îl",
+  "Qatada": "Qa-tâ-da",
+  "Jibril": "Jib-rîl",
+  "Yahya": "Yah-ya",
+  "Issa": "Î-sa",
+  "Yusuf": "You-souf",
+  "Allah": "Al-lah"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "era": 0.55,
+  "pen": 0.6,
+  "study": 0.6,
+  "call": 0.7,
+  "patience": 0.75,
+  "verse": 1.0,
+  "meaning": 0.8,
+  "miraj": 0.9,
+  "fourth": 1.0,
+  "lesson": 0.9,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
