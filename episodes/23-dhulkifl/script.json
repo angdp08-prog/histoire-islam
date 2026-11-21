@@ -1,0 +1,177 @@
+{
+ "title": "Dhul-Kifl",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "Trois",
+  "jours",
+  "Iblis",
+  "porte",
+  "colère",
+  "Dhul-Kifl",
+  "meilleurs",
+  "nom",
+  "Al-Yasa'",
+  "engagements",
+  "Jeûner",
+  "prier",
+  "jamais",
+  "Moi",
+  "leva",
+  "charge",
+  "démons",
+  "échouèrent",
+  "Laissez-le-moi",
+  "midi",
+  "vieillard",
+  "tort",
+  "justice",
+  "encore",
+  "s'emporte",
+  "troisième",
+  "ouverture",
+  "l'intérieur",
+  "fermée",
+  "l'ennemi",
+  "Oui",
+  "épuisé",
+  "tenu",
+  "engagement",
+  "endurants",
+  "fort",
+  "maîtrise",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Trois jours de suite, Iblis est venu frapper à sa porte… avec un seul but : le mettre en colère.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire de Dhul-Kifl, paix sur lui. Le Coran le cite parmi les meilleurs… et à la fin, tu sauras d'où vient son nom.",
+   "hold": 0.6
+  },
+  {
+   "id": "yasa",
+   "text": "Selon un récit rapporté par Mujahid, le prophète Al-Yasa', devenu vieux, réunit son peuple : « Qui prendra trois engagements ? Jeûner le jour, prier la nuit… et ne jamais se mettre en colère. »",
+   "hold": 1.0
+  },
+  {
+   "id": "stand",
+   "text": "Un homme se leva, un homme que personne ne remarquait : « Moi. » Le lendemain, même question, même silence… et le même homme se leva. Il reçut la charge du peuple.",
+   "hold": 1.0
+  },
+  {
+   "id": "plan",
+   "text": "Alors Iblis dit à ses démons : « Occupez-vous de lui. » Ils échouèrent tous. « Laissez-le-moi. »",
+   "hold": 1.0
+  },
+  {
+   "id": "day1",
+   "text": "Cet homme ne dormait qu'un peu, à midi. Ce jour-là, on frappe. Un vieillard : « On m'a fait du tort ! » Il ouvre, l'écoute longuement… et l'heure du repos passe.",
+   "hold": 0.8
+  },
+  {
+   "id": "court",
+   "text": "« Viens me voir quand je rendrai la justice. » Il s'assit pour juger, chercha le vieillard des yeux… il ne vint pas.",
+   "hold": 0.8
+  },
+  {
+   "id": "day2",
+   "text": "Le lendemain, à midi, on frappe encore. Même vieillard, même plainte. Il ne s'emporte pas : « Viens à l'audience. » Et il ne vint pas.",
+   "hold": 0.9
+  },
+  {
+   "id": "day3",
+   "text": "Le troisième jour, épuisé, il dit aux siens : « Que personne n'approche de cette porte. » Mais le vieillard trouva une ouverture… et frappa, de l'intérieur.",
+   "hold": 1.2
+  },
+  {
+   "id": "reveal",
+   "text": "La porte était toujours fermée, comme il l'avait laissée. Alors il comprit : « Tu es l'ennemi d'Allah ? » « Oui. Tu m'as épuisé. J'ai tout fait pour te mettre en colère. »",
+   "hold": 2.2
+  },
+  {
+   "id": "name",
+   "text": "Il avait pris un engagement, et il l'a tenu jusqu'au bout. Selon ce récit, c'est pour cela qu'on l'appela Dhul-Kifl : celui de l'engagement tenu.",
+   "hold": 1.6
+  },
+  {
+   "id": "quran",
+   "text": "Et Allah dit : « Ismaïl, Al-Yasa' et Dhul-Kifl : chacun d'eux était parmi les meilleurs. » Ailleurs, Il le cite parmi les endurants.",
+   "hold": 1.2
+  },
+  {
+   "id": "lesson",
+   "text": "Le Prophète Muhammad, paix et bénédictions sur lui, a dit : « Le fort n'est pas celui qui terrasse les gens. Le fort, c'est celui qui se maîtrise dans la colère. »",
+   "hold": 2.2
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire.",
+   "hold": 0.9
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.2,
+   "promise": 0.2,
+   "yasa": 0.22,
+   "stand": 0.22,
+   "plan": 0.3,
+   "day1": 0.2,
+   "court": 0.22,
+   "day2": 0.2,
+   "day3": 0.22,
+   "reveal": 0.15,
+   "name": 0.2,
+   "quran": 0.18,
+   "lesson": 0.2,
+   "cta": 0.2,
+   "outro": 0.18
+  },
+  "thunder": {}
+ },
+ "pron": {
+  "Dhul-Kifl": "Dhoul-Kifl",
+  "Al-Yasa'": "Al-Ya-sa'",
+  "Iblis": "Ib-lîs",
+  "Mujahid": "Mou-jâ-hid",
+  "Ismaïl": "Is-ma-îl",
+  "Muhammad": "Mou-ham-mad",
+  "Allah": "Al-lah"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "yasa": 0.55,
+  "stand": 0.65,
+  "plan": 0.75,
+  "day1": 0.6,
+  "court": 0.6,
+  "day2": 0.7,
+  "day3": 0.85,
+  "reveal": 1.0,
+  "name": 0.9,
+  "quran": 0.85,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
