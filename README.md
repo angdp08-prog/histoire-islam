@@ -157,3 +157,11 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `oldMan()` (vieillard courbé au bâton, frappe avec `knock`), `castShadow()` (ombre portée d'une figure sur un mur : cisaillée, étirée, floutée), `ysHero()` (assemblée devant le lieu de prière : un homme assis dans la foule se lève dans la lumière, `rise`, `lit`, `dim`),
   `threeVows()` (trois médaillons : jeûner le jour, prier la nuit, jamais en colère ; `done` = cochés), `dayTag()` (JOUR 1/2/3), `courtSet()` + `awning()` (l'audience à la porte de la ville : estrade, tapis, auvent rayé, file de plaignants, `empty` = la place vide), `nightTown()` + `darkSmoke()` (rue de nuit où glisse une obscurité froide).
 - Les démons ne sont jamais dessinés (obscurité seulement) ; Iblis n'apparaît que sous la forme du vieillard sans visage décrite par le récit (Mujahid, cité par Ibn Kathir), signalé à l'écran.
+
+## Épisode 25 (`episodes/25-muhammad/`) — le Prophète Muhammad ﷺ, la première révélation
+- **Le Prophète ﷺ n'est jamais représenté, même en silhouette** : point de vue (on est dans la grotte), lieux, lumière, objets (outre, provisions, natte, manteau, lampe) et calligraphie.
+  L'ange Jibril = lumière seulement ; Khadija et Waraqa ne sont pas dessinés (leur maison, leur pièce). Dans Lora, le glyphe ﷺ ne s'affiche pas : l'écrire seulement en Amiri (`arabic()`), sinon « paix et bénédictions sur lui ».
+- Nouveaux éléments : `hiraView()` (l'intérieur de la grotte de Hira, ouverture irrégulière sur la vallée de La Mecque la nuit, `light` = lumière de la révélation, `shake`, `spin` = étoiles qui tournent),
+  `noorMount()` (Jabal an-Nour au-dessus de La Mecque : `cave`, `beam`, `path`, `spin`), `meccaSet()` (La Mecque vers 610 : Kaaba `kaaba()`, idoles `idol25()` avec `idols` = surbrillance, tawaf avec pas pilotés par la distance, marché, `night`, `door`, `dark`),
+  `mantle()` (« couvrez-moi » : manteau rayé qui recouvre l'image), `fourVirtues()`, `scrollRoom()` (pièce aux rouleaux, livre ouvert, lampe), `desertNight()` (traces de chameaux vers le nord, `dawn`, `palms`),
+  `hijraMap()` (carte La Mecque → Médine qui se trace), `bookLight()`, `qalamWrite()` (calame sans main qui écrit en or), `threeDots()`, `vignette25()` (étreinte), `beat()` (battement de cœur).

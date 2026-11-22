@@ -1,0 +1,156 @@
+{
+ "title": "Muhammad",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "lire",
+  "écrire",
+  "seul",
+  "grotte",
+  "Lis",
+  "treize",
+  "quarante",
+  "al-Amine",
+  "confiance",
+  "idoles",
+  "Hira",
+  "Ramadan",
+  "Jibril",
+  "trois",
+  "calame",
+  "tremblant",
+  "Couvrez-moi",
+  "jamais",
+  "Waraqa",
+  "Moïse",
+  "chassera",
+  "chasser",
+  "combattu",
+  "Médine",
+  "réalisée",
+  "Coran",
+  "savoir",
+  "apprendre",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Un homme qui ne savait ni lire ni écrire était seul, la nuit, dans une grotte. Et soudain, il entendit : « Lis ! »",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est le début de l'histoire du Prophète Muhammad, paix et bénédictions sur lui. Et ce qu'un vieil homme lui annonça ce jour-là s'est réalisé… treize ans plus tard.",
+   "hold": 0.6
+  },
+  {
+   "id": "mecca",
+   "text": "La Mecque, vers l'an 610. Muhammad a quarante ans. Tout le monde l'appelle al-Amine : le digne de confiance. Mais autour de la Kaaba, son peuple adore des idoles, et lui s'en tient loin.",
+   "hold": 0.8
+  },
+  {
+   "id": "hira",
+   "text": "Alors il monte sur une montagne, près de La Mecque, jusqu'à une petite grotte : Hira. Il y passe des nuits entières, seul, à adorer son Seigneur.",
+   "hold": 0.9
+  },
+  {
+   "id": "night",
+   "text": "Une nuit du mois de Ramadan, l'ange Jibril vient à lui et lui dit : « Lis ! » Il répond : « Je ne sais pas lire. »",
+   "hold": 1.0
+  },
+  {
+   "id": "three",
+   "text": "L'ange le serre fort, puis le lâche : « Lis ! » Trois fois, la même réponse. Puis l'ange récite : « Lis, au nom de ton Seigneur qui a créé… qui a enseigné par le calame, enseigné à l'homme ce qu'il ne savait pas. »",
+   "hold": 2.0
+  },
+  {
+   "id": "home",
+   "text": "Le cœur tremblant, il redescend chez son épouse, Khadija : « Couvrez-moi ! Couvrez-moi ! » On le couvre, jusqu'à ce que sa peur s'en aille.",
+   "hold": 1.2
+  },
+  {
+   "id": "khadija",
+   "text": "Puis elle lui dit : « Non, par Allah, Allah ne t'humiliera jamais. Tu maintiens les liens de parenté, tu portes le faible, tu honores ton hôte, tu aides face aux malheurs. »",
+   "hold": 1.4
+  },
+  {
+   "id": "waraqa",
+   "text": "Elle l'emmène chez son cousin Waraqa, un vieil homme qui connaissait les Écritures. Il dit : « C'est l'ange qui descendait sur Moïse. Si seulement j'étais en vie quand ton peuple te chassera ! » « Ils vont me chasser ? » « Personne n'a apporté ce que tu apportes sans être combattu. »",
+   "hold": 1.0
+  },
+  {
+   "id": "hijra",
+   "text": "Treize ans plus tard, chassé de La Mecque, il partit pour Médine. La prédiction s'était réalisée. Et ce premier mot, « Lis », est devenu le Coran, récité aujourd'hui dans le monde entier.",
+   "hold": 1.6
+  },
+  {
+   "id": "lesson",
+   "text": "Le tout premier mot révélé du Coran, c'est : « Lis ». Avant tout le reste, le savoir. Alors toi aussi, n'arrête jamais d'apprendre.",
+   "hold": 2.4
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire.",
+   "hold": 0.9
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.2,
+   "promise": 0.2,
+   "mecca": 0.2,
+   "hira": 0.3,
+   "night": 0.26,
+   "three": 0.22,
+   "home": 0.2,
+   "khadija": 0.2,
+   "waraqa": 0.2,
+   "hijra": 0.2,
+   "lesson": 0.2,
+   "cta": 0.2,
+   "outro": 0.18
+  },
+  "thunder": {}
+ },
+ "pron": {
+  "Muhammad": "Mou-ham-mad",
+  "al-Amine": "al-A-mîne",
+  "Kaaba": "Ka-a-ba",
+  "Hira": "Hi-râ",
+  "Jibril": "Jib-rîl",
+  "Khadija": "Kha-dî-ja",
+  "Waraqa": "Wa-ra-qa",
+  "Médine": "Mé-dine",
+  "Allah": "Al-lah"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "mecca": 0.6,
+  "hira": 0.7,
+  "night": 0.85,
+  "three": 1.0,
+  "home": 0.75,
+  "khadija": 0.8,
+  "waraqa": 0.7,
+  "hijra": 0.9,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
