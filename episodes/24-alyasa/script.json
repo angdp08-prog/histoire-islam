@@ -1,0 +1,159 @@
+{
+ "title": "Al-Yasa'",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "deux",
+  "fois",
+  "favorisé",
+  "mondes",
+  "seul",
+  "Baal",
+  "menteur",
+  "Ilyas",
+  "Élisée",
+  "Yusuf",
+  "partout",
+  "montagne",
+  "Damas",
+  "quitta",
+  "place",
+  "prophète",
+  "rejeté",
+  "taire",
+  "partir",
+  "mort",
+  "dévier",
+  "vieux",
+  "trois",
+  "Dhul-Kifl",
+  "précédent",
+  "meilleurs",
+  "tenu",
+  "célèbre",
+  "fidèle",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Le Coran ne cite son nom que deux fois… et pourtant, Allah dit l'avoir favorisé sur les mondes.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire d'Al-Yasa', paix sur lui. L'élève d'un grand prophète… et ce qu'il fit le jour où il se retrouva seul, peu de gens le savent.",
+   "hold": 0.6
+  },
+  {
+   "id": "baal",
+   "text": "À cette époque, les fils d'Israël avaient délaissé Allah pour une idole : Baal. Le prophète Ilyas les appelait à revenir, et on le traitait de menteur.",
+   "hold": 0.8
+  },
+  {
+   "id": "disciple",
+   "text": "Sur sa jeunesse, le Coran ne dit rien. Selon les historiens, un jeune homme, descendant de Yusuf, grandit auprès de lui : Al-Yasa', que d'autres traditions appellent Élisée. Il le suivait partout, priait avec lui, apprenait de lui.",
+   "hold": 1.0
+  },
+  {
+   "id": "hide",
+   "text": "Quand on chercha à leur nuire, ils se cachèrent ensemble dans la montagne, près de Damas, selon certains récits.",
+   "hold": 0.9
+  },
+  {
+   "id": "depart",
+   "text": "Puis vint le jour où Ilyas quitta son peuple. C'est Al-Yasa' qu'il laissa à sa place, pour continuer l'appel. Et Allah fit de lui un prophète.",
+   "hold": 1.6
+  },
+  {
+   "id": "alone",
+   "text": "Le voilà seul, face au peuple qui avait rejeté son maître. Il aurait pu se taire, ou partir. Il ne l'a pas fait.",
+   "hold": 2.0
+  },
+  {
+   "id": "years",
+   "text": "Al-Hassan al-Basri dit : il resta parmi eux aussi longtemps qu'Allah le voulut, les appelant à Allah, fidèle à la voie d'Ilyas, jusqu'à sa mort. Des années, sans jamais dévier du chemin.",
+   "hold": 1.2
+  },
+  {
+   "id": "heir",
+   "text": "Devenu vieux, selon un récit rapporté par Mujahid, il chercha à son tour un homme pour porter la charge, avec trois engagements : jeûner le jour, prier la nuit, ne jamais se mettre en colère. Celui qui se leva deviendra Dhul-Kifl : c'est l'épisode précédent.",
+   "hold": 0.9
+  },
+  {
+   "id": "quran",
+   "text": "Et Allah dit : « Ismaïl, Al-Yasa', Yunus et Lut : chacun, Nous l'avons favorisé sur les mondes. » Et encore : « chacun d'eux était parmi les meilleurs. »",
+   "hold": 1.6
+  },
+  {
+   "id": "lesson",
+   "text": "Sa vie n'est pas racontée en détail. Mais après son maître, il a tenu jusqu'au bout. Personne ne te demande d'être célèbre. On te demande d'être fidèle… même quand tu continues seul.",
+   "hold": 2.4
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire.",
+   "hold": 0.9
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.2,
+   "promise": 0.2,
+   "baal": 0.2,
+   "disciple": 0.2,
+   "hide": 0.3,
+   "depart": 0.2,
+   "alone": 0.28,
+   "years": 0.2,
+   "heir": 0.2,
+   "quran": 0.2,
+   "lesson": 0.18,
+   "cta": 0.2,
+   "outro": 0.18
+  },
+  "thunder": {}
+ },
+ "pron": {
+  "Al-Yasa'": "Al-Ya-sa'",
+  "Ilyas": "Il-yâs",
+  "Baal": "Ba-al",
+  "Yusuf": "You-souf",
+  "Al-Hassan al-Basri": "Al-Has-san al-Bas-ri",
+  "Mujahid": "Mou-jâ-hid",
+  "Dhul-Kifl": "Dhoul-Kifl",
+  "Ismaïl": "Is-ma-îl",
+  "Yunus": "You-nous",
+  "Lut": "Loût",
+  "Allah": "Al-lah"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "baal": 0.65,
+  "disciple": 0.55,
+  "hide": 0.7,
+  "depart": 0.85,
+  "alone": 1.0,
+  "years": 0.8,
+  "heir": 0.65,
+  "quran": 0.9,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
