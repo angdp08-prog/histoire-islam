@@ -175,3 +175,14 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `ruinTown()` (Jérusalem en ruines vue de loin) + `townK()` (ruines → ville rebâtie en fondu), `brokenWall()` / `brokenTop()` (mur cassé en gradins), `rubble()`,
   `judea()` (paysage complet : ciel, chaînes, colline de la ville, terrasses d'oliviers ; `skyFn`, `walkers`, `cityFx`), `slope()` + `gY()` (pente proche où tout est posé),
   `daySky()` + `lapse()` (accéléré : jours/nuits, saisons de l'arbre, compteur `yearCount()`), `ruinNear()` (brèche dans le rempart), `fallSet()` (destruction, sans violence), `uzHero()`.
+
+## Épisode 27 (`episodes/27-khidr/`) — Al-Khidr et Moussa (Al-Kahf 60-82, Bukhari 122)
+- Après les 25 prophètes nommés et 'Uzayr : Al-Khidr (nommé dans Bukhari, prophète pour beaucoup de savants, signalé comme tel). Moussa, Al-Khidr et Youcha' sont
+  des silhouettes blanches au voile de lumière (galon vert pour Al-Khidr) ; la mort du garçon n'est pas montrée (une lampe qui s'éteint).
+- Nouveaux éléments : `seaSet27()` (pleine mer : côtes lointaines, houle en perspective, scintillement sous le soleil, voiles au large), `seaFront27()` (eau devant une coque :
+  cache la quille, écume, reflet), `boat27()` (bateau à voile latine : bordages à clin qui suivent la tonture, membrures, rames de gouverne, jarres ; `hole` = planche arrachée
+  aux bords éclatés, `patch` = rapiécé, `crew(c, deck27)` = personnages sur le pont, pieds cachés par le bordé, `sparrow` = l'oiseau de Bukhari sur l'étrave), `plank27()`,
+  `khHero()` (plan héros : le bateau, Al-Khidr tient la planche, Moussa lève la main), `twoSeas()` (le confluent des deux mers : deux eaux de couleurs différentes, couture d'écume),
+  `shore27()` + `sandY27()` (plage, grand rocher, coquillages, algues), `greenPatch()` (l'herbe qui verdit sous Al-Khidr, Bukhari 3402), `basket27()`, `fish27()`, `tunnel27()`
+  (le chemin du poisson « comme un tunnel »), `splash27()`, `sermonSet()`, `meetSet()` (`trio` = les trois marchent), `leanWall()` (mur penché par cisaillement, la base reste au sol),
+  `villageSet()` (`cut` = coupe du sol sur le trésor `chest27()`), `playSet()`, `lampSet()`, `harbourSet()` (soldats du roi qui saisissent les bateaux), `parentsSet()`, `sailAway()`, `fgShore()`.

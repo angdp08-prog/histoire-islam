@@ -1,0 +1,163 @@
+{
+ "title": "Al-Khidr",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "trou",
+  "bateau",
+  "gratuitement",
+  "sauver",
+  "Moussa",
+  "Al-Kahf",
+  "révélé",
+  "tout",
+  "savant",
+  "Moi",
+  "mers",
+  "poisson",
+  "vie",
+  "Al-Khidr",
+  "science",
+  "patient",
+  "condition",
+  "planche",
+  "noyer",
+  "innocent",
+  "mur",
+  "salaire",
+  "séparation",
+  "pauvres",
+  "roi",
+  "laissé",
+  "meilleur",
+  "trésor",
+  "orphelins",
+  "moi-même",
+  "malheur",
+  "miséricorde",
+  "chemin",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Un homme a fait un trou dans le bateau qui l'avait pris gratuitement… et c'était pour le sauver.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "Le prophète Moussa, paix sur lui, était à bord, et il n'a pas compris. C'est une histoire du Coran, sourate Al-Kahf. Et ce que cet homme lui a révélé ensuite a tout changé.",
+   "hold": 0.6
+  },
+  {
+   "id": "sermon",
+   "text": "Un jour, on demanda à Moussa qui était l'homme le plus savant. Il répondit : « Moi. » Alors Allah lui révéla qu'un de Ses serviteurs, là où les deux mers se rejoignent, en savait plus que lui.",
+   "hold": 0.9
+  },
+  {
+   "id": "fish",
+   "text": "Moussa partit avec son jeune serviteur, et un poisson dans un panier : là où ils le perdraient, ils trouveraient cet homme. Près d'un rocher, le poisson revint à la vie, et fila dans la mer.",
+   "hold": 1.2
+  },
+  {
+   "id": "meet",
+   "text": "Ils revinrent sur leurs pas, et trouvèrent un serviteur d'Allah, à qui Il avait donné une science venant de Lui. C'était Al-Khidr, paix sur lui ; pour beaucoup de savants, un prophète.",
+   "hold": 1.0
+  },
+  {
+   "id": "pact",
+   "text": "Moussa demanda à le suivre. « Tu ne pourras pas être patient avec moi. » Moussa promit. Une seule condition : ne rien demander, avant qu'il ne l'explique.",
+   "hold": 0.8
+  },
+  {
+   "id": "boat",
+   "text": "Des marins les prirent à bord, sans rien demander. Al-Khidr arracha une planche de la coque. Moussa s'écria : « Tu l'as percé pour noyer ses passagers ? »",
+   "hold": 1.2
+  },
+  {
+   "id": "boy",
+   "text": "Plus loin, Al-Khidr ôta la vie à un jeune garçon. Moussa ne put se taire : « Tu as tué un innocent ! »",
+   "hold": 1.4
+  },
+  {
+   "id": "wall",
+   "text": "Puis, dans un village qui leur refusa l'hospitalité, il redressa un mur qui allait s'écrouler. « Tu aurais pu demander un salaire ! » Ce fut la séparation.",
+   "hold": 1.0
+  },
+  {
+   "id": "reveal",
+   "text": "Alors Al-Khidr expliqua. Le bateau appartenait à des pauvres, et un roi s'emparait de tout bateau en bon état. Abîmé, il leur fut laissé.",
+   "hold": 1.8
+  },
+  {
+   "id": "reveal2",
+   "text": "Le garçon aurait entraîné ses parents croyants dans la mécréance : Allah allait leur en donner un meilleur. Et sous le mur, il y avait le trésor de deux orphelins. « Je ne l'ai pas fait de moi-même. »",
+   "hold": 1.8
+  },
+  {
+   "id": "lesson",
+   "text": "Ce qui ressemble à un malheur cache parfois une miséricorde. Toi, tu vois une planche arrachée. Allah, Lui, voit tout le chemin.",
+   "hold": 2.4
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire.",
+   "hold": 0.9
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.3,
+   "promise": 0.25,
+   "sermon": 0.25,
+   "fish": 0.3,
+   "meet": 0.25,
+   "pact": 0.2,
+   "boat": 0.35,
+   "boy": 0.2,
+   "wall": 0.3,
+   "reveal": 0.3,
+   "reveal2": 0.22,
+   "lesson": 0.25,
+   "cta": 0.2,
+   "outro": 0.18
+  },
+  "thunder": {}
+ },
+ "pron": {
+  "Moussa": "Mou-ssa",
+  "Al-Khidr": "Al-Khi-dr (kh = r raclé, comme la jota espagnole)",
+  "Al-Kahf": "Al-Kahf (h aspiré)",
+  "Allah": "Al-lah"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "sermon": 0.55,
+  "fish": 0.7,
+  "meet": 0.75,
+  "pact": 0.6,
+  "boat": 0.8,
+  "boy": 0.7,
+  "wall": 0.7,
+  "reveal": 0.95,
+  "reveal2": 1.0,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
