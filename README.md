@@ -165,3 +165,13 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `noorMount()` (Jabal an-Nour au-dessus de La Mecque : `cave`, `beam`, `path`, `spin`), `meccaSet()` (La Mecque vers 610 : Kaaba `kaaba()`, idoles `idol25()` avec `idols` = surbrillance, tawaf avec pas pilotés par la distance, marché, `night`, `door`, `dark`),
   `mantle()` (« couvrez-moi » : manteau rayé qui recouvre l'image), `fourVirtues()`, `scrollRoom()` (pièce aux rouleaux, livre ouvert, lampe), `desertNight()` (traces de chameaux vers le nord, `dawn`, `palms`),
   `hijraMap()` (carte La Mecque → Médine qui se trace), `bookLight()`, `qalamWrite()` (calame sans main qui écrit en or), `threeDots()`, `vignette25()` (étreinte), `beat()` (battement de cœur).
+
+## Épisode 26 (`episodes/26-uzayr/`) — 'Uzayr, l'homme mort cent ans (Al-Baqara 259)
+- Les 25 prophètes nommés dans le Coran ont tous un épisode (01 à 25) : l'épisode 26 traite de 'Uzayr, nommé dans At-Tawba 30, identifié par la plupart
+  des exégètes à l'homme d'Al-Baqara 259 (sa qualité de prophète est discutée : signalé « pour beaucoup de savants »).
+- Nouveaux éléments : `donkey()` (âne gris détaillé : longues oreilles, crinière droite, croix sur les épaules, museau clair ; `walk` piloté par `donkeyStep(dist, s)`,
+  `lie` couché, `head` broute, `blanket`, `halter`, `earFlick`/`swish` ; `halterOf()` pour la longe), `donkeyBones()` + `BONES26` (squelette propre et blanc qui se
+  rassemble : `k` 0 = os épars au sol → 1 = squelette debout ; puis `donkey({alpha})` pour la chair), `figBasket()` / `fig26()` (panier de figues, `fresh`, `dust`), `jug26()`,
+  `ruinTown()` (Jérusalem en ruines vue de loin) + `townK()` (ruines → ville rebâtie en fondu), `brokenWall()` / `brokenTop()` (mur cassé en gradins), `rubble()`,
+  `judea()` (paysage complet : ciel, chaînes, colline de la ville, terrasses d'oliviers ; `skyFn`, `walkers`, `cityFx`), `slope()` + `gY()` (pente proche où tout est posé),
+  `daySky()` + `lapse()` (accéléré : jours/nuits, saisons de l'arbre, compteur `yearCount()`), `ruinNear()` (brèche dans le rempart), `fallSet()` (destruction, sans violence), `uzHero()`.

@@ -1,0 +1,152 @@
+{
+ "title": "'Uzayr",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "cent",
+  "mort",
+  "réveillé",
+  "jour",
+  "Al-Baqara",
+  "Uzayr",
+  "signes",
+  "ruines",
+  "Jérusalem",
+  "Nabuchodonosor",
+  "Comment",
+  "étonnement",
+  "mourir",
+  "âne",
+  "figues",
+  "saisons",
+  "soixante-dix",
+  "rebâtie",
+  "matin",
+  "soleil",
+  "Combien",
+  "gâté",
+  "os",
+  "chair",
+  "signe",
+  "capable",
+  "brisé",
+  "désespère",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Un homme est mort pendant cent ans… puis il s'est réveillé, persuadé d'avoir dormi un seul jour.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est une histoire du Coran, dans la sourate Al-Baqara. Pour beaucoup de savants, cet homme est 'Uzayr, paix sur lui, dont le nom est cité dans le Coran. Et ce qu'il vit à son réveil est l'un des plus grands signes d'Allah.",
+   "hold": 0.6
+  },
+  {
+   "id": "ruins",
+   "text": "Un jour, avec son âne, il passa près d'une ville en ruines : murs effondrés, toits écroulés, plus personne. Selon les exégètes, c'était Jérusalem, détruite par Nabuchodonosor.",
+   "hold": 0.9
+  },
+  {
+   "id": "question",
+   "text": "Il s'arrêta, et se demanda : « Comment Allah va-t-Il redonner la vie à cette ville, après sa mort ? » Selon les exégètes, ce n'était pas un doute, mais de l'étonnement devant tant de ruines.",
+   "hold": 1.0
+  },
+  {
+   "id": "death",
+   "text": "Alors Allah le fit mourir, pendant cent ans. Près de lui, son âne, sa nourriture et sa boisson : des figues et du jus de raisin, selon les récits.",
+   "hold": 1.4
+  },
+  {
+   "id": "years",
+   "text": "Les saisons passèrent, les générations aussi. Selon les récits, soixante-dix ans plus tard, la ville fut même rebâtie et repeuplée. Et lui restait là, sans rien savoir.",
+   "hold": 1.6
+  },
+  {
+   "id": "wake",
+   "text": "Puis Allah le ramena à la vie. Il était mort le matin ; il se réveilla avant le coucher du soleil. Allah lui demanda : « Combien de temps es-tu resté ainsi ? » Il répondit : « Un jour, ou une partie d'un jour. »",
+   "hold": 1.0
+  },
+  {
+   "id": "hundred",
+   "text": "« Non : tu es resté cent ans ! Regarde ta nourriture et ta boisson : rien ne s'est gâté. Et regarde ton âne… »",
+   "hold": 1.2
+  },
+  {
+   "id": "bones",
+   "text": "Il ne restait de l'âne que des os blanchis. Et sous ses yeux, les os se rassemblèrent, se remirent en place… puis se couvrirent de chair.",
+   "hold": 2.4
+  },
+  {
+   "id": "know",
+   "text": "Allah dit : « Pour faire de toi un signe pour les gens. » Et devant l'évidence, il dit : « Je sais qu'Allah est capable de toute chose. »",
+   "hold": 1.6
+  },
+  {
+   "id": "lesson",
+   "text": "Celui qui a rassemblé ces os peut réparer ce qui est brisé en toi. Ce qui te semble mort, un cœur, un espoir, Allah peut le ramener à la vie. Alors ne désespère jamais.",
+   "hold": 2.4
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire.",
+   "hold": 0.9
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.25,
+   "promise": 0.2,
+   "ruins": 0.35,
+   "question": 0.3,
+   "death": 0.3,
+   "years": 0.4,
+   "wake": 0.22,
+   "hundred": 0.2,
+   "bones": 0.25,
+   "know": 0.2,
+   "lesson": 0.2,
+   "cta": 0.2,
+   "outro": 0.18
+  },
+  "thunder": {}
+ },
+ "pron": {
+  "'Uzayr": "Ou-zaïr (le ' = petit coup de gorge)",
+  "Al-Baqara": "Al-Ba-qa-ra",
+  "Nabuchodonosor": "Na-bu-ko-do-no-zor",
+  "Allah": "Al-lah",
+  "At-Tawba": "At-Taw-ba"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "ruins": 0.6,
+  "question": 0.65,
+  "death": 0.75,
+  "years": 0.8,
+  "wake": 0.75,
+  "hundred": 0.85,
+  "bones": 1.0,
+  "know": 0.9,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
