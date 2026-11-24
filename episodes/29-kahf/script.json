@@ -1,0 +1,160 @@
+{
+ "title": "Les gens de la Caverne",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "endormis",
+  "caverne",
+  "réveillés",
+  "neuf",
+  "Al-Kahf",
+  "pièce",
+  "révélé",
+  "idoles",
+  "guidance",
+  "levèrent",
+  "Seigneur",
+  "foi",
+  "chien",
+  "miséricorde",
+  "sommeil",
+  "soleil",
+  "retournait",
+  "pattes",
+  "années",
+  "mourut",
+  "croire",
+  "trois",
+  "réveilla",
+  "combien",
+  "jour",
+  "argent",
+  "discrètement",
+  "marché",
+  "stupéfait",
+  "mort",
+  "vérité",
+  "l'Heure",
+  "tout",
+  "signe",
+  "cinq",
+  "sept",
+  "nombre",
+  "réfugie",
+  "protège",
+  "grotte",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Ils se sont endormis dans une caverne… et ils se sont réveillés trois cent neuf ans plus tard.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est une histoire du Coran, dans la sourate Al-Kahf. Et à leur réveil, c'est une simple pièce de monnaie qui a tout révélé.",
+   "hold": 0.6
+  },
+  {
+   "id": "youth",
+   "text": "Dans une ville qui adorait des idoles, quelques jeunes gens croyaient en leur Seigneur. Allah dit : « Nous leur avons ajouté la guidance. » Ils se levèrent et dirent : « Notre Seigneur est le Seigneur des cieux et de la terre. »",
+   "hold": 0.8
+  },
+  {
+   "id": "flee",
+   "text": "Pour sauver leur foi, ils quittèrent tout, et se réfugièrent dans une caverne. Leur chien les avait suivis. Ils prièrent : « Seigneur, accorde-nous une miséricorde venant de Toi. »",
+   "hold": 0.9
+  },
+  {
+   "id": "sleep",
+   "text": "Alors Allah les plongea dans le sommeil. À son lever, le soleil s'écartait de leur caverne, et à son coucher, il passait loin d'eux. Allah les retournait sur le côté droit et sur le côté gauche. Et leur chien, les pattes étendues, gardait l'entrée.",
+   "hold": 1.2
+  },
+  {
+   "id": "years",
+   "text": "Dehors, les années passèrent. Selon les récits, le roi idolâtre mourut, et la ville finit par croire. Trois cents ans… et neuf de plus.",
+   "hold": 1.2
+  },
+  {
+   "id": "wake",
+   "text": "Puis Allah les réveilla. « Combien de temps êtes-vous restés ? » « Un jour, ou une partie d'un jour. » Ils envoyèrent l'un d'eux en ville avec une pièce d'argent, pour acheter de la nourriture, très discrètement.",
+   "hold": 0.8
+  },
+  {
+   "id": "coin",
+   "text": "Au marché, il tendit sa pièce. Selon les exégètes, le marchand la regarda, stupéfait : elle portait le nom d'un roi mort depuis trois siècles.",
+   "hold": 1.0
+  },
+  {
+   "id": "sign",
+   "text": "Allah dit : « Ainsi, Nous les avons fait découvrir, pour que l'on sache que la promesse d'Allah est vérité, et que l'Heure viendra sans aucun doute. » Ils avaient tout quitté pour Allah. Et Allah a fait d'eux un signe pour toute l'humanité.",
+   "hold": 1.8
+  },
+  {
+   "id": "number",
+   "text": "Combien étaient-ils ? Trois, cinq, sept, avec leur chien ? Le Coran répond : « Mon Seigneur connaît mieux leur nombre. »",
+   "hold": 1.2
+  },
+  {
+   "id": "lesson",
+   "text": "Ils n'avaient qu'une caverne. Mais quand on se réfugie auprès d'Allah, Il étend sur nous Sa miséricorde, même au fond d'une grotte.",
+   "hold": 1.8
+  },
+  {
+   "id": "cta",
+   "text": "Quelle histoire du Coran veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "ambience": {
+  "wind": {
+   "hook": 0.3,
+   "promise": 0.25,
+   "youth": 0.25,
+   "flee": 0.35,
+   "sleep": 0.22,
+   "years": 0.35,
+   "wake": 0.22,
+   "coin": 0.2,
+   "sign": 0.3,
+   "number": 0.25,
+   "lesson": 0.25,
+   "cta": 0.2,
+   "outro": 0.18
+  }
+ },
+ "pron": {
+  "Al-Kahf": "Al-Ka-hf (h aspiré, « la caverne »)",
+  "Allah": "Al-lah",
+  "l'Heure": "l'Heure (le Jour dernier)"
+ },
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "youth": 0.55,
+  "flee": 0.65,
+  "sleep": 0.8,
+  "years": 0.85,
+  "wake": 0.6,
+  "coin": 0.65,
+  "sign": 1.0,
+  "number": 0.7,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
