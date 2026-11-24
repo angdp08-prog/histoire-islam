@@ -775,7 +775,7 @@ function sparkle(c, t, x, y, n, rad, seed, a = 1) { t += 100; // crossfades draw
   c.restore(); }
 
 function seriesTag(c, a, ep = 10) { textGlow(c, `LES PROPHÈTES  ·  ÉPISODE ${ep}`, W / 2, 112, '600 32px Lora', '#fbe7c6', a * 0.92, '#000000', 12); }
-function topShade(c, a = 1) { const g = c.createLinearGradient(0, 0, 0, 520); g.addColorStop(0, `rgba(10,6,4,${0.55 * a})`); g.addColorStop(1, 'rgba(10,6,4,0)'); c.fillStyle = g; c.fillRect(0, 0, W, 520); }
+function topShade(c, a = 1) { const g = c.createLinearGradient(0, 0, 0, 660); g.addColorStop(0, `rgba(10,6,4,${Math.min(0.85, 0.7 * a)})`); g.addColorStop(0.55, `rgba(10,6,4,${Math.min(0.5, 0.4 * a)})`); g.addColorStop(1, "rgba(10,6,4,0)"); c.fillStyle = g; c.fillRect(0, 0, W, 660); } // stronger: titles over snowy peaks
 function caption(c, txt, y, a, size = 34, col = '#f3e7d0') { textGlow(c, txt, W / 2, y, `italic 500 ${size}px Lora`, col, a * 0.88, '#000', 10); }
 
 // shared settings
@@ -3501,7 +3501,7 @@ function skyline(c, x0, x1, y, s, col, seed, lit, t) { const r = rng(seed); let 
 }
 function nightCities(c, t, o = {}) {
   sky0(c, [[0, '#03050e'], [0.35, '#0c1230'], [0.55, '#1e2444']]);
-  stars(c, t, 170, 2121, [-300, -300, W + 600, 1100], 0.9); moon(c, 820, 430, 44, 0.95, 0.5);
+  stars(c, t, 170, 2121, [-300, -300, W + 600, 1100], 0.9); moon(c, 860, 640, 40, 0.95, 0.5);
   const r = rng(2122); for (let i = 0; i < 260; i++) { const q = Math.pow(r(), 1.4), yy = 1180 + q * 160, xx = -400 + r() * 1900; c.fillStyle = `rgba(255,${190 + (r() * 50 | 0)},120,${0.25 + 0.5 * r()})`; c.fillRect(xx, yy, 1.5 + q * 2.5, 1.5 + q * 2.5); }
   hazeW(c, 1200, 200, '#3a3a60', 0.35);
   skyline(c, -500, 1700, 1420, 0.8, '#121630', 2123, 0.8, t); hazeW(c, 1440, 160, '#2a2a50', 0.35);

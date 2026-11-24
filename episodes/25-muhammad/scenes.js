@@ -3502,7 +3502,7 @@ function skyline(c, x0, x1, y, s, col, seed, lit, t) { const r = rng(seed); let 
 }
 function nightCities(c, t, o = {}) {
   sky0(c, [[0, '#03050e'], [0.35, '#0c1230'], [0.55, '#1e2444']]);
-  stars(c, t, 170, 2121, [-300, -300, W + 600, 1100], 0.9); moon(c, 820, 430, 44, 0.95, 0.5);
+  stars(c, t, 170, 2121, [-300, -300, W + 600, 1100], 0.9); moon(c, 860, 640, 40, 0.95, 0.5);
   const r = rng(2122); for (let i = 0; i < 260; i++) { const q = Math.pow(r(), 1.4), yy = 1180 + q * 160, xx = -400 + r() * 1900; c.fillStyle = `rgba(255,${190 + (r() * 50 | 0)},120,${0.25 + 0.5 * r()})`; c.fillRect(xx, yy, 1.5 + q * 2.5, 1.5 + q * 2.5); }
   hazeW(c, 1200, 200, '#3a3a60', 0.35);
   skyline(c, -500, 1700, 1420, 0.8, '#121630', 2123, 0.8, t); hazeW(c, 1440, 160, '#2a2a50', 0.35);
@@ -3793,7 +3793,7 @@ function windPlain(c, T, o = {}) {
 // 7) ascent from the earth to the heavens: alt 0 (land) -> 1 (stars); clouds pass downward
 function ascent(c, T, alt, o = {}) {
   const a = clamp(alt);
-  if (a < 0.55) { c.save(); c.translate(0, a * 1900); earthLand(c, T, o.night ? { sky: 'night', sun: false, stars: 1, night: 0.75, lamp: 1, moon: 0.9, moonX: 800, moonY: 500, herd: false } : { sky: 'dawn', to: 'gold', k: 0.4, sunX: 760, sunY: 900, herd: false }); c.restore(); }
+  if (a < 0.55) { c.save(); c.translate(0, a * 1900); earthLand(c, T, o.night ? { sky: 'night', sun: false, stars: 1, night: 0.75, lamp: 1, moon: 0.9, moonX: 800, moonY: 640, herd: false } : { sky: 'dawn', to: 'gold', k: 0.4, sunX: 760, sunY: 900, herd: false }); c.restore(); }
   if (a > 0.25) { c.save(); c.globalAlpha = ease(seg(a, 0.25, 0.7)); cosmos(c, T, { arcs: ease(seg(a, 0.6, 1)), hi: o.hi === undefined ? -1 : o.hi, hk: o.hk || 0, ay: 1500 + (1 - a) * 800 }); c.restore(); }
   // cloud layers rushing down
   blurLayer(c, 16, c => { const r = rng(2270);
@@ -4156,7 +4156,7 @@ function prayPair(c, T, o = {}) {
 
 // night lesson: an oil lamp between them on a rock ledge, Ilyas speaking (reach), the young man sitting, listening
 function lessonNight(c, T, o = {}) {
-  lebanon(c, T, { sky: 'night', sun: false, stars: 1, moon: 0.9, moonX: 860, moonY: 520, night: 0.85, fy: 1340, haze: '#2a2a48', city: cityIdol({ x: 820, y: 1334, s: 0.3, lamp: 0.9, night: 1, fire: 0.8 }) });
+  lebanon(c, T, { sky: 'night', sun: false, stars: 1, moon: 0.9, moonX: 860, moonY: 640, night: 0.85, fy: 1340, haze: '#2a2a48', city: cityIdol({ x: 820, y: 1334, s: 0.3, lamp: 0.9, night: 1, fire: 0.8 }) });
   spur(c, T, { cedarX: 980, cedarS: 1.4, col: '#3a3038', night: 1 });
   oilLamp(c, 330, spurY(330) - 2, 1.4, 1, T);
   c.save(); c.globalCompositeOperation = 'lighter'; glow(c, 330, spurY(330) - 40, 420, '#ffb860', 0.35); c.restore();
@@ -4167,7 +4167,7 @@ function lessonNight(c, T, o = {}) {
 // men with torches searching the valley at night (they wanted to harm them); walking, steps driven by distance
 const SEARCH = [[-420, 1, 0], [-300, 1, 3], [-120, 1, 6], [1500, -1, 2], [1380, -1, 5]];
 function searchNight(c, T, q, o = {}) {
-  lebanon(c, T, { sky: 'night', sun: false, stars: 1, moon: 0.85, moonX: 260, moonY: 420, night: 0.9, fy: 1300, haze: '#262848', city: cityIdol({ x: 540, y: 1294, s: 0.36, lamp: 0.9, night: 1, fire: 0.9 }) });
+  lebanon(c, T, { sky: 'night', sun: false, stars: 1, moon: 0.85, moonX: 260, moonY: 640, night: 0.9, fy: 1300, haze: '#262848', city: cityIdol({ x: 540, y: 1294, s: 0.36, lamp: 0.9, night: 1, fire: 0.9 }) });
   const r = 1520;
   SEARCH.forEach(([x0, d, f], i) => { const dist = 60 + q * 70 + i * 14, h = 230 + (i % 2) * 20, so = { x: x0 + d * dist + (d > 0 ? 400 : -400), y: r + (i % 3) * 30, h, dir: d, walk: stepOf(dist, h) + i * 0.4, reach: 0.35, light: 0.55, t: T + i, wind: 0.3, ink: 0.7 };
     fig(c, BAALP[f], so); heldTorch(c, so, T, i); });
@@ -4177,7 +4177,7 @@ function searchNight(c, T, q, o = {}) {
 // the hiding place: the mouth of a cave in the mountain at night, a small lamp inside, the two of them sitting in its glow
 function caveMouth(c, T, o = {}) {
   sky0(c, [[0, '#050818'], [0.3, '#101634'], [0.5, '#22284a']]);
-  stars(c, T, 140, 2411, [-400, -300, W + 800, 900], 0.9); moon(c, 860, 360, 36, 0.9, 0.32);
+  stars(c, T, 140, 2411, [-400, -300, W + 800, 900], 0.9); moon(c, 820, 560, 34, 0.9, 0.32);
   snowRange(c, 980, 300, 2412, '#1a1e36', '#4a5070', 760); hazeW(c, 1040, 220, '#262a48', 0.5);
   // the rock mass: layered, a rim of moonlight, the arched opening
   const top = x => 760 + Math.abs(x - 560) * 0.32 + noise1(x * 0.01, 2413) * 60;
@@ -4307,7 +4307,7 @@ function noorMount(c, T, o = {}) {
   sky25(c, o.sky || 'night', o.to, o.k || 0);
   if (nt > 0.3) { stars(c, T, 220, 2504, [-400, -300, W + 800, 1300], 0.95 * nt); milkyWay(c, T, 0.35 * nt * (o.milky === undefined ? 1 : o.milky)); }
   if (o.spin) spinStars(c, T, o.spin, nt);
-  if (o.moon) moon(c, o.moonX || 820, o.moonY || 360, o.moonR || 40, o.moon, o.phase === undefined ? 0.18 : o.phase);
+  if (o.moon) moon(c, o.moonX || 820, o.moonY || 640, o.moonR || 40, o.moon, o.phase === undefined ? 0.18 : o.phase);
   if (o.sunX !== undefined) { c.save(); c.globalCompositeOperation = 'lighter'; glow(c, o.sunX, o.sunY, 520, '#ffd8a0', 0.4 * (o.sunA || 1)); c.restore(); sun(c, o.sunX, o.sunY, 46, '#ffe6b0', o.sunA || 1); }
   // far ranges of the Hijaz
   const far1 = mix('#8a6a78', '#1a1c3a', nt), far2 = mix('#6a4e56', '#141630', nt), near = mix('#5a3e38', '#100f22', nt);
@@ -4451,7 +4451,7 @@ const TAWAF = [...Array(16).keys()].map(i => ({ a0: i / 16 * 6.283 + (i % 3) * 0
 function meccaSet(c, T, o = {}) {
   const nt = o.night || 0, dk = o.dark || 0;
   if (nt > 0.5) sky25(c, 'night', 'deep', dk); else sky25(c, 'gold', 'dusk', o.dusk === undefined ? 0.45 : o.dusk);
-  if (nt > 0.3) { stars(c, T, 160, 2541, [-300, -300, W + 600, 1000], nt); moon(c, 820, 380, 34, nt, 0.25); }
+  if (nt > 0.3) { stars(c, T, 160, 2541, [-300, -300, W + 600, 1000], nt); moon(c, 840, 600, 34, nt, 0.25); }
   else { c.save(); c.globalCompositeOperation = 'lighter'; glow(c, 780, 1040, 560, '#ffd8a0', 0.45); c.restore(); sun(c, 780, 1040, 50, '#ffe6b0', 0.95); }
   wisps(c, T, 600, 4, nt > 0.5 ? '#3a4070' : '#fff0dc', 0.14, 2542, 6);
   par(c, 0.1, o.px || 0, 0, () => { ridgeW(c, 1120, 180, 0.0034, 2543, mix('#9a7078', '#1a1c3a', nt)); hazeW(c, 1140, 220, mix('#f8c8a0', '#262a50', nt), 0.55); });
@@ -4566,7 +4566,7 @@ function hoofPrint(c, x, y, s, a) { c.fillStyle = `rgba(60,36,20,${0.5 * a})`; c
 function desertNight(c, T, o = {}) {
   const dw = o.dawn || 0;
   sky25(c, 'deep', 'dawn', dw); stars(c, T, 260, 2591, [-300, -300, W + 600, 1250], 1 - dw * 0.8); milkyWay(c, T, 0.45 * (1 - dw));
-  moon(c, 300, 420, 34, 0.9 * (1 - dw * 0.6), 0.22); c.save(); c.globalCompositeOperation = 'lighter'; glow(c, 300, 420, 500, '#8890d0', 0.18 * (1 - dw)); c.restore();
+  // no moon here: it sat behind the titles
   if (dw > 0) { c.save(); c.globalCompositeOperation = 'lighter'; glow(c, 760, 1180, 700, '#ffc890', 0.5 * dw); c.restore(); }
   const sand = mix('#6a6288', '#c89a6a', dw), sandD = mix('#2e2a48', '#8a6040', dw);
   par(c, 0.1, o.px || 0, 0, () => { ridgeW(c, 1180, 60, 0.004, 2592, mix('#2a2a48', '#b08a80', dw)); hazeW(c, 1200, 140, mix('#2a2e54', '#f8d0b0', dw), 0.5);
@@ -4653,7 +4653,7 @@ const SCENES = {
       const tSe = at('hook', 'seul', 0, 3.4), tGr = at('hook', 'grotte', 0, 5.0), tSo = at('hook', 'soudain', 0, 5.9), tLi = at('hook', 'lis', 0, 7.2);
       shots(c, t, [
         [0, (cc, q) => { const k = ease(seg(q, 0, tSe)); hero25(cc, t, { z: lerp(1.0, 1.1, k), cy: lerp(980, 1000, k) }); }],
-        [tSe - 0.15, (cc, q) => { const k = ease(seg(q, 0, tGr - tSe + 0.3)); cam(cc, lerp(1.25, 1.6, k), lerp(560, 640, k), lerp(1000, 760, k)); noorMount(cc, t, { cave: 0.5, moon: 0.9, moonX: 860, moonY: 380 }); }],
+        [tSe - 0.15, (cc, q) => { const k = ease(seg(q, 0, tGr - tSe + 0.3)); cam(cc, lerp(1.25, 1.6, k), lerp(560, 640, k), lerp(1000, 760, k)); noorMount(cc, t, { cave: 0.5, moon: 0.9, moonX: 860, moonY: 640 }); }],
         [tGr - 0.15, (cc, q) => { const k = ease(seg(q, 0, tSo - tGr + 0.3)); hiraView(cc, t, { z: lerp(1.9, 1.75, k), cx: lerp(380, 520, k), cy: 1560, light: 0.1 }); }],
         [tSo - 0.15, (cc, q) => { const L = 0.1 + 0.9 * ease(seg(q, 0, tLi - tSo + 0.05)); hiraView(cc, t, { z: lerp(1.15, 1.0, ease(seg(q, 0, d - tSo))), light: L, shake: 0.25 * ramp(q, 0, 0.4) + 0.6 * Math.exp(-Math.max(0, q - (tLi - tSo)) * 3) * (q > tLi - tSo ? 1 : 0) }); }],
       ]);
@@ -4673,7 +4673,7 @@ const SCENES = {
     draw(c, t, d) {
       const tMu = at('promise', 'muhammad', 0, 4.0), tVi = at('promise', 'vieil', 0, 7.0), tRe = at('promise', 'realise', 0, 9.6), tTr = at('promise', 'treize', 0, 10.6);
       shots(c, t, [
-        [0, (cc, q) => { const k = ease(seg(q, 0, tVi)); cam(cc, lerp(1.35, 1.0, k), lerp(640, 560, k), lerp(820, 1040, k)); noorMount(cc, t, { sky: 'night', to: 'dawn', k: 0.25 + 0.3 * k, night: 0.85, cave: 0.7, moon: 0.7, moonX: 880, moonY: 340 }); }],
+        [0, (cc, q) => { const k = ease(seg(q, 0, tVi)); cam(cc, lerp(1.35, 1.0, k), lerp(640, 560, k), lerp(820, 1040, k)); noorMount(cc, t, { sky: 'night', to: 'dawn', k: 0.25 + 0.3 * k, night: 0.85, cave: 0.7, moon: 0.7, moonX: 880, moonY: 640 }); }],
         [tVi - 0.25, (cc, q) => { const k = ease(seg(q, 0, tRe - tVi + 0.3)); cam(cc, lerp(1.0, 1.12, k), lerp(480, 560, k), 1250); scrollRoom(cc, t, { glow: 0.2 }); }],
         [tRe - 0.25, (cc, q) => { const k = ease(seg(q, 0, d - tRe)); cam(cc, lerp(1.0, 1.08, k), 540, 1300); desertNight(cc, t, { k: 0.2 + 0.8 * k, route: 0.6 }); }],
       ]);
@@ -4738,8 +4738,8 @@ const SCENES = {
     draw(c, t, d) {
       const tRa = at('night', 'ramadan', 0, 1.6), tJi = at('night', 'jibril', 0, 3.2), tLi = at('night', 'lis', 0, 5.4), tRe = at('night', 'repond', 0, 6.2), tSa = at('night', 'sais', 0, 7.4);
       shots(c, t, [
-        [0, (cc, q) => { const k = ease(seg(q, 0, tJi)); cam(cc, lerp(1.0, 1.15, k), lerp(600, 760, k), lerp(900, 640, k)); noorMount(cc, t, { sky: 'deep', moon: 1, moonX: 860, moonY: 420, moonR: 64, phase: 0.12, cave: 0.3 }); }],
-        [tJi - 0.25, (cc, q) => { const k = ease(seg(q, 0, tLi - tJi + 0.2)); cam(cc, lerp(1.4, 1.3, k), 640, lerp(780, 820, k)); noorMount(cc, t, { sky: 'deep', moon: 0.8, moonX: 860, moonY: 420, moonR: 64, phase: 0.12, cave: 0.4 + 0.6 * k, beam: ramp(q, 0.1, 0.8) }); }],
+        [0, (cc, q) => { const k = ease(seg(q, 0, tJi)); cam(cc, lerp(1.0, 1.15, k), lerp(600, 760, k), lerp(900, 640, k)); noorMount(cc, t, { sky: 'deep', moon: 1, moonX: 860, moonY: 640, moonR: 64, phase: 0.12, cave: 0.3 }); }],
+        [tJi - 0.25, (cc, q) => { const k = ease(seg(q, 0, tLi - tJi + 0.2)); cam(cc, lerp(1.4, 1.3, k), 640, lerp(780, 820, k)); noorMount(cc, t, { sky: 'deep', moon: 0.8, moonX: 860, moonY: 640, moonR: 64, phase: 0.12, cave: 0.4 + 0.6 * k, beam: ramp(q, 0.1, 0.8) }); }],
         [tLi - 0.15, (cc, q) => { hiraView(cc, t, { z: lerp(1.08, 1.0, ease(seg(q, 0, tRe - tLi))), light: 1, shake: 0.7 * Math.exp(-q * 3) }); }],
         [tRe - 0.2, (cc, q) => { const k = ease(seg(q, 0, d - tRe)); hiraView(cc, t, { z: lerp(1.6, 1.7, k), cx: lerp(360, 420, k), cy: 1500, light: 0.55 }); }],
       ]);
@@ -4765,7 +4765,7 @@ const SCENES = {
         [tLi - 0.15, (cc, q) => { const fl = tri.reduce((m, s) => Math.max(m, t >= s ? Math.exp(-(t - s) * 5) : 0), 0); hiraView(cc, t, { z: lerp(1.0, 1.08, ease(seg(q, 0, tRc - tLi))), light: 0.8 + 0.2 * fl, shake: 0.4 * fl }); }],
         [tRc - 0.25, (cc, q) => { const k = ease(seg(q, 0, tCa - tRc + 0.3)); hiraView(cc, t, { z: lerp(0.95, 1.12, k), cy: lerp(1000, 900, k), light: 1 }); verseRise(cc, t, ramp(q, 0.4, tCa - tRc), HMX + 40, HMY + 80, 'اقرأ باسم ربك'); }],
         [tCa - 0.3, (cc, q) => { const k = ease(seg(q, 0, tHo - tCa + 0.3)); cam(cc, lerp(1.0, 1.08, k), 540, 1020); qalamWrite(cc, t, ramp(q, 0.1, tHo - tCa + 0.2)); }],
-        [tHo - 0.25, (cc, q) => { const k = ease(seg(q, 0, d - tHo)); cam(cc, lerp(1.25, 0.95, k), lerp(640, 580, k), lerp(760, 980, k)); noorMount(cc, t, { sky: 'deep', moon: 0.8, moonX: 860, moonY: 420, moonR: 64, phase: 0.12, cave: 1, beam: 0.7 + 0.3 * k }); }],
+        [tHo - 0.25, (cc, q) => { const k = ease(seg(q, 0, d - tHo)); cam(cc, lerp(1.25, 0.95, k), lerp(640, 580, k), lerp(760, 980, k)); noorMount(cc, t, { sky: 'deep', moon: 0.8, moonX: 860, moonY: 640, moonR: 64, phase: 0.12, cave: 1, beam: 0.7 + 0.3 * k }); }],
       ]);
       c.setTransform(1, 0, 0, 1, 0, 0);
       vignette25(c, press * 0.8);
@@ -4790,7 +4790,7 @@ const SCENES = {
         tOn = at('home', 'couvre', 0, 7.4), tPe = at('home', 'peur', 0, 9.2);
       const calm = ramp(t, tOn, tPe - tOn + 0.8), hb = beat(t, 0, 0.75) * (1 - calm);
       shots(c, t, [
-        [0, (cc, q) => { const k = ease(seg(q, 0, tKh)); cam(cc, lerp(1.5, 1.15, k), lerp(640, 520, k), lerp(760, 1300, k), ...shake(t, 0.2 * hb, 8)); noorMount(cc, t, { sky: 'deep', moon: 0.7, moonX: 860, moonY: 420, cave: 0.3 }); }],
+        [0, (cc, q) => { const k = ease(seg(q, 0, tKh)); cam(cc, lerp(1.5, 1.15, k), lerp(640, 520, k), lerp(760, 1300, k), ...shake(t, 0.2 * hb, 8)); noorMount(cc, t, { sky: 'deep', moon: 0.7, moonX: 860, moonY: 640, cave: 0.3 }); }],
         [tKh - 0.25, (cc, q) => { const k = ease(seg(q, 0, tCo - tKh + 0.3)); cam(cc, lerp(1.5, 1.65, k), 300, 1520); meccaSet(cc, t, { night: 1, door: 1, crowd: false, market: false, fg: false }); }],
         [tCo - 0.2, (cc, q) => { dkRoom(cc, t, { night: 1, lamp: 1, bar: false, z: lerp(1.15, 1.3, ease(seg(q, 0, tOn - tCo))), cx: 560, cy: 1150, shakeCam: 0.5 * (1 - calm) * (0.5 + hb) }); dkRoomFg(cc, t, { night: 1 }); }],
         [tOn - 0.2, (cc, q) => { dkRoom(cc, t, { night: 1, lamp: 1, bar: false, z: 1.3 + 0.1 * ease(seg(q, 0, d - tOn)), cx: 560, cy: 1150, shakeCam: 0.4 * (1 - calm) }); mantle(cc, t, 0.6 * ramp(q, 0.05, 1.6) + 0.03 * Math.sin(t * 1.2)); }],
@@ -4835,7 +4835,7 @@ const SCENES = {
         [tAn - 0.25, (cc, q) => { const k = ease(seg(q, 0, tSi - tAn + 0.3)); cam(cc, lerp(1.6, 1.4, k), 520, lerp(1480, 1380, k)); scrollRoom(cc, t, { glow: ramp(q, 0, 0.8) }); }],
         [tSi - 0.25, (cc, q) => { const k = ease(seg(q, 0, tCh - tSi + 0.3)); cam(cc, lerp(2.2, 2.35, k), 720, 1540); scrollRoom(cc, t, { glow: 0.3 }); }],
         [tCh - 0.2, (cc, q) => { const k = ease(seg(q, 0, tIl - tCh + 0.3)); cam(cc, lerp(1.05, 1.15, k), 540, 1250); meccaSet(cc, t, { night: 1, dark: 0.3 + 0.5 * ramp(q, 0, 0.6), market: false }); }],
-        [tIl - 0.2, (cc, q) => { const k = ease(seg(q, 0, tPe - tIl + 0.3)); cam(cc, lerp(1.0, 1.1, k), 560, 1050); noorMount(cc, t, { sky: 'deep', moon: 0.7, moonX: 860, moonY: 420, cave: 0.4 }); }],
+        [tIl - 0.2, (cc, q) => { const k = ease(seg(q, 0, tPe - tIl + 0.3)); cam(cc, lerp(1.0, 1.1, k), 560, 1050); noorMount(cc, t, { sky: 'deep', moon: 0.7, moonX: 860, moonY: 640, cave: 0.4 }); }],
         [tPe - 0.25, (cc, q) => { const k = ease(seg(q, 0, d - tPe)); cam(cc, lerp(1.25, 1.05, k), 560, 1300); scrollRoom(cc, t, { dim: 0.3, glow: 0.15 }); }],
       ]);
       c.setTransform(1, 0, 0, 1, 0, 0);
@@ -4857,7 +4857,7 @@ const SCENES = {
       const tCh = at('hijra', 'chasse', 0, 2.2), tMe = at('hijra', 'medine', 0, 4.6), tPr = at('hijra', 'prediction', 0, 5.8), tRe = at('hijra', 'realisee', 0, 7.0), tLi = at('hijra', 'lis', 0, 8.8), tCo = at('hijra', 'coran', 0, 10.4), tMo = at('hijra', 'monde', 0, 12.4);
       shots(c, t, [
         [0, (cc, q) => { const k = ease(seg(q, 0, tCh)); cam(cc, lerp(1.05, 1.0, k), 540, 1300); desertNight(cc, t, { k: 0.1 + 0.4 * k, route: 0.4 }); }],
-        [tCh - 0.25, (cc, q) => { const k = ease(seg(q, 0, tPr - tCh + 0.3)); cam(cc, lerp(1.0, 1.06, k), 540, lerp(1080, 960, k)); hijraMap(cc, t, ramp(q, 0.1, tMe - tCh + 0.3)); }],
+        [tCh - 0.25, (cc, q) => { const k = ease(seg(q, 0, tPr - tCh + 0.3)); cam(cc, lerp(0.86, 0.9, k), 540, lerp(940, 880, k)); hijraMap(cc, t, ramp(q, 0.1, tMe - tCh + 0.3)); }], // framed lower: the map card stays clear of the title
         [tPr - 0.25, (cc, q) => { const k = ease(seg(q, 0, tLi - tPr + 0.3)); cam(cc, lerp(1.0, 1.1, k), 560, 1250); desertNight(cc, t, { k: 1, route: 0.8, dawn: 0.3 + 0.5 * k, palms: true, px: k * 30 }); }],
         [tLi - 0.25, (cc, q) => { const k = ease(seg(q, 0, tMo - tLi + 0.3)); cam(cc, lerp(1.3, 1.15, k), 540, lerp(1150, 1100, k)); bookLight(cc, t, { glow: 0.7 + 0.3 * k }); verseRise(cc, t, ramp(q, tCo - tLi - 0.6, 1.6), 580, 1250, 'اقرأ'); }],
         [tMo - 0.25, (cc, q) => { const k = ease(seg(q, 0, d - tMo)); cam(cc, lerp(1.0, 1.08, k), 540, 1000); nightCities(cc, t); verseRise(cc, t, ramp(q, 0.1, 2.0), 600, 1300, 'اقرأ باسم ربك'); }],

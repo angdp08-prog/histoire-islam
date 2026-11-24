@@ -2603,7 +2603,7 @@ function streetSet(c, t, o = {}) {
   const nt = o.night === undefined ? 1 : o.night;
   sky0(c, skyBlend({ sky: o.sky || 'night', to: o.to, k: o.k }));
   stars(c, t, 120, 27, [-400, -300, W + 800, 1000], 0.7 * nt);
-  if (o.moon !== false) moon(c, 820, 380, 40, 0.9 * nt);
+  if (o.moon !== false) moon(c, o.moonX || 820, o.moonY || 380, 40, 0.9 * nt);
   wisps(c, t, 520, 4, '#c8c8e0', 0.06, 4, 3);
   // houses receding along the right side and the far left side (far first)
   const R = [[1260, 1510, 0.95], [1080, 1420, 0.72], [950, 1350, 0.55], [860, 1300, 0.42], [800, 1262, 0.32]], L = [[560, 1300, 0.42], [630, 1262, 0.32], [480, 1350, 0.55]];
@@ -3501,7 +3501,7 @@ function skyline(c, x0, x1, y, s, col, seed, lit, t) { const r = rng(seed); let 
 }
 function nightCities(c, t, o = {}) {
   sky0(c, [[0, '#03050e'], [0.35, '#0c1230'], [0.55, '#1e2444']]);
-  stars(c, t, 170, 2121, [-300, -300, W + 600, 1100], 0.9); moon(c, 820, 430, 44, 0.95, 0.5);
+  stars(c, t, 170, 2121, [-300, -300, W + 600, 1100], 0.9); moon(c, 860, 640, 40, 0.95, 0.5);
   const r = rng(2122); for (let i = 0; i < 260; i++) { const q = Math.pow(r(), 1.4), yy = 1180 + q * 160, xx = -400 + r() * 1900; c.fillStyle = `rgba(255,${190 + (r() * 50 | 0)},120,${0.25 + 0.5 * r()})`; c.fillRect(xx, yy, 1.5 + q * 2.5, 1.5 + q * 2.5); }
   hazeW(c, 1200, 200, '#3a3a60', 0.35);
   skyline(c, -500, 1700, 1420, 0.8, '#121630', 2123, 0.8, t); hazeW(c, 1440, 160, '#2a2a50', 0.35);
@@ -3669,7 +3669,7 @@ const HUTS = [[-380, 1, 0.55], [-120, 0, 0.6], [140, 1, 0.5], [920, 0, 0.62], [1
 function earthLand(c, t, o = {}) { // o: sky, to, k, px, night, lamp, fy
   const fy = o.fy || 1240, nt = o.night || 0, px = o.px || 0;
   canaanLand(c, t, { fy, sky: o.sky || 'gold', to: o.to, k: o.k, px, night: nt, sun: o.sun, sunX: o.sunX === undefined ? 760 : o.sunX, sunY: o.sunY === undefined ? fy - 380 : o.sunY, sunA: o.sunA,
-    stars: o.stars, moon: o.moon, haze: o.haze || '#f4d0a8', seed: 22, n: 120 });
+    stars: o.stars, moon: o.moon, moonX: o.moonX, moonY: o.moonY, haze: o.haze || '#f4d0a8', seed: 22, n: 120 });
   par(c, 1, px, 0, () => {
     if (o.river !== false) river(c, fy, t, { night: nt, top: o.water });
     HUTS.forEach(([x, sm, s], i) => reedHut(c, x, fy + 20 + i % 2 * 14, s, t + i, { night: nt, smoke: sm, lamp: o.lamp ? o.lamp * (i % 2 ? 1 : 0.6) : 0 }));
@@ -3976,7 +3976,7 @@ const SCENES = {
     draw(c, t, d) {
       const tAl = at('verse', 'allah', 0, 2.6), tEl = at('verse', 'elevames', 0, 4.4), tRa = at('verse', 'rang', 0, 5.6);
       shots(c, t, [
-        [0, (cc, q) => { const k = ease(seg(q, 0, tAl)); cam(cc, lerp(1.0, 1.06, k), 540, 1150); earthLand(cc, t, { sky: 'night', to: 'dawn', k: 0.0, sun: false, stars: 1, night: 0.75, lamp: 1, moon: 0.9, moonX: 800, moonY: 500 });
+        [0, (cc, q) => { const k = ease(seg(q, 0, tAl)); cam(cc, lerp(1.0, 1.06, k), 540, 1150); earthLand(cc, t, { sky: 'night', to: 'dawn', k: 0.0, sun: false, stars: 1, night: 0.75, lamp: 1, moon: 0.9, moonX: 820, moonY: 700 });
           fig(cc, IDR, { x: 420, y: 1640, h: 480, dir: 1, dua: true, light: 0.9, t, wind: 0.3, veilGlow: 0.4 }); earthFg(cc, t, '#1e2414'); }],
         [tAl - 0.25, (cc, q) => { const k = ease(seg(q, 0, d - tAl)); ascent(cc, t, ease(seg(q, 0.3, tRa - tAl + 1.4)), { night: true, hi: 3, hk: ramp(q, tRa - tAl, 0.8) }); riseStreaks(cc, t, 0.6 * Math.sin(Math.PI * clamp(q / (tRa - tAl + 1.4)))); }],
       ]);

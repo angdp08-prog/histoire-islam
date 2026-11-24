@@ -3503,7 +3503,7 @@ function skyline(c, x0, x1, y, s, col, seed, lit, t) { const r = rng(seed); let 
 }
 function nightCities(c, t, o = {}) {
   sky0(c, [[0, '#03050e'], [0.35, '#0c1230'], [0.55, '#1e2444']]);
-  stars(c, t, 170, 2121, [-300, -300, W + 600, 1100], 0.9); moon(c, 820, 430, 44, 0.95, 0.5);
+  stars(c, t, 170, 2121, [-300, -300, W + 600, 1100], 0.9); moon(c, 860, 640, 40, 0.95, 0.5);
   const r = rng(2122); for (let i = 0; i < 260; i++) { const q = Math.pow(r(), 1.4), yy = 1180 + q * 160, xx = -400 + r() * 1900; c.fillStyle = `rgba(255,${190 + (r() * 50 | 0)},120,${0.25 + 0.5 * r()})`; c.fillRect(xx, yy, 1.5 + q * 2.5, 1.5 + q * 2.5); }
   hazeW(c, 1200, 200, '#3a3a60', 0.35);
   skyline(c, -500, 1700, 1420, 0.8, '#121630', 2123, 0.8, t); hazeW(c, 1440, 160, '#2a2a50', 0.35);
@@ -3901,7 +3901,7 @@ function dkDoor(c, T, o = {}) {
   c.fillStyle = '#f2dcb4'; c.fillRect(hx - hw / 2 - 10, top - 14, hw + 20, 18); c.fillStyle = '#5a3a22'; for (let k = 0; k < 8; k++) c.fillRect(hx - hw / 2 + 40 + k * 130, top + 10, 26, 16); // roof beams
   c.fillStyle = 'rgba(90,60,30,0.25)'; c.fillRect(hx + hw / 2 - 30, top, 30, hh); // the corner in shade
   // the small high window (the opening of the story)
-  const wx = 640, wy = top + 300; c.fillStyle = '#2a1a10'; c.beginPath(); archPath(c, wx, wy, 96, 130); c.fill();
+  const wx = 640, wy = top + 540; c.fillStyle = '#2a1a10'; c.beginPath(); archPath(c, wx, wy, 96, 130); c.fill();
   c.strokeStyle = '#b8946a'; c.lineWidth = 8; c.beginPath(); archPath(c, wx, wy + 4, 112, 142); c.stroke();
   // door step + door + lintel
   c.fillStyle = '#9a7a56'; c.fillRect(DOORX - DOORW / 2 - 36, DOORY - 14, DOORW + 72, 18);
@@ -3925,7 +3925,7 @@ function dkDoor(c, T, o = {}) {
 
 // 2) the room inside (day1, day2, day3, reveal, lesson): plastered walls, ceiling beams, the barred door on the left, the small high
 //    window on the right with a shaft of sunlight full of dust, a mat, cushions, a niche with an oil lamp, a water jar.
-const RFY = 1500, RDX = 230, RDW = 250, RDH = 560, RWX = 840, RWY = 560;
+const RFY = 1500, RDX = 230, RDW = 250, RDH = 560, RWX = 840, RWY = 840;
 function dkRoom(c, T, o = {}) {
   const nt = o.night || 0, z = o.z || 1, cx = o.cx || 540, cy = o.cy || 1150;
   cam(c, z + 0.004 * Math.sin(T * 0.27), cx, cy, ...(o.shakeCam ? shake(T, o.shakeCam, 8) : [0, 0]));
