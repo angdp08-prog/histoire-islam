@@ -186,3 +186,13 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `shore27()` + `sandY27()` (plage, grand rocher, coquillages, algues), `greenPatch()` (l'herbe qui verdit sous Al-Khidr, Bukhari 3402), `basket27()`, `fish27()`, `tunnel27()`
   (le chemin du poisson « comme un tunnel »), `splash27()`, `sermonSet()`, `meetSet()` (`trio` = les trois marchent), `leanWall()` (mur penché par cisaillement, la base reste au sol),
   `villageSet()` (`cut` = coupe du sol sur le trésor `chest27()`), `playSet()`, `lampSet()`, `harbourSet()` (soldats du roi qui saisissent les bateaux), `parentsSet()`, `sailAway()`, `fgShore()`.
+
+## Épisode 28 (`episodes/28-yasin/`) — les messagers de Yâ-Sîn et Habib, l'homme qui arriva en courant (Yâ-Sîn 13-29)
+- Après les 25 prophètes nommés, 'Uzayr et Al-Khidr : les trois messagers envoyés à « la cité » (Antioche selon beaucoup d'exégètes, signalé « Allah sait mieux »).
+  Les messagers = silhouettes blanches au voile de lumière ; Habib (nom donné par les exégètes, menuisier selon Ibn Ishaq) est un croyant ordinaire, sans visage.
+  Sa mort n'est pas montrée (lumière blanche, puis son herminette sur les dalles) ; le Paradis n'est qu'évoqué (jardin de lumière) ; le Cri = une onde et toutes les lampes qui s'éteignent.
+- Nouveaux éléments : `silpius()` (le mont Silpius : rempart à tours qui suit la crête, citadelle, maisons étagées avec lampes `lamp`, `dark`), `orontes()` (fleuve dans la plaine),
+  `antioch()` (paysage complet + sol proche `slope()`/`gY` pour les marcheurs `walkers`), `square28()` (place à colonnade, auvent, jarres), `crowd28()` (foule en perspective `CR28` :
+  `anger`, `stones` = pierres en main, `laugh`, `close` = la foule se resserre en gardant ses distances avec Habib), `hero28()` (plan héros : colonne de lumière + vignette sur Habib),
+  `runnerAt()` (course dans la rue en perspective, pas pilotés par la distance intégrée), `garden28()` (jardin de lumière), `adze()` (herminette), `cryWave()`, `cityAt()` (`out` = lampes éteintes).
+- Piège : `sparkle()` près d'une tête dessine des points blancs qui ressemblent à des yeux → toujours le placer bien au-dessus des personnages.

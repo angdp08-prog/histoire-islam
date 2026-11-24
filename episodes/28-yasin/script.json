@@ -1,0 +1,167 @@
+{
+ "title": "Les messagers de Yâ-Sîn",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "tué",
+  "Paradis",
+  "eux",
+  "Yâ-Sîn",
+  "messagers",
+  "défendre",
+  "mort",
+  "deux",
+  "Antioche",
+  "menteurs",
+  "troisième",
+  "envoyés",
+  "hommes",
+  "transmettre",
+  "malheur",
+  "lapiderons",
+  "extrémité",
+  "courant",
+  "Habib",
+  "suivez",
+  "salaire",
+  "guidés",
+  "écoutez-moi",
+  "tua",
+  "conseiller",
+  "Entre",
+  "savait",
+  "pardonné",
+  "honorés",
+  "Cri",
+  "éteints",
+  "vivant",
+  "rancune",
+  "bien",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Son peuple l'a tué. Et au Paradis, ses premiers mots ont été pour eux.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est une histoire du Coran, dans la sourate Yâ-Sîn : une cité, trois messagers, et un seul homme qui a osé les défendre. Et ce qu'il a dit après sa mort, personne ne s'y attendait.",
+   "hold": 0.6
+  },
+  {
+   "id": "city",
+   "text": "Allah envoya deux messagers à une cité, Antioche selon beaucoup d'exégètes. Ils appelèrent ses habitants à n'adorer qu'Allah, et à délaisser leurs idoles. Mais on les traita de menteurs.",
+   "hold": 0.8
+  },
+  {
+   "id": "third",
+   "text": "Alors Allah les renforça par un troisième. Et tous les trois dirent : « Nous sommes envoyés vers vous. »",
+   "hold": 0.9
+  },
+  {
+   "id": "reject",
+   "text": "Le peuple répondit : « Vous n'êtes que des hommes comme nous ! Le Tout Miséricordieux n'a rien fait descendre, vous ne faites que mentir. » Les messagers dirent : « Notre Seigneur sait que nous sommes envoyés vers vous. Nous devons seulement transmettre clairement. »",
+   "hold": 0.8
+  },
+  {
+   "id": "threat",
+   "text": "« Vous nous portez malheur ! Si vous ne cessez pas, nous vous lapiderons. »",
+   "hold": 1.0
+  },
+  {
+   "id": "runner",
+   "text": "C'est alors que, de l'extrémité de la ville, un homme arriva en courant. Les exégètes l'appellent Habib, le menuisier.",
+   "hold": 0.9
+  },
+  {
+   "id": "speech",
+   "text": "« Ô mon peuple, suivez les messagers ! Suivez ceux qui ne vous demandent aucun salaire, et qui sont bien guidés. Pourquoi n'adorerais-je pas Celui qui m'a créé, et vers qui vous serez ramenés ? Moi, je crois en votre Seigneur : écoutez-moi ! »",
+   "hold": 0.9
+  },
+  {
+   "id": "killed",
+   "text": "Mais son peuple se jeta sur lui, et le tua, rapportent les exégètes. Il n'avait fait que les conseiller.",
+   "hold": 1.4
+  },
+  {
+   "id": "paradise",
+   "text": "Alors on lui dit : « Entre au Paradis. » Et ses premiers mots furent : « Si seulement mon peuple savait comment mon Seigneur m'a pardonné, et m'a mis parmi les honorés ! »",
+   "hold": 2.2
+  },
+  {
+   "id": "cry",
+   "text": "Après lui, Allah n'envoya contre son peuple aucune armée du ciel. Pour la cité, il n'a fallu qu'un seul Cri. Et les voilà éteints.",
+   "hold": 1.4
+  },
+  {
+   "id": "lesson",
+   "text": "Ibn Abbas a dit : il a conseillé son peuple de son vivant, et après sa mort. Le cœur du croyant ne garde pas de rancune : même blessé, il veut encore leur bien.",
+   "hold": 2.0
+  },
+  {
+   "id": "cta",
+   "text": "Quel prophète veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "ambience": {
+  "wind": {
+   "hook": 0.3,
+   "promise": 0.25,
+   "city": 0.3,
+   "third": 0.3,
+   "reject": 0.25,
+   "threat": 0.35,
+   "runner": 0.35,
+   "speech": 0.3,
+   "killed": 0.4,
+   "paradise": 0.2,
+   "cry": 0.4,
+   "lesson": 0.25,
+   "cta": 0.2,
+   "outro": 0.18
+  },
+  "thunder": {
+   "cry": 0.35,
+   "threat": 0.15
+  }
+ },
+ "pron": {
+  "Yâ-Sîn": "Ya-Sine",
+  "Habib": "Ha-bib (h aspiré)",
+  "Ibn Abbas": "Ibn Ab-bas (a guttural)",
+  "Antioche": "An-ti-oche",
+  "Allah": "Al-lah"
+ },
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "city": 0.55,
+  "third": 0.6,
+  "reject": 0.6,
+  "threat": 0.7,
+  "runner": 0.75,
+  "speech": 0.8,
+  "killed": 0.7,
+  "paradise": 1.0,
+  "cry": 0.8,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
