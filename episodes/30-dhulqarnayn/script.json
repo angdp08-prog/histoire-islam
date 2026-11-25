@@ -1,0 +1,154 @@
+{
+ "title": "Dhul-Qarnayn et la muraille de fer",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "fer",
+  "cuivre",
+  "Ya'juj",
+  "Ma'juj",
+  "fin",
+  "Dhul-Qarnayn",
+  "Al-Kahf",
+  "fait",
+  "établi",
+  "moyen",
+  "cornes",
+  "juste",
+  "couchant",
+  "source",
+  "récompense",
+  "levant",
+  "soleil",
+  "montagnes",
+  "désordre",
+  "barrière",
+  "refusa",
+  "mieux",
+  "forces",
+  "Soufflez",
+  "rouge",
+  "fondu",
+  "escalader",
+  "percer",
+  "miséricorde",
+  "nivellera",
+  "vérité",
+  "pouvoir",
+  "humble",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Un roi a bâti un mur de fer et de cuivre fondu, pour retenir Ya'juj et Ma'juj… et ce mur ne tombera qu'à l'approche de la fin des temps.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire de Dhul-Qarnayn, dans la sourate Al-Kahf. Et quand il eut fini, ce roi si puissant n'a pas dit : « Regardez ce que j'ai fait. »",
+   "hold": 0.6
+  },
+  {
+   "id": "who",
+   "text": "Allah dit : « Nous l'avons établi sur la terre, et Nous lui avons donné un moyen pour toute chose. » Son nom signifie « l'homme aux deux cornes ». Pour la plupart des savants, c'était un roi juste et croyant ; son identité reste discutée.",
+   "hold": 0.8
+  },
+  {
+   "id": "west",
+   "text": "Il suivit une route jusqu'au couchant. Là, à ses yeux, le soleil se couchait dans une source boueuse et sombre. Il y trouva un peuple, et dit : « Celui qui fait le mal sera puni. Celui qui croit et fait le bien aura la plus belle récompense. »",
+   "hold": 0.9
+  },
+  {
+   "id": "east",
+   "text": "Puis il alla jusqu'au levant, chez un peuple que rien ne protégeait du soleil. Et Allah dit : « Nous savions tout ce qu'il possédait. »",
+   "hold": 0.8
+  },
+  {
+   "id": "gap",
+   "text": "Puis, entre deux montagnes, il trouva un peuple qui ne comprenait presque aucune langue. Ils lui dirent : « Ya'juj et Ma'juj sèment le désordre sur la terre. Veux-tu, contre un tribut, bâtir une barrière entre eux et nous ? »",
+   "hold": 0.9
+  },
+  {
+   "id": "refuse",
+   "text": "Il refusa leur argent : « Ce que mon Seigneur m'a donné vaut mieux. Aidez-moi seulement de vos forces. »",
+   "hold": 1.0
+  },
+  {
+   "id": "build",
+   "text": "« Apportez-moi des blocs de fer ! » Il combla l'espace entre les deux montagnes. « Soufflez ! » Et le fer devint rouge comme le feu. « Apportez du cuivre fondu, que je le verse dessus ! »",
+   "hold": 1.2
+  },
+  {
+   "id": "hold",
+   "text": "Ya'juj et Ma'juj ne purent ni l'escalader, ni le percer.",
+   "hold": 1.4
+  },
+  {
+   "id": "peak",
+   "text": "Alors, au sommet de sa puissance, il dit simplement : « Ceci est une miséricorde de mon Seigneur. Quand viendra Sa promesse, Il le nivellera. Et la promesse de mon Seigneur est vérité. »",
+   "hold": 2.0
+  },
+  {
+   "id": "lesson",
+   "text": "Le vrai pouvoir, c'est de savoir d'où il vient. Plus Allah te donne, plus tu dois être humble.",
+   "hold": 1.8
+  },
+  {
+   "id": "cta",
+   "text": "Quelle histoire du Coran veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "ambience": {
+  "wind": {
+   "hook": 0.32,
+   "promise": 0.25,
+   "who": 0.25,
+   "west": 0.3,
+   "east": 0.28,
+   "gap": 0.32,
+   "refuse": 0.22,
+   "build": 0.3,
+   "hold": 0.38,
+   "peak": 0.3,
+   "lesson": 0.25,
+   "cta": 0.2,
+   "outro": 0.18
+  }
+ },
+ "pron": {
+  "Dhul-Qarnayn": "Dhoul-Qar-naïne",
+  "Ya'juj et Ma'juj": "Ya-djoudj et Ma-djoudj (Gog et Magog)",
+  "Al-Kahf": "Al-Ka-hf (h aspiré, « la caverne »)",
+  "Allah": "Al-lah"
+ },
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "who": 0.6,
+  "west": 0.7,
+  "east": 0.6,
+  "gap": 0.65,
+  "refuse": 0.7,
+  "build": 0.85,
+  "hold": 0.9,
+  "peak": 1.0,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
