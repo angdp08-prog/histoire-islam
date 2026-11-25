@@ -1,0 +1,152 @@
+{
+ "title": "Les gens de l'Éléphant",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "éléphant",
+  "agenouillé",
+  "refusé",
+  "Kaaba",
+  "Al-Fil",
+  "immense",
+  "Abraha",
+  "église",
+  "détruire",
+  "Mahmoud",
+  "chameaux",
+  "Seigneur",
+  "protégera",
+  "maître",
+  "montagnes",
+  "agenouilla",
+  "refusait",
+  "oiseaux",
+  "pierres",
+  "argile",
+  "trois",
+  "paille",
+  "néant",
+  "jamais",
+  "Éléphant",
+  "Muhammad",
+  "part",
+  "confie-le",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Un éléphant géant, aux portes de La Mecque, s'est agenouillé… et a refusé d'avancer d'un seul pas vers la Kaaba.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "« N'as-tu pas vu comment ton Seigneur a traité les gens de l'Éléphant ? » C'est le début de la sourate Al-Fil. Et reste jusqu'à la fin : cette même année, il s'est passé autre chose d'immense.",
+   "hold": 0.6
+  },
+  {
+   "id": "who",
+   "text": "Selon les historiens, Abraha gouvernait le Yémen. À Sanaa, il bâtit une immense église pour détourner les Arabes du pèlerinage. Mais ils continuaient d'aller à la Kaaba.",
+   "hold": 0.8
+  },
+  {
+   "id": "march",
+   "text": "Furieux, il jura de la détruire. Il partit avec une grande armée, et devant elle, un éléphant immense : Mahmoud, selon les récits.",
+   "hold": 0.9
+  },
+  {
+   "id": "camels",
+   "text": "Près de La Mecque, ses soldats prirent les troupeaux des Mecquois, dont deux cents chameaux d'Abd al-Muttalib, le grand-père du Prophète, paix et bénédictions sur lui.",
+   "hold": 0.8
+  },
+  {
+   "id": "meet",
+   "text": "Abd al-Muttalib alla réclamer ses chameaux. Abraha s'étonna : « Tu me parles de tes chameaux, et pas de la Maison que je viens détruire ? » Il répondit : « Je suis le maître des chameaux. La Maison a un Seigneur qui la protégera. »",
+   "hold": 1.2
+  },
+  {
+   "id": "kneel",
+   "text": "Les Mecquois se réfugièrent dans les montagnes. Au matin, l'armée avança. Mais face à La Mecque, l'éléphant s'agenouilla. Tourné vers le Yémen, il se levait et marchait. Tourné vers la Kaaba, il refusait.",
+   "hold": 1.4
+  },
+  {
+   "id": "birds",
+   "text": "Alors Allah envoya sur eux des oiseaux par volées, qui leur lançaient des pierres d'argile cuite. Selon les récits, chaque oiseau en portait trois : une dans le bec, deux dans les pattes.",
+   "hold": 1.2
+  },
+  {
+   "id": "end",
+   "text": "Leur ruse fut réduite à néant, et Allah les rendit comme de la paille mâchée. L'armée venue détruire la Maison n'a jamais pu l'atteindre.",
+   "hold": 2.0
+  },
+  {
+   "id": "reveal",
+   "text": "Et cette année-là, l'année de l'Éléphant, naissait à La Mecque le Prophète Muhammad, paix et bénédictions sur lui, selon la plupart des historiens.",
+   "hold": 2.0
+  },
+  {
+   "id": "lesson",
+   "text": "La Maison a un Seigneur. Fais ta part, et ce qui te dépasse, confie-le à Allah.",
+   "hold": 1.8
+  },
+  {
+   "id": "cta",
+   "text": "Quelle histoire du Coran veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "ambience": {
+  "wind": {
+   "hook": 0.3,
+   "promise": 0.24,
+   "who": 0.22,
+   "march": 0.32,
+   "camels": 0.26,
+   "meet": 0.2,
+   "kneel": 0.3,
+   "birds": 0.38,
+   "end": 0.34,
+   "reveal": 0.2,
+   "lesson": 0.24,
+   "cta": 0.2,
+   "outro": 0.18
+  }
+ },
+ "pron": {
+  "Abraha": "A-bra-ha (h aspiré)",
+  "Abd al-Muttalib": "Abd al-Mout-ta-lib",
+  "Al-Fil": "Al-Fil (« l'éléphant »)",
+  "Mahmoud": "Mah-moud (h aspiré)",
+  "Sanaa": "Sa-na-'a",
+  "Kaaba": "Ka-'ba",
+  "Allah": "Al-lah"
+ },
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "who": 0.55,
+  "march": 0.75,
+  "camels": 0.6,
+  "meet": 0.7,
+  "kneel": 0.9,
+  "birds": 1.0,
+  "end": 0.85,
+  "reveal": 1.0,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
