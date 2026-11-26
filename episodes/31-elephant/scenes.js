@@ -6500,7 +6500,7 @@ const SCENES = {
     grade: 'rgba(255,195,150,0.1)',
     draw(c, t, d) {
       const tMo = at('kneel', 'montagnes', 0, 2.2), tMat = at('kneel', 'matin', 0, 3.4), tFa = at('kneel', 'face', 0, 5.6), tAg = at('kneel', 'agenouilla', 0, 7.2), tT1 = at('kneel', 'tourne', 0, 8.8), tLe = at('kneel', 'levait', 0, 10.2), tT2 = at('kneel', 'tourne', 1, 12.0), tRe = at('kneel', 'refusait', 0, 13.8);
-      const MORN = { sky: 'dawn', to: 'gold', k: 0.7, sunA: 0.9, sunX: 160, sunY: 900, kLight: 0.5 };
+      const MORN = { sky: 'dawn', to: 'gold', k: 0.7, sunA: 0.9, sunX: 150, sunY: 1060, kLight: 0.5 };
       const stopD = 100 + (tAg - tMat + 0.1) * 60;
       shots(c, t, [
         [0, (cc, q) => { const dist = 120 + q * 46; meccaOut31(cc, t, { sky: 'night', to: 'dawn', k: 0.35 + q * 0.06, night: 0.45, stars: 0.6, gy: pY31, z: lerp(1.2, 1.25, ease(seg(q, 0, tMo))), cx: -100 + dist * 0.92 - 120, cy: 1460, px: dist * 0.92 - 760,
