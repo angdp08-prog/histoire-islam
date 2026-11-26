@@ -243,3 +243,16 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `treasury32()` (salle du trésor : portes bardées de fer `vaultDoor32()` avec serrure et clé qui tourne `key`, lumière sous la porte `doorGlow`, tas d'or `goldHeap32()`, coffres ouverts `openChest32()`, aiguières `ewer32()`),
   `procession32()` + `parasol32()` (cortège en safran et rouge, Qarun sous l'ombrelle), `ruins32()` + `brokenCol32()` (colonnes brisées dans les dunes au couchant), `humble32()` (maison modeste, croyant en prière dans la lumière),
   `keyClose32()` (gros plan : la clé dans le sable à l'aube), `hero32()` / `heroTexts32()` (plan héros : palais à l'heure dorée, Qarun sur le perron, porteurs au premier plan).
+
+## Épisode 33 (`episodes/33-jardin/`) — Les gens du jardin (Al-Qalam 17-33) · « Histoires du Coran »
+- Le père, les trois frères (nombre non précisé par le Coran) et les pauvres sont des croyants ordinaires, sans visage. Le fléau (ṭā'if, verset 19) n'est jamais une forme : un front sombre
+  qui passe sur le jardin la nuit + une lueur de braises, puis le jardin noir. Yémen / Sanaa, la part des pauvres, « sans dire : si Allah le veut », le jardin meilleur ensuite = « selon les exégètes ».
+- Le scenes.js est assemblé par `episodes/33-jardin/build.sh` : bibliothèque partagée de l'épisode 32 (jusqu'avant `const SCENES`) + `ep33_lib.js` (décors et personnages) + `ep33_scenes.js` (SCENES).
+- Nouveaux éléments : `palm33()` (palmier dattier qui brûle : `burn` 0→1 = palmes noircies, courtes, raides et cassées + « jupe » de palmes mortes pendantes, dattes ratatinées ; `lush` = régimes plus nombreux ; `ember`),
+  `vineRow33()` (rang de vigne sur treille : piquets, fil, ceps tordus, feuilles à trois lobes `leaf33()`, grappes `grapes33()` ; `burn` nombre ou fonction de x), `basket33()` (panier tressé : `fill` = dattes, `hang` = origine en haut de l'anse, `rot` = renversé),
+  `hand33()` / `carrier33()` (personnage qui porte un panier à la main, main calculée avec le balancement de la marche), `whisper33()` (chuchotement : petits arcs à côté de la tête, jamais de points),
+  `terraces33()` (montagnes en terrasses du Yémen), `village33()` (maisons-tours lointaines), `wall33()` (mur du jardin en pierre, piliers et linteau, porte à deux battants qui s'ouvrent vers l'intérieur `open`, `soot` = haut noirci),
+  `orchard33()` (l'intérieur derrière le mur : sol, rang de vigne vu par la porte, deux rangées de palmiers), `ground33()` (terre, chemin vers la porte et le long du mur, rigole d'irrigation), `home33()` (la maison des frères à gauche, `HX33`),
+  `fleau33()` (front d'obscurité + lueur de braises qui balaie le jardin ; avec `burn: burnFront33(sx)` le jardin noircit derrière lui), `smoke33()`, `garden33()` (paysage complet : `burn`, `open`, `night`, `stars`, `moon`, `sweep`, `smoke`, `lush`, `onWall`, `walkers`, `doorOpen`),
+  `vineyard33()` (dans le jardin : rangs de vigne en profondeur, allée centrale douce, rang proche flou ; `ash`, `vision` = bords blancs d'une vision), `sleepRoom33()` (les trois frères endormis la nuit, `sleeper29()`), `hero33()` / `heroTexts33()`.
+- Piège : dans une fonction `par(c, …, () => {…})`, une variable déclarée dans une autre fermeture n'existe pas — `top` tombait sur `window.top` (crash `h1.slice` dans `mix()`).

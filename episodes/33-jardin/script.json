@@ -1,0 +1,154 @@
+{
+ "title": "Les gens du jardin",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "aube",
+  "jardin",
+  "chuchotant",
+  "noir",
+  "nuit",
+  "Al-Qalam",
+  "mots",
+  "Yémen",
+  "palmiers",
+  "vignes",
+  "pauvres",
+  "part",
+  "jurèrent",
+  "Allah",
+  "fléau",
+  "Seigneur",
+  "noire",
+  "tôt",
+  "bas",
+  "égarés",
+  "privés",
+  "juste",
+  "glorifiiez",
+  "Gloire",
+  "injustes",
+  "mieux",
+  "sincère",
+  "meilleur",
+  "châtiment",
+  "privé",
+  "veut",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Ils sont partis avant l'aube pour cueillir leur jardin, en chuchotant. En arrivant, ils ne l'ont pas reconnu : il était devenu noir comme la nuit.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire des gens du jardin, dans la sourate Al-Qalam. Reste jusqu'au bout : tu vas découvrir les mots qui leur ont manqué.",
+   "hold": 0.6
+  },
+  {
+   "id": "father",
+   "text": "Selon les exégètes, c'était au Yémen, près de Sanaa. Un homme pieux y avait un jardin de palmiers et de vignes. À chaque récolte, les pauvres venaient, et il leur laissait leur part.",
+   "hold": 0.9
+  },
+  {
+   "id": "oath",
+   "text": "À sa mort, ses fils trouvèrent que les pauvres prenaient trop. Ils jurèrent de tout cueillir au matin, sans rien leur laisser. Et ils jurèrent sans dire, selon les exégètes : « si Allah le veut ».",
+   "hold": 1.0
+  },
+  {
+   "id": "night",
+   "text": "Mais pendant qu'ils dormaient, un fléau venu de ton Seigneur passa sur le jardin. Au matin, il était comme une nuit noire.",
+   "hold": 2.0
+  },
+  {
+   "id": "dawn",
+   "text": "À l'aube, ils s'appelèrent : « Partez tôt, si vous voulez cueillir ! » Et en chemin, ils se disaient tout bas : « Qu'aujourd'hui, aucun pauvre n'y entre ! » Ils avançaient, sûrs d'eux.",
+   "hold": 0.8
+  },
+  {
+   "id": "see",
+   "text": "Quand ils le virent, ils dirent : « Nous nous sommes égarés ! » Puis ils comprirent : « Non… nous sommes privés de tout. »",
+   "hold": 2.0
+  },
+  {
+   "id": "middle",
+   "text": "Le plus juste d'entre eux leur dit : « Ne vous avais-je pas dit : si seulement vous glorifiiez Allah ? » Les voilà, les mots qui leur ont manqué.",
+   "hold": 1.4
+  },
+  {
+   "id": "repent",
+   "text": "Alors ils dirent : « Gloire à notre Seigneur ! Nous étions injustes. » Ils se firent des reproches, puis se tournèrent vers Lui : « Peut-être nous donnera-t-Il mieux que ce jardin. »",
+   "hold": 2.4
+  },
+  {
+   "id": "better",
+   "text": "Selon certains exégètes, leur repentir était sincère, et Allah leur donna ensuite un jardin meilleur encore. Allah sait mieux.",
+   "hold": 1.2
+  },
+  {
+   "id": "lesson",
+   "text": "Tel fut le châtiment, et celui de l'au-delà est plus grand encore. Ce que tu refuses aux pauvres, c'est toi qui en es privé. Et pour chaque projet de demain, dis : « si Allah le veut ».",
+   "hold": 2.0
+  },
+  {
+   "id": "cta",
+   "text": "Quelle histoire du Coran veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "ambience": {
+  "wind": {
+   "hook": 0.3,
+   "promise": 0.22,
+   "father": 0.2,
+   "oath": 0.22,
+   "night": 0.4,
+   "dawn": 0.24,
+   "see": 0.32,
+   "middle": 0.24,
+   "repent": 0.22,
+   "better": 0.2,
+   "lesson": 0.22,
+   "cta": 0.2,
+   "outro": 0.18
+  },
+  "thunder": {
+   "night": 0.3
+  }
+ },
+ "pron": {
+  "Al-Qalam": "Al-Qa-lam (« le calame »)",
+  "Sanaa": "Sa-na-â",
+  "Allah": "Al-lah"
+ },
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "father": 0.55,
+  "oath": 0.65,
+  "night": 1.0,
+  "dawn": 0.6,
+  "see": 0.9,
+  "middle": 0.8,
+  "repent": 1.0,
+  "better": 0.85,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
