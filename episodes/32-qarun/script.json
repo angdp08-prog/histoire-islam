@@ -1,0 +1,156 @@
+{
+ "title": "Qarun et ses trésors",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "clés",
+  "trésors",
+  "forts",
+  "englouti",
+  "maison",
+  "Qarun",
+  "Al-Qasas",
+  "phrase",
+  "basculer",
+  "Moussa",
+  "cousin",
+  "arrogant",
+  "robustes",
+  "orgueil",
+  "orgueilleux",
+  "Demeure",
+  "bien",
+  "savoir",
+  "périr",
+  "parure",
+  "Si",
+  "immense",
+  "Malheur",
+  "récompense",
+  "engloutir",
+  "secourir",
+  "lendemain",
+  "grâce",
+  "don",
+  "valeur",
+  "désordre",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Les seules clés de ses trésors pesaient lourd, même pour un groupe d'hommes forts. Et en un seul jour, la terre l'a englouti, lui et sa maison.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire de Qarun, dans la sourate Al-Qasas. Reste jusqu'au bout : une seule phrase sortie de sa bouche a tout fait basculer.",
+   "hold": 0.6
+  },
+  {
+   "id": "who",
+   "text": "Qarun était du peuple de Moussa, paix sur lui, et son cousin selon les exégètes. Mais il se montra arrogant et injuste envers les siens.",
+   "hold": 0.8
+  },
+  {
+   "id": "treasure",
+   "text": "Allah lui avait donné tant de trésors que leurs clés seules pesaient sur un groupe d'hommes robustes.",
+   "hold": 1.2
+  },
+  {
+   "id": "advice",
+   "text": "Les sages de son peuple lui dirent : « Ne te réjouis pas avec orgueil, Allah n'aime pas les orgueilleux. Recherche, avec ce qu'Allah t'a donné, la Demeure dernière, sans oublier ta part de ce monde. Et fais le bien, comme Allah t'a fait du bien. »",
+   "hold": 1.0
+  },
+  {
+   "id": "reply",
+   "text": "Il répondit : « Ce que j'ai, je l'ai obtenu grâce à un savoir que je possède. » La voilà, la phrase. Ne savait-il pas qu'Allah avait fait périr avant lui des générations plus fortes et plus riches ?",
+   "hold": 1.4
+  },
+  {
+   "id": "parade",
+   "text": "Un jour, il sortit devant son peuple dans toute sa parure. Ceux qui désiraient la vie d'ici-bas soupirèrent : « Si seulement nous avions ce qu'a reçu Qarun ! Il a une chance immense. »",
+   "hold": 0.9
+  },
+  {
+   "id": "wise",
+   "text": "Mais ceux qui avaient reçu le savoir dirent : « Malheur à vous ! La récompense d'Allah est meilleure pour celui qui croit et fait le bien. »",
+   "hold": 1.0
+  },
+  {
+   "id": "swallow",
+   "text": "Alors Allah fit engloutir par la terre Qarun et sa maison. Aucun groupe ne put le secourir, et il ne put se défendre lui-même.",
+   "hold": 2.2
+  },
+  {
+   "id": "morning",
+   "text": "Le lendemain, ceux qui avaient envié sa place disaient : « Allah donne largement à qui Il veut, ou restreint. Sans Sa grâce, nous aussi aurions été engloutis. »",
+   "hold": 1.4
+  },
+  {
+   "id": "lesson",
+   "text": "Ce que tu as est un don, pas une preuve de ta valeur. La Demeure dernière est pour ceux qui ne cherchent ni à s'élever sur terre, ni à y semer le désordre.",
+   "hold": 2.0
+  },
+  {
+   "id": "cta",
+   "text": "Quelle histoire du Coran veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "ambience": {
+  "wind": {
+   "hook": 0.3,
+   "promise": 0.24,
+   "who": 0.22,
+   "treasure": 0.2,
+   "advice": 0.22,
+   "reply": 0.26,
+   "parade": 0.24,
+   "wise": 0.24,
+   "swallow": 0.4,
+   "morning": 0.3,
+   "lesson": 0.24,
+   "cta": 0.2,
+   "outro": 0.18
+  },
+  "thunder": {
+   "hook": 0.2,
+   "swallow": 0.45
+  }
+ },
+ "pron": {
+  "Qarun": "Qa-roune (« Qâroûn », r roulé léger)",
+  "Al-Qasas": "Al-Qa-sas (« le récit »)",
+  "Moussa": "Mou-ssa",
+  "Allah": "Al-lah"
+ },
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "who": 0.55,
+  "treasure": 0.75,
+  "advice": 0.6,
+  "reply": 0.8,
+  "parade": 0.7,
+  "wise": 0.7,
+  "swallow": 1.0,
+  "morning": 0.85,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}

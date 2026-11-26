@@ -229,3 +229,17 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `hero31()` / `heroNear31()` (plan héros : l'éléphant agenouillé, soldats qui tirent et poussent), `sanaa31()` + `church31()` (Sanaa : maisons-tours, la grande église al-Qullays sans aucun symbole), `pavilion31()` + `pavPeople31()` (le pavillon d'Abraha, trône, gardes),
   `march31()` (l'armée en marche sur `plain30`), `herd31()` (chameaux qui paissent / emmenés), `climbers31()`, `mecca31()` (= `meccaSet()` de l'épisode 25 avec caméra, `noIdols`, `skyFn`, `people`, `moonX/moonY`).
 - Piège : dans `elephant31`, les pattes proches sont dessinées entre le corps et le caparaçon (deux passes sous la même transformation de cisaillement) ; la tête est agrandie (x1,14) : la limite du sol de la trompe est recalculée dans ce repère.
+
+## Épisode 32 (`episodes/32-qarun/`) — Qarun et ses trésors (Al-Qasas 76-83) · « Histoires du Coran »
+- Qarun, ses porteurs, son cortège, les sages et les gens sont sans visage ; Moussa = silhouette blanche au voile de lumière ; Allah jamais représenté (lumière `lightFromAbove`).
+  L'engloutissement (verset 81) = la maison qui s'enfonce dans une fosse, poussière, fissures : personne n'est montré dedans. « Son cousin » = selon les exégètes (Ibn Abbas). Les détails non vérifiés (mulets, habits du cortège) ne sont pas dits à l'oral.
+- Piège corrigé : les entrées `covered: true` de `FOLK` dessinaient une tête claire et vide qui se lit comme un **voile de lumière de prophète** → l'épisode 32 remet `covered: false` partout (et retire le violet de `FOLK[6]`, réservé à Qarun).
+- Nouveaux éléments : `key32()` (grande clé de bronze : anneau, tige, panneton à dents ; pend par l'anneau, `ang`), `bearers32()` (file d'hommes forts courbés (`lean`) sous une poutre posée sur leurs épaules
+  (points d'épaule recalculés après l'inclinaison), trousseaux de clés qui se balancent entre eux, coussinets ; `dist` = marche pilotée par la distance, sinon ils peinent sur place),
+  `palace32()` (palais sur plateforme à gradins : tours à merlons à redans, frise peinte, colonnade dorée, porte dorée cloutée, étage aux fenêtres éclairées `lamp`, dôme doré `glint`),
+  `town32()` (ville basse en parallaxe : rempart, rangées de maisons à toits plats, palmiers, fenêtres éclairées ; tirages aléatoires toujours faits pour que rien ne saute quand `lamp` change),
+  `forecourt32()` (parvis dallé en perspective + palmiers), `qarunLand32()` (paysage complet : `onPalace` = personnages sur le perron du palais, `walkers`, `sink` 0→1 = la maison s'enfonce
+  (clip rectangle + demi-ellipse de la fosse), `after` = la cicatrice du lendemain, `light`, `tint`, `shake`), `sinking32()` + `cracks32()` (fissures fines qui partent du bord de la fosse : `cracks()` était trop épais en gros plan),
+  `treasury32()` (salle du trésor : portes bardées de fer `vaultDoor32()` avec serrure et clé qui tourne `key`, lumière sous la porte `doorGlow`, tas d'or `goldHeap32()`, coffres ouverts `openChest32()`, aiguières `ewer32()`),
+  `procession32()` + `parasol32()` (cortège en safran et rouge, Qarun sous l'ombrelle), `ruins32()` + `brokenCol32()` (colonnes brisées dans les dunes au couchant), `humble32()` (maison modeste, croyant en prière dans la lumière),
+  `keyClose32()` (gros plan : la clé dans le sable à l'aube), `hero32()` / `heroTexts32()` (plan héros : palais à l'heure dorée, Qarun sur le perron, porteurs au premier plan).
