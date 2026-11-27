@@ -269,3 +269,17 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `covered34()` (corps couvert d'un manteau, seules les sandales dépassent), `risen34()` (le mort sur son brancard sous un linceul de lin : `rise` 0→1 = il se redresse en pivotant aux hanches, `glow`), `bundle34()` (« un morceau » = petit paquet de tissu noué),
   `plough34()` (bœuf sous le joug + araire + laboureur, sillon), `irrigWell34()` (puits d'irrigation : le bœuf s'éloigne, la corde sur la poulie remonte le seau), `visionFx34()` + `noSign34()` (vision pâle barrée d'un cercle tracé),
   `hero34()` / `heroCrowd34()` (`rise`, `turn` = la foule se tourne vers le meurtrier) / `heroTexts34()`.
+
+## Épisode 35 (`episodes/35-tranchee/`) — Les gens de la Tranchée (Al-Buruj 4-11, Sahih Muslim 3005) · « Histoires du Coran »
+- Le garçon (bleu ciel, jamais blanc : `BOY35`, `child: true`), le roi (`KING35` + couronne, `king35()`), le magicien, le moine, le proche du roi, les soldats (`sold35()`), la mère (`MOTHER35`, tête couverte sombre) et les gens (`NAJ35`) sont sans visage ;
+  Allah jamais représenté (lumière) ; le Prophète ﷺ seulement nommé. Aucune violence montrée : chute des soldats = poussière, naufrage = bateau qui gîte + flash blanc, la flèche part et l'image passe au blanc puis tronc vide dans la lumière,
+  tranchée vue de loin, personne dans le feu. Najran = « selon les exégètes » (le hadith ne nomme pas la ville), non dit à l'oral.
+- Le scenes.js est assemblé par `episodes/35-tranchee/build.sh` : bibliothèque de l'épisode 34 (jusqu'avant `const SCENES`) + `ep35_lib.js` + `ep35_scenes.js`.
+- Nouveaux éléments : `najran35()` (paysage complet : chaînes du Yémen en terrasses, tell de maisons-tours `najranCity35()` + `tellY35`, palmiers, grande plaine plate ; `hY35(y)` = taille selon la profondeur ; `lamp`, `torches`, `props`, `walkers`, `post`, `night`),
+  `trench35()` (la tranchée : `dig` 0→1 = longueur creusée avec terre rejetée, `k` 0→1 = feu (langues de flammes derrière la lèvre proche, braises, fumée), `fs` = hauteur des flammes), `fireLight35()` (lueur orange venue d'en bas),
+  `trunk35()` (tronc de palmier dressé), `tied35()` / `boyAtTrunk35()` (corde autour du garçon et du tronc, colonne de lumière), `bow35()` (arc tenu à la main d'une figure : `draw` corde tirée, flèche encochée, main qui tire), `arrowFly35()` (flèche en vol + traînée),
+  `quiver35()` (carquois en cuir, `pull` = une flèche sort), `cell35()` (cellule du moine contre un rocher : porte en arc éclairée `lamp`, tapis, jarre), `summit35()` + `sumY35` (sommet rocheux, pente de montée à gauche, falaise à droite, plaine et ville tout en bas),
+  `peak35()` (la montagne vue de loin : `shake`, `dust`, `fall` = cailloux qui roulent), `sea35()` (bateau des soldats sur `seaSet27`/`boat27` : `rot` gîte, `sink`, `storm`, `splash`, `pray` ; `beach` = plage, `walkers(c, sy)`),
+  `court35()` (salle du trône = `hall()` + `throne()` ; `dim` + `braziers` = la salle du magicien) + `kingOnThrone35()`, `crowd35()` / `HCROWD35` (foule en arc autour du tronc), `streamIn35()`, `believers35()`, `seated35()` (le roi et sa cour assis au bord, Al-Buruj 6-7),
+  `mother35()` (la mère et son bébé, `baby` = lumière `babyLight()`), `hero35()` / `heroPeople35()` (`cheer`, `bowUp`, `draw`, `arrow`, `boyGone`) / `heroTexts35()` / `hookTexts35()`.
+- Piège : dans le plan héros, une foule dessinée d'un bloc cachait le garçon → dessiner les rangs derrière le tronc, puis le garçon, puis les rangs devant (allée centrale élargie rang par rang).

@@ -1,0 +1,180 @@
+{
+ "title": "Les gens de la Tranchée",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "garçon",
+  "tuer",
+  "peuple",
+  "cru",
+  "Tranchée",
+  "Al-Buruj",
+  "Prophète",
+  "bébé",
+  "magicien",
+  "magie",
+  "moine",
+  "croire",
+  "aveugles",
+  "Allah",
+  "crut",
+  "vit",
+  "vue",
+  "Seigneur",
+  "mourir",
+  "renier",
+  "montagne",
+  "jeter",
+  "protège-moi",
+  "trembla",
+  "pied",
+  "mer",
+  "renversa",
+  "seul",
+  "tueras",
+  "Rassemble",
+  "tronc",
+  "flèche",
+  "carquois",
+  "obéit",
+  "mourut",
+  "croyons",
+  "Furieux",
+  "feu",
+  "foi",
+  "assis",
+  "hésita",
+  "parla",
+  "patience",
+  "vérité",
+  "Puissant",
+  "gagné",
+  "jardins",
+  "succès",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Un garçon a expliqué lui-même au roi comment le tuer… et ce jour-là, tout un peuple a cru en Allah.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire des gens de la Tranchée, citée dans la sourate Al-Buruj et racontée par le Prophète, paix et bénédictions sur lui. Reste jusqu'au bout : un bébé va parler.",
+   "hold": 0.6
+  },
+  {
+   "id": "magician",
+   "text": "Un roi avait un vieux magicien. Il lui confia un garçon, pour lui apprendre la magie. Mais en chemin, le garçon s'arrêtait chez un moine, qui lui apprit à croire en Allah.",
+   "hold": 0.8
+  },
+  {
+   "id": "blind",
+   "text": "Avec la permission d'Allah, le garçon guérissait les aveugles. Un proche du roi, aveugle, vint le voir. « Ce n'est pas moi qui guéris, c'est Allah. » L'homme crut, et il vit.",
+   "hold": 1.2
+  },
+  {
+   "id": "king",
+   "text": "Le roi lui demanda : « Qui t'a rendu la vue ? » « Mon Seigneur, et ton Seigneur : Allah. » Le roi fit mourir cet homme et le moine. Le garçon, lui, refusa aussi de renier sa foi.",
+   "hold": 0.9
+  },
+  {
+   "id": "mountain",
+   "text": "Ses soldats l'emmenèrent en haut d'une montagne pour l'en jeter. Il pria : « Ô Allah, protège-moi d'eux comme Tu veux. » La montagne trembla, ils tombèrent, et il revint à pied.",
+   "hold": 1.0
+  },
+  {
+   "id": "sea",
+   "text": "Alors ils l'emmenèrent en pleine mer. Il pria encore. Le bateau se renversa… et le garçon revint, seul, devant le roi.",
+   "hold": 1.0
+  },
+  {
+   "id": "secret",
+   "text": "« Tu ne me tueras que si tu fais ce que je te dis. Rassemble les gens, attache-moi à un tronc, prends une flèche de mon carquois, et dis : Au nom d'Allah, Seigneur du garçon. »",
+   "hold": 0.9
+  },
+  {
+   "id": "arrow",
+   "text": "Le roi obéit. La flèche partit… et le garçon mourut. Alors la foule entière s'écria : « Nous croyons au Seigneur du garçon ! »",
+   "hold": 2.2
+  },
+  {
+   "id": "trench",
+   "text": "Furieux, le roi fit creuser des tranchées, et y alluma un feu. Ceux qui ne reniaient pas leur foi y étaient jetés. Le Coran dit qu'ils étaient assis au bord, à regarder.",
+   "hold": 1.2
+  },
+  {
+   "id": "baby",
+   "text": "Une femme arriva avec son bébé, et elle hésita. Alors le bébé parla : « Maman, patience ! Tu es dans la vérité. »",
+   "hold": 2.4
+  },
+  {
+   "id": "lesson",
+   "text": "On ne leur reprochait qu'une chose : croire en Allah, le Puissant, le Digne de louange. Le roi croyait avoir gagné. Mais Allah dit : pour eux, des jardins. C'est cela, le grand succès.",
+   "hold": 2.0
+  },
+  {
+   "id": "cta",
+   "text": "Quelle histoire du Coran veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "ambience": {
+  "wind": {
+   "hook": 0.3,
+   "promise": 0.26,
+   "magician": 0.22,
+   "blind": 0.2,
+   "king": 0.24,
+   "mountain": 0.36,
+   "sea": 0.38,
+   "secret": 0.22,
+   "arrow": 0.3,
+   "trench": 0.34,
+   "baby": 0.28,
+   "lesson": 0.22,
+   "cta": 0.2,
+   "outro": 0.18
+  },
+  "thunder": {
+   "mountain": 0.3,
+   "sea": 0.25,
+   "arrow": 0.2
+  }
+ },
+ "pron": {
+  "Al-Buruj": "Al-Bou-roùj (« les constellations »)",
+  "Allah": "Al-lah",
+  "Sahih Muslim": "Sa-hîh Mous-lim"
+ },
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.65,
+  "magician": 0.55,
+  "blind": 0.65,
+  "king": 0.6,
+  "mountain": 0.75,
+  "sea": 0.75,
+  "secret": 0.65,
+  "arrow": 1.0,
+  "trench": 0.8,
+  "baby": 1.0,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
