@@ -1,0 +1,171 @@
+{
+ "title": "La vache des fils d'Israël",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "assassiné",
+  "vie",
+  "tué",
+  "vache",
+  "Al-Baqara",
+  "coûté",
+  "riche",
+  "neveu",
+  "hériter",
+  "clan",
+  "colère",
+  "Seigneur",
+  "Allah",
+  "moques",
+  "ignorants",
+  "questions",
+  "vieille",
+  "jeune",
+  "ordonne",
+  "couleur",
+  "jaune",
+  "réjouit",
+  "précise",
+  "labouré",
+  "tache",
+  "vérité",
+  "fortune",
+  "failli",
+  "Frappez",
+  "releva",
+  "meurtrier",
+  "retomba",
+  "Ibn",
+  "suffi",
+  "compliqué",
+  "morts",
+  "simple",
+  "Obéis",
+  "ouverte",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Un homme assassiné est revenu à la vie… et, selon les exégètes, il a dit qui l'avait tué. Tout a commencé par un ordre étrange : égorger une vache.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire qui a donné son nom à la plus longue sourate du Coran : Al-Baqara, « la vache ». Reste jusqu'au bout : tu vas voir ce que leurs questions leur ont coûté.",
+   "hold": 0.6
+  },
+  {
+   "id": "murder",
+   "text": "Au temps de Moussa, paix sur lui, un homme riche fut tué. Selon les exégètes, son neveu l'avait tué pour hériter de lui, puis il avait jeté le corps devant un autre clan.",
+   "hold": 0.9
+  },
+  {
+   "id": "dispute",
+   "text": "Chaque clan accusait l'autre, et la colère montait. Alors ils vinrent voir Moussa : « Demande à ton Seigneur qui l'a tué. »",
+   "hold": 0.8
+  },
+  {
+   "id": "order",
+   "text": "Moussa leur dit : « Allah vous ordonne d'égorger une vache. » Ils répondirent : « Tu te moques de nous ? » Il dit : « Qu'Allah me protège d'être parmi les ignorants ! »",
+   "hold": 1.0
+  },
+  {
+   "id": "age",
+   "text": "Au lieu d'obéir, ils posèrent des questions. « Quelle vache ? » Ni vieille, ni trop jeune : entre les deux. « Faites donc ce qu'on vous ordonne ! »",
+   "hold": 0.8
+  },
+  {
+   "id": "color",
+   "text": "« Quelle couleur ? » Jaune, d'un jaune éclatant, qui réjouit ceux qui la regardent.",
+   "hold": 1.2
+  },
+  {
+   "id": "noyoke",
+   "text": "« Les vaches se ressemblent, pour nous ! » Alors la réponse se fit plus précise : une vache qui n'a jamais labouré, ni arrosé les champs, saine, sans aucune tache.",
+   "hold": 1.0
+  },
+  {
+   "id": "price",
+   "text": "« Maintenant, tu dis la vérité ! » Selon les récits, une seule vache leur ressemblait, et elle leur coûta une fortune. Ils l'égorgèrent enfin… mais ils avaient bien failli ne pas le faire.",
+   "hold": 1.0
+  },
+  {
+   "id": "miracle",
+   "text": "Allah dit : « Frappez le mort avec un morceau de la vache. » Le mort se releva. Selon les exégètes, il nomma son meurtrier… puis retomba sans vie.",
+   "hold": 2.4
+  },
+  {
+   "id": "payoff",
+   "text": "Ibn Abbas a dit : s'ils avaient pris n'importe quelle vache, cela aurait suffi. Mais ils se sont compliqué la tâche, et elle leur a été compliquée.",
+   "hold": 1.4
+  },
+  {
+   "id": "lesson",
+   "text": "« Ainsi Allah redonne la vie aux morts. » Quand Allah te demande une chose simple, ne la complique pas. Obéis : la porte est déjà ouverte.",
+   "hold": 2.0
+  },
+  {
+   "id": "cta",
+   "text": "Quelle histoire du Coran veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "ambience": {
+  "wind": {
+   "hook": 0.3,
+   "promise": 0.22,
+   "murder": 0.34,
+   "dispute": 0.26,
+   "order": 0.24,
+   "age": 0.2,
+   "color": 0.2,
+   "noyoke": 0.2,
+   "price": 0.24,
+   "miracle": 0.32,
+   "payoff": 0.22,
+   "lesson": 0.22,
+   "cta": 0.2,
+   "outro": 0.18
+  },
+  "thunder": {
+   "murder": 0.25,
+   "miracle": 0.3
+  }
+ },
+ "pron": {
+  "Al-Baqara": "Al-Ba-qa-ra (« la vache »)",
+  "Moussa": "Mou-ssa",
+  "Ibn Abbas": "Ibn Ab-bâs",
+  "Allah": "Al-lah"
+ },
+ "voice_file": "voix_off.mp3",
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.6,
+  "murder": 0.7,
+  "dispute": 0.65,
+  "order": 0.6,
+  "age": 0.55,
+  "color": 0.65,
+  "noyoke": 0.6,
+  "price": 0.7,
+  "miracle": 1.0,
+  "payoff": 0.85,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}

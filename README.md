@@ -256,3 +256,16 @@ synchro au mot, mixage et ambiance. Lire son `scenes.js`, son `script.json` et s
   `fleau33()` (front d'obscurité + lueur de braises qui balaie le jardin ; avec `burn: burnFront33(sx)` le jardin noircit derrière lui), `smoke33()`, `garden33()` (paysage complet : `burn`, `open`, `night`, `stars`, `moon`, `sweep`, `smoke`, `lush`, `onWall`, `walkers`, `doorOpen`),
   `vineyard33()` (dans le jardin : rangs de vigne en profondeur, allée centrale douce, rang proche flou ; `ash`, `vision` = bords blancs d'une vision), `sleepRoom33()` (les trois frères endormis la nuit, `sleeper29()`), `hero33()` / `heroTexts33()`.
 - Piège : dans une fonction `par(c, …, () => {…})`, une variable déclarée dans une autre fermeture n'existe pas — `top` tombait sur `window.top` (crash `h1.slice` dans `mix()`).
+
+## Épisode 34 (`episodes/34-vache/`) — La vache des fils d'Israël (Al-Baqara 67-73) · « Histoires du Coran »
+- Moussa = silhouette blanche au voile de lumière (`MUSA34`) ; le riche assassiné, son neveu (rouge sombre, `NEPHEW34`), le propriétaire de la vache et les gens sont sans visage ; Allah jamais représenté (lumière).
+  Le meurtre n'est jamais montré (une fenêtre dont la lampe s'éteint, un corps couvert devant une porte) ; l'égorgement non plus (la foule de dos au couchant, puis la corde au sol). Le mort ressuscité = linceul de lin chaud, jamais blanc lumineux (pour ne pas le confondre avec un prophète).
+  Neveu / héritage / autre clan / « il nomma son meurtrier » / prix = « selon les exégètes / les récits » ; parole d'Ibn Abbas = rapportée par at-Tabari.
+- Le scenes.js est assemblé par `episodes/34-vache/build.sh` : bibliothèque de l'épisode 33 (jusqu'avant `const SCENES`) + `ep34_lib.js` + `ep34_scenes.js`.
+- Nouveaux éléments : `cow34()` (vache de profil détaillée : tonneau à garrot et hanche, fanon, cornes, oreille, queue à touffe, sabots ; `col` yellow / brown / dark / old (maigre, dos creusé, côtes),
+  `calf`, `dist` = marche pilotée par la distance (`cowStep34`), `head` = broute, `glow`, `halter`, `yoke`, `dim`, `night` ; `cowAnchor34()` = point du museau pour une longe), `camp34()` (campement des fils d'Israël :
+  chaînes de granit du Sinaï `sinai34()`, rangées de tentes `camp19()`, palmiers, maisons de briques proches `houses`, sol plat en perspective ; `night`, `lamp`, `fires`, `torches`, `doorOpen` + `doorLight` = porte ouverte sur la lumière),
+  `hY34(y)` (taille d'un personnage selon la profondeur sur ce sol plat), `pasture34()` (prairie d'oasis : ruisseau, herbe animée, fleurs, palmiers, `farHerd` ; `vision`), `crowd34()` / `CROWD34` / `ASM34` (foules en rangs, `face` = regardent un point, `fn` = gestes par personne),
+  `covered34()` (corps couvert d'un manteau, seules les sandales dépassent), `risen34()` (le mort sur son brancard sous un linceul de lin : `rise` 0→1 = il se redresse en pivotant aux hanches, `glow`), `bundle34()` (« un morceau » = petit paquet de tissu noué),
+  `plough34()` (bœuf sous le joug + araire + laboureur, sillon), `irrigWell34()` (puits d'irrigation : le bœuf s'éloigne, la corde sur la poulie remonte le seau), `visionFx34()` + `noSign34()` (vision pâle barrée d'un cercle tracé),
+  `hero34()` / `heroCrowd34()` (`rise`, `turn` = la foule se tourne vers le meurtrier) / `heroTexts34()`.
