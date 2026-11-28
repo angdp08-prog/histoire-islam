@@ -7081,7 +7081,7 @@ const SCENES = {
       const tAp = at('dawn', "s'appelerent", 0, 1.3), tPa = at('dawn', 'partez', 0, 2.6), tCh = at('dawn', 'chemin', 0, 6.6), tBa = at('dawn', 'bas', 0, 8.6), tQu = at('dawn', "qu'aujourd'hui", 0, 9.3), tAv = at('dawn', 'avancaient', 0, 13.3), tSu = at('dawn', 'surs', 0, 14.3);
       const PRE = { sky: 'night', to: 'dawn', k: 0.3, stars: 0.6, night: 0.75, burn: 1, open: 0, fg: false, haze: '#6a6a8a' };
       const out = (q) => c2 => { [[HX33 + 40, 1600, 0, 360, 1], [HX33 - 90, 1560, 2, 330, 1], [HX33 + 200, 1590, 1, 340, -1]].forEach(([x, y, i, h, dd], j) => {
-        const o = { x, y, h, dir: i === 1 ? turnDir(q, 1.0, -1, 1, 0.5) : dd, t: t + j, light: 0.75, wind: 0.3, ink: 0.6, armUp: i === 0 ? 0.9 * ramp(q, 0.2, 0.4) * (1 - ramp(q, 2.8, 0.5)) : 0 }; if (i === 0) fig(c2, BRO33[i], o); else carrier33(c2, BRO33[i], o); }); };
+        const o = { x, y, h, dir: dd, t: t + j, light: 0.75, wind: 0.3, ink: 0.6, armUp: i === 0 ? 0.9 * ramp(q, 0.2, 0.4) * (1 - ramp(q, 2.8, 0.5)) : 0 }; if (i === 0) fig(c2, BRO33[i], o); else carrier33(c2, BRO33[i], o); }); };
       const road = (q, x0, wh = 0) => c2 => { const dist = q * 62; [[x0, 1640, 0, 390], [x0 - 120, 1610, 1, 360], [x0 - 250, 1660, 2, 395]].forEach(([x, y, i, h], j) => {
         const o = { x: x + dist, y, h, dir: 1, t: t + j, light: 0.75, wind: 0.3, ink: 0.6, walk: stepOf(dist, h) + j * 0.37 }; carrier33(c2, BRO33[i], o); });
         if (wh > 0) { whisper33(c2, x0 + dist - 120 + 36, 1610 - 360 * 0.9 + 8, 0.9, t, 1, wh); whisper33(c2, x0 + dist + 36, 1640 - 390 * 0.9 + 8, 0.9, t + 0.4, 1, wh * 0.8); } };
