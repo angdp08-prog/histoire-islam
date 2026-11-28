@@ -1,0 +1,157 @@
+{
+ "title": "La digue de Saba",
+ "voice": "user",
+ "lead_first": 0.3,
+ "tail": 0.9,
+ "outro": 3.0,
+ "keywords": [
+  "merci",
+  "digue",
+  "cédé",
+  "Saba",
+  "proverbe",
+  "Ma'rib",
+  "montagnes",
+  "ruines",
+  "deux",
+  "jardins",
+  "panier",
+  "fruits",
+  "Mangez",
+  "reconnaissants",
+  "pardonne",
+  "villages",
+  "sécurité",
+  "détournèrent",
+  "oublièrent",
+  "allonge",
+  "torrent",
+  "rats",
+  "tout",
+  "amers",
+  "tamaris",
+  "dispersa",
+  "Aws",
+  "Khazraj",
+  "récits",
+  "patient",
+  "bienfait",
+  "commentaire"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Ils avaient tout. Allah ne leur demandait qu'une chose : dire merci. Ils se sont détournés… et la digue a cédé.",
+   "hold": 1.0
+  },
+  {
+   "id": "promise",
+   "text": "C'est l'histoire du peuple de Saba, dans la sourate qui porte son nom. Reste jusqu'au bout : leur nom est devenu un proverbe que les Arabes disent encore.",
+   "hold": 0.6
+  },
+  {
+   "id": "dam",
+   "text": "Au Yémen, à Ma'rib selon les exégètes, ils avaient bâti une immense digue entre deux montagnes. Elle retenait l'eau des pluies et arrosait toute la vallée. Ses ruines sont encore debout.",
+   "hold": 0.8
+  },
+  {
+   "id": "gardens",
+   "text": "Le Coran dit : deux jardins, l'un à droite, l'autre à gauche. Selon les récits, une femme marchait sous les arbres, un panier sur la tête, et il se remplissait de fruits.",
+   "hold": 1.2
+  },
+  {
+   "id": "command",
+   "text": "Allah leur dit : « Mangez de ce que votre Seigneur vous donne, et soyez-Lui reconnaissants. Une bonne contrée, et un Seigneur qui pardonne. »",
+   "hold": 1.0
+  },
+  {
+   "id": "route",
+   "text": "Entre eux et les terres bénies du Cham, Allah avait placé des villages bien visibles, à distance mesurée. On y voyageait de nuit comme de jour, en sécurité.",
+   "hold": 0.8
+  },
+  {
+   "id": "ingrat",
+   "text": "Mais ils se détournèrent, et oublièrent Celui qui leur donnait tout. Ils dirent même : « Seigneur, allonge les distances entre nos étapes. » Ils se firent du tort à eux-mêmes.",
+   "hold": 0.9
+  },
+  {
+   "id": "flood",
+   "text": "Alors Allah envoya contre eux le torrent de la digue. Selon certains récits, des rats en avaient rongé la base. L'eau emporta les arbres, les champs… tout.",
+   "hold": 2.0
+  },
+  {
+   "id": "after",
+   "text": "À la place des deux jardins, le Coran décrit des fruits amers, des tamaris, et quelques jujubiers. Et le peuple se dispersa dans toute l'Arabie. Selon les historiens, les Aws et les Khazraj de Médine venaient de là.",
+   "hold": 1.2
+  },
+  {
+   "id": "proverb",
+   "text": "Allah dit : « Nous en fîmes des récits. » Aujourd'hui encore, pour dire que des gens se sont éparpillés, les Arabes disent : ils se sont dispersés comme Saba.",
+   "hold": 1.4
+  },
+  {
+   "id": "lesson",
+   "text": "Le Coran conclut : il y a là des signes pour tout homme patient et reconnaissant. Ce qui garde un bienfait, ce n'est pas une digue. C'est le merci.",
+   "hold": 2.2
+  },
+  {
+   "id": "cta",
+   "text": "Quelle histoire du Coran veux-tu pour le prochain épisode ? Dis-le en commentaire."
+  }
+ ],
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model_id": "eleven_v3",
+ "local_voice": "piper:fr_FR-miro-high",
+ "local_speed": 1.12,
+ "ambience": {
+  "wind": {
+   "hook": 0.3,
+   "promise": 0.24,
+   "dam": 0.26,
+   "gardens": 0.2,
+   "command": 0.2,
+   "route": 0.28,
+   "ingrat": 0.26,
+   "flood": 0.4,
+   "after": 0.32,
+   "proverb": 0.24,
+   "lesson": 0.2,
+   "cta": 0.2,
+   "outro": 0.18
+  },
+  "thunder": {
+   "hook": 0.25,
+   "flood": 0.35
+  }
+ },
+ "pron": {
+  "Saba": "Sa-ba",
+  "Ma'rib": "Maa-rib",
+  "Cham": "Chêm (la Syrie historique)",
+  "Aws": "Aouss",
+  "Khazraj": "Khaz-raj",
+  "Allah": "Al-lah"
+ },
+ "ambience_gain": 0.6,
+ "est_cps": 15.5,
+ "music": {
+  "file": "music.wav",
+  "gain": 0.3,
+  "duck": true
+ },
+ "music_level": {
+  "hook": 0.85,
+  "promise": 0.65,
+  "dam": 0.6,
+  "gardens": 0.6,
+  "command": 0.65,
+  "route": 0.6,
+  "ingrat": 0.6,
+  "flood": 1.0,
+  "after": 0.8,
+  "proverb": 0.75,
+  "lesson": 1.0,
+  "cta": 0.65,
+  "outro": 0.8
+ }
+}
